@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
   <title id="title">No Stone Unturned review artwork</title>
   <desc id="desc">Original geometric PsychoBros artwork for No Stone Unturned.</desc>
-  <rect width="1200" height="675" fill="oklch(7% 0.006 95)"/>
-  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(78% 0 0 / 0.16)"/>
-  <g fill="none" stroke="oklch(84% 0.19 80.46)" opacity="0.72">
-    <circle cx="719" cy="169" r="159" stroke-width="2"/>
-    <circle cx="889" cy="349" r="99" stroke-width="10"/>
-    <path d="M479 449  999 139  1179 449" stroke-width="5"/>
+  <rect width="1200" height="675" fill="oklch(10% 0.015 20)"/>
+  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(96% 0.01 95 / 0.16)"/>
+  <g fill="none" stroke="oklch(66% 0.24 20)" opacity="0.9">
+    <circle cx="719" cy="169" r="159" stroke-width="12"/>
+    <circle cx="889" cy="349" r="99" stroke-width="20"/>
+    <path d="M479 449  999 139  1179 449" stroke-width="12"/>
   </g>
-  <path d="M790 0h410v675H940Z" fill="oklch(84% 0.19 80.46)" opacity="0.08"/>
-  <path d="M840 0h360v675H1060Z" fill="oklch(49% 0.08 188)" opacity="0.08"/>
-  <circle cx="1050" cy="118" r="16" fill="oklch(49% 0.08 188)"/>
-  <path d="M84 82h130" stroke="oklch(84% 0.19 80.46)" stroke-width="4"/>
-  <text x="84" y="126" fill="oklch(84% 0.19 80.46)" font-family="Consolas, monospace" font-size="18" letter-spacing="5">PAX WEST 2025 / REVIEW 10</text>
-  <text x="82" y="420" fill="oklch(91% 0 0)" font-family="Alumni Sans, Arial, sans-serif" font-size="74" font-weight="300">No Stone Unturned</text>
-  <text x="84" y="620" fill="oklch(72% 0 0)" font-family="Albert Sans, Arial, sans-serif" font-size="22">Wise Monkey Entertainment Ltd. / Comedy Detective Adventure</text>
-  <text x="1114" y="620" fill="oklch(84% 0.19 80.46)" font-family="Consolas, monospace" font-size="20" text-anchor="end">PSYCHOBROS</text>
+  <path d="M760 0h440v675H890Z" fill="oklch(66% 0.24 20)" opacity="0.2"/>
+  <path d="M900 0h300v675H1060Z" fill="oklch(78% 0.19 145)" opacity="0.15"/>
+  <circle cx="1050" cy="118" r="24" fill="oklch(78% 0.19 145)"/>
+  <rect x="84" y="70" width="268" height="58" fill="oklch(66% 0.24 20)"/>
+  <text x="104" y="108" fill="oklch(98% 0.005 95)" font-family="Arial Black, Arial, sans-serif" font-size="20" letter-spacing="3">DAD REVIEW 10</text>
+  <text x="82" y="390" fill="oklch(96% 0.01 95)" font-family="Arial Black, Arial, sans-serif" font-size="70" font-weight="900">No Stone Unturned</text>
+  <text x="84" y="620" fill="oklch(76% 0.01 95)" font-family="Albert Sans, Arial, sans-serif" font-size="22">Wise Monkey Entertainment Ltd. / Comedy Detective Adventure</text>
+  <text x="1114" y="620" fill="oklch(66% 0.24 20)" font-family="Arial Black, Arial, sans-serif" font-size="20" text-anchor="end">PSYCHOBROS</text>
 </svg>

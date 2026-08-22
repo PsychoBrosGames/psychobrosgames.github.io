@@ -4,8 +4,6 @@ const mobileNav = document.querySelector(".mobile-nav");
 const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
 const themeToggle = document.querySelector(".theme-toggle");
 const revealItems = document.querySelectorAll(".reveal");
-const lensTabs = Array.from(document.querySelectorAll("[data-lens]"));
-const lensPanels = Array.from(document.querySelectorAll("[data-panel]"));
 const reviewSearch = document.querySelector("[data-review-search]");
 const reviewGroup = document.querySelector("[data-review-group]");
 const reviewCards = Array.from(document.querySelectorAll("[data-review-card]"));
@@ -47,6 +45,13 @@ menuToggle?.addEventListener("click", () => {
 
 mobileNavLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && header?.classList.contains("is-menu-open")) {
+    closeMenu();
+    menuToggle?.focus();
+  }
+});
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 window.addEventListener("resize", () => {
   if (window.innerWidth > 1040) {
@@ -63,49 +68,6 @@ themeToggle?.addEventListener("click", () => {
   const url = new URL(window.location.href);
   url.searchParams.set("scoutTheme", nextTheme);
   window.history.replaceState({}, "", url);
-});
-
-const activateLens = (selectedTab, moveFocus = false) => {
-  const selectedLens = selectedTab.dataset.lens;
-
-  lensTabs.forEach((tab) => {
-    const isSelected = tab === selectedTab;
-    tab.classList.toggle("is-active", isSelected);
-    tab.setAttribute("aria-selected", String(isSelected));
-    tab.tabIndex = isSelected ? 0 : -1;
-  });
-
-  lensPanels.forEach((panel) => {
-    panel.hidden = panel.dataset.panel !== selectedLens;
-  });
-
-  if (moveFocus) {
-    selectedTab.focus();
-  }
-};
-
-lensTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateLens(tab));
-  tab.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
-      return;
-    }
-
-    event.preventDefault();
-    let nextIndex = index;
-
-    if (event.key === "ArrowLeft") {
-      nextIndex = (index - 1 + lensTabs.length) % lensTabs.length;
-    } else if (event.key === "ArrowRight") {
-      nextIndex = (index + 1) % lensTabs.length;
-    } else if (event.key === "Home") {
-      nextIndex = 0;
-    } else if (event.key === "End") {
-      nextIndex = lensTabs.length - 1;
-    }
-
-    activateLens(lensTabs[nextIndex], true);
-  });
 });
 
 const filterReviews = () => {
@@ -130,7 +92,9 @@ const filterReviews = () => {
   });
 
   if (reviewCount) reviewCount.textContent = String(visibleCount);
-  if (reviewLabel) reviewLabel.textContent = visibleCount === 1 ? "review shown" : "reviews shown";
+  if (reviewLabel) {
+    reviewLabel.textContent = visibleCount === 1 ? "argument found" : "arguments found";
+  }
   if (reviewEmpty) reviewEmpty.hidden = visibleCount !== 0;
 };
 

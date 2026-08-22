@@ -11,6 +11,7 @@
     "groupKey": "pax-rising",
     "deck": "Possession-based party building gives this open-world tactics game a genuinely different answer to the usual roster problem.",
     "verdictTitle": "A tactics sandbox with possession at its center.",
+    "dadTake": "Possession: cheaper than recruiting and somehow worse for HR.",
     "verdict": "Never's End has the kind of central mechanic that can support an entire campaign: your immortal spirit survives, but the bodies carrying it do not have to. The promise rests on whether its weather, terrain, settlements, and swappable hosts stay legible when the battlefield gets busy.",
     "overview": [
       "Humanity is almost gone, the Never is spreading, and the player is an undying warrior spirit embodied in living silver. Instead of recruiting a fixed party, that spirit possesses townsfolk and carries their abilities into turn-based battles.",
@@ -75,6 +76,7 @@
     "groupKey": "pax-rising",
     "deck": "Stack blocks in 2D, blast them apart in 3D, then build a run around the collision between both halves.",
     "verdictTitle": "Two genres collide hard enough to make the gimmick work.",
+    "dadTake": "Tetris got a shotgun. We have follow-up questions.",
     "verdict": "Blocks for Babies has a pitch that survives the elevator ride: stack the board, jump into it, and shoot the mess you made. The deciding factor will be whether upgrades turn that contrast into strategy instead of asking players to alternate between two disconnected minigames.",
     "overview": [
       "The run switches between arcade block-stacking and first-person shooting. Clearing lines shapes the 2D board; entering the 3D space lets the player destroy blocks directly with weapons.",
@@ -139,6 +141,7 @@
     "groupKey": "pax-rising",
     "deck": "A broken car, a pair of rollerblades, and a playlist turn a small-town summer into an unusually personal adventure.",
     "verdictTitle": "A small-town mixtape with wheels.",
+    "dadTake": "A broken car, good music, and zero desire to call roadside assistance.",
     "verdict": "RollerGirl stands out by making music taste part of how the world reads its protagonist. The adventure will live or die on character writing, but its blend of movement, odd jobs, romance, and playlist decisions gives a familiar summer story a specific point of view.",
     "overview": [
       "Naomi is sixteen, her car has broken down, and getting around town now means rollerblades. That inconvenience opens a slice-of-life adventure built from conversations, odd jobs, romance, and a small-town mystery.",
@@ -203,6 +206,7 @@
     "groupKey": "pax-rising",
     "deck": "Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular.",
     "verdictTitle": "Starfighter spectacle built for another run.",
+    "dadTake": "Space is vast, beautiful, and apparently full of things that need exploding.",
     "verdict": "Rogue Eclipse understands that a space roguelike needs more than upgrade menus: the flying itself has to feel dangerous and fast. Destructible environments and behemoth-scale enemies give its run structure a strong visual purpose, while its Arabesque Futurism helps it avoid generic military sci-fi.",
     "overview": [
       "The player is a pilot fighting for humanity's future through repeated arcade-style spaceflight runs. Ships can be upgraded as battles escalate from fighter skirmishes to encounters with enormous enemy machines.",
@@ -267,6 +271,7 @@
     "groupKey": "pax-rising",
     "deck": "A dead car and a decaying Route 66 dinosaur attraction turn a 1992 road stop into a focused horror setup.",
     "verdictTitle": "Roadside Americana with teeth.",
+    "dadTake": "Road trip rule one: never trust the dinosaur-shaped roadside attraction.",
     "verdict": "Terrible Lizards starts from a location horror games have barely touched: a sun-faded tourist trap built around fake dinosaurs. The missing-child mystery gives the player a reason to explore, while the 1992 setting removes the easy exits that modern technology usually creates.",
     "overview": [
       "The player's car dies outside Dalton's Dinos, a deteriorating Route 66 attraction in New Mexico. It is 1992, a child is missing, and the creatures stalking the property are more dangerous than the roadside statues suggest.",
@@ -331,6 +336,7 @@
     "groupKey": "pax-rising",
     "deck": "Zombie survival becomes an immersive-sim toy box where puddles, gas, cars, and ridiculous crafted weapons all count.",
     "verdictTitle": "A systems-first survivor with a mean toy box.",
+    "dadTake": "The city has problems. Your solution is mostly uppercuts.",
     "verdict": "Beatdown City Survivors is most convincing when it treats the city as part of the loadout. Electrifying puddles and detonating gas promise more interesting decisions than simply circling a horde, and weapon crafting gives the run structure a gleefully scrappy identity.",
     "overview": [
       "This survivors-like drops varied characters into a sandbox city full of zombies and mutants. Environmental hazards can be chained together, so puddles, electricity, gas, and cars become improvised tools.",
@@ -395,6 +401,7 @@
     "groupKey": "pax-rising",
     "deck": "Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.",
     "verdictTitle": "A pirate map that rewards taking the long route.",
+    "dadTake": "Pirates, dragons, and a map we will absolutely hold upside down.",
     "verdict": "Draco and the Seven Scales makes a strong case for putting the ship back into pirate adventure. Different sea routes open different dungeons, items, and puzzles, giving travel a strategic purpose beyond connecting islands.",
     "overview": [
       "Draco is a pirate captain trying to save what matters most to him. The adventure moves between top-down exploration on foot and travel by ship across a large pixel-art world.",
@@ -459,6 +466,7 @@
     "groupKey": "pax-rising",
     "deck": "Ingredient cards, enchanted cooktops, and impatient customers turn meal prep into a compact turn-by-turn strategy problem.",
     "verdictTitle": "A deckbuilder where dinner service is the boss fight.",
+    "dadTake": "The dinner rush now has spells, cards, and still no clean spoons.",
     "verdict": "Arcane Eats gives card play a physical process: ingredients occupy cooktops, tools modify meals, and customers create timing pressure. The theme is not pasted over the deckbuilder; it changes how cards occupy space and when they become useful.",
     "overview": [
       "Ingredient cards move onto enchanted cooktops rather than resolving as abstract attacks. Energy, timing, kitchen tools, and customer demands all compete for attention during a turn.",
@@ -524,6 +532,7 @@
     "featured": true,
     "deck": "Forget health bars. Win by using arrows, marbles, fireballs, traps, and pushes to physically knock miniatures off balance.",
     "verdictTitle": "Miniatures strategy where gravity writes the damage numbers.",
+    "dadTake": "Finally, a strategy game where knocking things over counts as planning.",
     "verdict": "Table Tactics replaces invisible arithmetic with visible consequences. Weight, shape, position, and momentum decide whether a miniature stays upright, giving every move the clarity of a tabletop stunt and the possibility of an unexpected chain reaction.",
     "overview": [
       "The battlefield is a tabletop populated by collectible miniature figures. Archers, catapults, mages, traps, marbles, and other tools do not reduce a health meter; they apply force until an opposing figure falls.",
@@ -588,6 +597,7 @@
     "groupKey": "pax-rising",
     "deck": "A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer.",
     "verdictTitle": "Thirty minutes of poisoned cartoon noir.",
+    "dadTake": "Thirty minutes of cartoon noir, poison, and excellent reasons to hydrate.",
     "verdict": "Hank is short enough to commit fully to its premise without turning the subconscious into a collectible map. Its dark Saturday-morning-cartoon style and half-hour target make it a useful reminder that a complete game does not need to fill a calendar.",
     "overview": [
       "Hank is a time-traveling vigilante who has been poisoned and left drowning in spilled beer. The attempt to survive sends him through his own subconscious rather than a conventional crime scene.",
@@ -652,6 +662,7 @@
     "groupKey": "pax-rising",
     "deck": "A fully voiced British detective comedy builds three classic cases into the larger mystery of A Murder Most Fowl.",
     "verdictTitle": "A chicken murder with actual casework underneath.",
+    "dadTake": "A chicken is dead. Three dads are now emotionally overinvested.",
     "verdict": "No Stone Unturned has a joke-shaped doorway, but the structure behind it is substantial: multiple cases, a voiced cast, and a central murder mystery. The best version lets the humor sharpen observation instead of treating every clue as another setup.",
     "overview": [
       "The larger case is called A Murder Most Fowl, but the investigation extends through three classic cases inspired by fairy tales, jokes, and children's stories. Each feeds into the central whodunnit.",
@@ -716,6 +727,7 @@
     "groupKey": "pax-rising",
     "deck": "Sea-creature duels combine rhythm timing, parries, and clean cuts with an open-source physical sword controller.",
     "verdictTitle": "The sword controller is the hook; timing is the game.",
+    "dadTake": "We came for the sword controller and stayed because our arms hurt.",
     "verdict": "Sashimi Slayer is exactly the kind of concept that belongs on a show floor: visible, physical, and understandable from across the aisle. The open-source sword is more than a prop if the same parry-and-cut timing remains satisfying on a standard controller.",
     "overview": [
       "This rhythm-action arcade game turns seafood duels into timed parries and cuts. Hand-drawn art and original music frame three levels built around learning when to defend and when to strike.",
@@ -780,6 +792,7 @@
     "groupKey": "official-pax",
     "deck": "Four stranded explorers must survive a growing base whose chemistry and physics keep working whether the crew is ready or not.",
     "verdictTitle": "A colony sim that makes physics part of the crew.",
+    "dadTake": "A colony sim where even the air has a spreadsheet.",
     "verdict": "Adaptory's fixed four-person crew gives every expansion a cost: the base becomes more complicated while the available hands do not multiply. A simulation of heat, density, viscosity, gravity, and phase changes turns automation from a late-game luxury into the central survival plan.",
     "overview": [
       "Four procedurally generated explorers crash on a deserted planetoid and have to build a path home. The crew remains fixed while the base grows, so automation becomes the answer to rising complexity.",
@@ -844,6 +857,7 @@
     "groupKey": "official-pax",
     "deck": "Nine floating realms, a molten inner sun, and fully voiced episodes frame a choice-driven journey across a broken world.",
     "verdictTitle": "A story-first journey across a literally broken world.",
+    "dadTake": "The world broke apart. Great news for anyone who hates normal maps.",
     "verdict": "Sky of Tides has a world concept strong enough to carry a narrative RPG: oceans in the sky and nine realms hanging over a molten core. Its success depends on choices leaving visible marks rather than only changing the tone of the next conversation.",
     "overview": [
       "Rin D'Lorah travels through numen9, a shattered world made of nine floating realms above the Inner Sun. The story unfolds across nine fully voiced episodes.",
@@ -908,6 +922,7 @@
     "groupKey": "official-pax",
     "deck": "Stamping, sorting, and delivering mail inside a post office with mandatory housing turns cheerful procedure into a warning sign.",
     "verdictTitle": "Postal work turns into quiet workplace horror.",
+    "dadTake": "Neither rain nor snow nor workplace horror will stop this delivery.",
     "verdict": "Letter Lost uses one of horror's best tools: instructions that sound friendly until the player notices what they forbid. Sorting mail provides a dependable routine, while the closed Wistvale Post Office gives every corporate reassurance something ominous to hide.",
     "overview": [
       "The player works in the Wistvale Post Office on Kharnym Isle, stamping, sorting, and delivering mail. Official language describes mandatory room and board while making it clear that leaving is not encouraged.",
@@ -972,6 +987,7 @@
     "groupKey": "official-pax",
     "deck": "More than one hundred tameable monsters fight back against the Abyss across a procedurally varied, interconnected world.",
     "verdictTitle": "Monster-taming depth in a world already losing the fight.",
+    "dadTake": "Catch monsters, fight oblivion, remember which dad named them all.",
     "verdict": "Voidsayer frames collection as survival rather than sport. Gear, evolution, and a roster of more than one hundred monsters create obvious team-building depth, while procedural events aim to keep the dark world from becoming a fixed route.",
     "overview": [
       "The Abyss is consuming the world, and the player's answer is a roster of tameable monsters. More than one hundred creatures can be recruited, equipped, and evolved.",
@@ -1036,6 +1052,7 @@
     "groupKey": "official-pax",
     "deck": "A memoryless soldier wakes aboard a derelict warship where shifting corridors turn retro FPS combat into a repeated escape attempt.",
     "verdictTitle": "Retro FPS aggression with a roguelite memory problem.",
+    "dadTake": "The spaceship is haunted, the guns are loud, and bedtime was an hour ago.",
     "verdict": "Moros Protocol combines the direct feedback of a classic shooter with the uncertainty of a roguelite. Crunchy pixel textures and low-poly spaces give The Orpheus a strong look, while augments and found weapons make each return to its shifting corridors a new loadout problem.",
     "overview": [
       "The player wakes without memory aboard the derelict warship The Orpheus. Its corridors shift between runs, and the route out is filled with monsters and demanding bosses.",
@@ -1100,6 +1117,7 @@
     "groupKey": "official-pax",
     "deck": "Repairing a house, growing crops, and cooking meals become unsettling when Angie realizes the day will not stay finished.",
     "verdictTitle": "Cozy routines weaponized by a time loop.",
+    "dadTake": "Cozy gardening, except Tuesday is broken and possibly watching you.",
     "verdict": "Fractured Blooms uses familiar life-sim chores as emotional pressure. A time loop turns every planted crop and repaired room into a question about what can be preserved, making comfort and dread depend on the same daily routine.",
     "overview": [
       "Angie restores a neglected house, grows crops, cooks meals, and cares for the people inside it. Those cozy systems operate inside a time loop that gradually changes how each task is understood.",
@@ -1164,6 +1182,7 @@
     "groupKey": "official-pax",
     "deck": "Handcrafted biomes, changing moons, and field-recorded northern soundscapes replace the usual survival panic with careful attention.",
     "verdictTitle": "Survival that replaces panic with attention.",
+    "dadTake": "Survival crafting for people who would prefer nature not scream at them.",
     "verdict": "Akiiwan keeps the gathering and adaptation of survival games while removing much of the hostility. No minimap, changing biomes, and wildlife that generally avoids aggression encourage players to read the world instead of racing a threat meter.",
     "overview": [
       "The player explores handcrafted biomes whose conditions change with each new moon. Navigation happens without a minimap, placing more value on landmarks and observation.",
@@ -1228,6 +1247,7 @@
     "groupKey": "official-pax",
     "deck": "A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.",
     "verdictTitle": "Factory optimization without the conveyor-belt anxiety.",
+    "dadTake": "Build a factory in zero gravity. Misplace every wrench in three dimensions.",
     "verdict": "Exovia changes factory design by removing the floor. Floating production layouts and asteroid maps turn three-dimensional space into the central logistics problem, while the lack of danger and time pressure makes experimentation the point rather than the cost.",
     "overview": [
       "Factories are built in zero gravity around procedurally generated asteroids. Traditional conveyor belts give way to floating production layouts and logistics that use open space.",
