@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const supportedThemes = new Set(["light", "dark"]);
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme =
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse every PsychoBros game review and filter by title, studio, genre, or PAX West showcase group." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Game reviews - PsychoBros" />
+    <meta property="og:description" content="Browse every PsychoBros game review and filter by title, studio, genre, or PAX West showcase group." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/reviews/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>Game reviews - PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/reviews/" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Alumni+Sans:ital,wght@0,100;0,300;0,400;0,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+
+  </head>
+  <body class="publication-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../reviews/" aria-current="page">Reviews</a>
+<a href="../pax-west-2025/">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/">About</a>
+        </nav>
+        <div class="header-actions">
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../reviews/" aria-current="page">Reviews</a>
+<a href="../pax-west-2025/">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/">About</a>
+      </nav>
+    </header>
+
+      <main id="main" class="publication-main">
+        <section class="archive-hero" id="top">
+          <div class="shell archive-hero-grid">
+            <div class="reveal">
+              <p class="eyebrow"><span></span> Review archive</p>
+              <h1>Games worth arguing about.</h1>
+            </div>
+            <p class="archive-hero-copy reveal">Every verdict runs through three player perspectives before it reaches the page. Search the full archive or narrow the 2025 PAX collection.</p>
+          </div>
+        </section>
+        <section class="section archive-section" aria-labelledby="archive-title">
+          <div class="shell">
+            <div class="review-tools reveal">
+              <label>
+                <span>Search reviews</span>
+                <input type="search" placeholder="Game, studio, or genre" data-review-search />
+              </label>
+              <label>
+                <span>Showcase</span>
+                <select data-review-group>
+                  <option value="all">All PAX West indies</option>
+                  <option value="pax-rising">PAX Rising Showcase</option>
+                  <option value="official-pax">Additional official PAX entries</option>
+                </select>
+              </label>
+              <p role="status" aria-live="polite" aria-atomic="true">
+                <strong data-review-count>20</strong>
+                <span data-review-label>reviews shown</span>
+              </p>
+            </div>
+            <h2 class="visually-hidden" id="archive-title">All reviews</h2>
+            <div class="review-card-grid review-card-grid-archive" data-review-results>
+
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="exovia"
+    data-review-studio="byterockers&#039; games"
+    data-review-genre="zero-g factory simulation"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/exovia/" aria-label="Read Exovia review">
+      <img src="../assets/reviews/exovia.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Zero-G Factory Simulation</span>
+        <time datetime="2025-09-30">Sep 30</time>
+      </div>
+      <h3><a href="../reviews/exovia/">Exovia</a></h3>
+      <p>A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.</p>
+      <div class="review-card-footer">
+        <span>ByteRockers&#039; Games</span>
+        <a class="text-link" href="../reviews/exovia/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="akiiwan: relaxing survival"
+    data-review-studio="little buffalo studios"
+    data-review-genre="relaxing survival"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/akiiwan-relaxing-survival/" aria-label="Read Akiiwan: Relaxing Survival review">
+      <img src="../assets/reviews/akiiwan-relaxing-survival.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Relaxing Survival</span>
+        <time datetime="2025-09-28">Sep 28</time>
+      </div>
+      <h3><a href="../reviews/akiiwan-relaxing-survival/">Akiiwan: Relaxing Survival</a></h3>
+      <p>Handcrafted biomes, changing moons, and field-recorded northern soundscapes replace the usual survival panic with careful attention.</p>
+      <div class="review-card-footer">
+        <span>Little Buffalo Studios</span>
+        <a class="text-link" href="../reviews/akiiwan-relaxing-survival/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="fractured blooms"
+    data-review-studio="serenity forge"
+    data-review-genre="psychological life sim"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/fractured-blooms/" aria-label="Read Fractured Blooms review">
+      <img src="../assets/reviews/fractured-blooms.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Psychological Life Sim</span>
+        <time datetime="2025-09-26">Sep 26</time>
+      </div>
+      <h3><a href="../reviews/fractured-blooms/">Fractured Blooms</a></h3>
+      <p>Repairing a house, growing crops, and cooking meals become unsettling when Angie realizes the day will not stay finished.</p>
+      <div class="review-card-footer">
+        <span>Serenity Forge</span>
+        <a class="text-link" href="../reviews/fractured-blooms/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="moros protocol"
+    data-review-studio="pixel reign"
+    data-review-genre="roguelite retro fps"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/moros-protocol/" aria-label="Read Moros Protocol review">
+      <img src="../assets/reviews/moros-protocol.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Roguelite Retro FPS</span>
+        <time datetime="2025-09-25">Sep 25</time>
+      </div>
+      <h3><a href="../reviews/moros-protocol/">Moros Protocol</a></h3>
+      <p>A memoryless soldier wakes aboard a derelict warship where shifting corridors turn retro FPS combat into a repeated escape attempt.</p>
+      <div class="review-card-footer">
+        <span>Pixel Reign</span>
+        <a class="text-link" href="../reviews/moros-protocol/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="voidsayer"
+    data-review-studio="pavel auseitasau"
+    data-review-genre="monster-taming rpg"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/voidsayer/" aria-label="Read Voidsayer review">
+      <img src="../assets/reviews/voidsayer.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Monster-Taming RPG</span>
+        <time datetime="2025-09-24">Sep 24</time>
+      </div>
+      <h3><a href="../reviews/voidsayer/">Voidsayer</a></h3>
+      <p>More than one hundred tameable monsters fight back against the Abyss across a procedurally varied, interconnected world.</p>
+      <div class="review-card-footer">
+        <span>Pavel Auseitasau</span>
+        <a class="text-link" href="../reviews/voidsayer/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="letter lost"
+    data-review-studio="flatnine games"
+    data-review-genre="workplace horror adventure"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/letter-lost/" aria-label="Read Letter Lost review">
+      <img src="../assets/reviews/letter-lost.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Workplace Horror Adventure</span>
+        <time datetime="2025-09-23">Sep 23</time>
+      </div>
+      <h3><a href="../reviews/letter-lost/">Letter Lost</a></h3>
+      <p>Stamping, sorting, and delivering mail inside a post office with mandatory housing turns cheerful procedure into a warning sign.</p>
+      <div class="review-card-footer">
+        <span>FlatNine Games</span>
+        <a class="text-link" href="../reviews/letter-lost/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="sky of tides"
+    data-review-studio="lofty sky entertainment inc."
+    data-review-genre="narrative rpg"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/sky-of-tides/" aria-label="Read Sky of Tides review">
+      <img src="../assets/reviews/sky-of-tides.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Narrative RPG</span>
+        <time datetime="2025-09-21">Sep 21</time>
+      </div>
+      <h3><a href="../reviews/sky-of-tides/">Sky of Tides</a></h3>
+      <p>Nine floating realms, a molten inner sun, and fully voiced episodes frame a choice-driven journey across a broken world.</p>
+      <div class="review-card-footer">
+        <span>Lofty Sky Entertainment Inc.</span>
+        <a class="text-link" href="../reviews/sky-of-tides/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="adaptory"
+    data-review-studio="stormcloak games"
+    data-review-genre="colony simulation"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="../reviews/adaptory/" aria-label="Read Adaptory review">
+      <img src="../assets/reviews/adaptory.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Colony Simulation</span>
+        <time datetime="2025-09-20">Sep 20</time>
+      </div>
+      <h3><a href="../reviews/adaptory/">Adaptory</a></h3>
+      <p>Four stranded explorers must survive a growing base whose chemistry and physics keep working whether the crew is ready or not.</p>
+      <div class="review-card-footer">
+        <span>Stormcloak Games</span>
+        <a class="text-link" href="../reviews/adaptory/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="sashimi slayer"
+    data-review-studio="shrimp fried rice games"
+    data-review-genre="rhythm action"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/sashimi-slayer/" aria-label="Read Sashimi Slayer review">
+      <img src="../assets/reviews/sashimi-slayer.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Rhythm Action</span>
+        <time datetime="2025-09-18">Sep 18</time>
+      </div>
+      <h3><a href="../reviews/sashimi-slayer/">Sashimi Slayer</a></h3>
+      <p>Sea-creature duels combine rhythm timing, parries, and clean cuts with an open-source physical sword controller.</p>
+      <div class="review-card-footer">
+        <span>Shrimp Fried Rice Games</span>
+        <a class="text-link" href="../reviews/sashimi-slayer/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="no stone unturned"
+    data-review-studio="wise monkey entertainment ltd."
+    data-review-genre="comedy detective adventure"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/no-stone-unturned/" aria-label="Read No Stone Unturned review">
+      <img src="../assets/reviews/no-stone-unturned.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Comedy Detective Adventure</span>
+        <time datetime="2025-09-17">Sep 17</time>
+      </div>
+      <h3><a href="../reviews/no-stone-unturned/">No Stone Unturned</a></h3>
+      <p>A fully voiced British detective comedy builds three classic cases into the larger mystery of A Murder Most Fowl.</p>
+      <div class="review-card-footer">
+        <span>Wise Monkey Entertainment Ltd.</span>
+        <a class="text-link" href="../reviews/no-stone-unturned/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="hank: drowning on dry land"
+    data-review-studio="my next games"
+    data-review-genre="narrative adventure"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/hank-drowning-on-dry-land/" aria-label="Read Hank: Drowning On Dry Land review">
+      <img src="../assets/reviews/hank-drowning-on-dry-land.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Narrative Adventure</span>
+        <time datetime="2025-09-15">Sep 15</time>
+      </div>
+      <h3><a href="../reviews/hank-drowning-on-dry-land/">Hank: Drowning On Dry Land</a></h3>
+      <p>A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer.</p>
+      <div class="review-card-footer">
+        <span>My Next Games</span>
+        <a class="text-link" href="../reviews/hank-drowning-on-dry-land/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="table tactics: physics-driven tabletop battles"
+    data-review-studio="unbound creations"
+    data-review-genre="physics strategy"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/table-tactics/" aria-label="Read Table Tactics: physics-driven tabletop battles review">
+      <img src="../assets/reviews/table-tactics.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Physics Strategy</span>
+        <time datetime="2025-09-14">Sep 14</time>
+      </div>
+      <h3><a href="../reviews/table-tactics/">Table Tactics: physics-driven tabletop battles</a></h3>
+      <p>Forget health bars. Win by using arrows, marbles, fireballs, traps, and pushes to physically knock miniatures off balance.</p>
+      <div class="review-card-footer">
+        <span>Unbound Creations</span>
+        <a class="text-link" href="../reviews/table-tactics/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="arcane eats"
+    data-review-studio="wonderbelly games"
+    data-review-genre="cooking deckbuilder"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/arcane-eats/" aria-label="Read Arcane Eats review">
+      <img src="../assets/reviews/arcane-eats.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Cooking Deckbuilder</span>
+        <time datetime="2025-09-12">Sep 12</time>
+      </div>
+      <h3><a href="../reviews/arcane-eats/">Arcane Eats</a></h3>
+      <p>Ingredient cards, enchanted cooktops, and impatient customers turn meal prep into a compact turn-by-turn strategy problem.</p>
+      <div class="review-card-footer">
+        <span>Wonderbelly Games</span>
+        <a class="text-link" href="../reviews/arcane-eats/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="draco and the seven scales"
+    data-review-studio="ice goat games"
+    data-review-genre="pirate action adventure"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/draco-and-the-seven-scales/" aria-label="Read Draco and the Seven Scales review">
+      <img src="../assets/reviews/draco-and-the-seven-scales.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Pirate Action Adventure</span>
+        <time datetime="2025-09-11">Sep 11</time>
+      </div>
+      <h3><a href="../reviews/draco-and-the-seven-scales/">Draco and the Seven Scales</a></h3>
+      <p>Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.</p>
+      <div class="review-card-footer">
+        <span>Ice Goat Games</span>
+        <a class="text-link" href="../reviews/draco-and-the-seven-scales/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="beatdown city survivors"
+    data-review-studio="nuchallenger"
+    data-review-genre="action survivors-like"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/beatdown-city-survivors/" aria-label="Read Beatdown City Survivors review">
+      <img src="../assets/reviews/beatdown-city-survivors.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Action Survivors-Like</span>
+        <time datetime="2025-09-09">Sep 9</time>
+      </div>
+      <h3><a href="../reviews/beatdown-city-survivors/">Beatdown City Survivors</a></h3>
+      <p>Zombie survival becomes an immersive-sim toy box where puddles, gas, cars, and ridiculous crafted weapons all count.</p>
+      <div class="review-card-footer">
+        <span>NuChallenger</span>
+        <a class="text-link" href="../reviews/beatdown-city-survivors/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="terrible lizards"
+    data-review-studio="wdr studios llc"
+    data-review-genre="survival horror"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/terrible-lizards/" aria-label="Read Terrible Lizards review">
+      <img src="../assets/reviews/terrible-lizards.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Survival Horror</span>
+        <time datetime="2025-09-08">Sep 8</time>
+      </div>
+      <h3><a href="../reviews/terrible-lizards/">Terrible Lizards</a></h3>
+      <p>A dead car and a decaying Route 66 dinosaur attraction turn a 1992 road stop into a focused horror setup.</p>
+      <div class="review-card-footer">
+        <span>WDR Studios LLC</span>
+        <a class="text-link" href="../reviews/terrible-lizards/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="rogue eclipse"
+    data-review-studio="huskrafts"
+    data-review-genre="spaceflight roguelike"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/rogue-eclipse/" aria-label="Read Rogue Eclipse review">
+      <img src="../assets/reviews/rogue-eclipse.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Spaceflight Roguelike</span>
+        <time datetime="2025-09-06">Sep 6</time>
+      </div>
+      <h3><a href="../reviews/rogue-eclipse/">Rogue Eclipse</a></h3>
+      <p>Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular.</p>
+      <div class="review-card-footer">
+        <span>HUSKRAFTS</span>
+        <a class="text-link" href="../reviews/rogue-eclipse/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="rollergirl"
+    data-review-studio="pushing vertices"
+    data-review-genre="slice-of-life adventure"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/rollergirl/" aria-label="Read RollerGirl review">
+      <img src="../assets/reviews/rollergirl.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Slice-of-Life Adventure</span>
+        <time datetime="2025-09-05">Sep 5</time>
+      </div>
+      <h3><a href="../reviews/rollergirl/">RollerGirl</a></h3>
+      <p>A broken car, a pair of rollerblades, and a playlist turn a small-town summer into an unusually personal adventure.</p>
+      <div class="review-card-footer">
+        <span>Pushing Vertices</span>
+        <a class="text-link" href="../reviews/rollergirl/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="blocks for babies"
+    data-review-studio="bunksoft interactive llc"
+    data-review-genre="arcade roguelite"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/blocks-for-babies/" aria-label="Read Blocks for Babies review">
+      <img src="../assets/reviews/blocks-for-babies.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Arcade Roguelite</span>
+        <time datetime="2025-09-03">Sep 3</time>
+      </div>
+      <h3><a href="../reviews/blocks-for-babies/">Blocks for Babies</a></h3>
+      <p>Stack blocks in 2D, blast them apart in 3D, then build a run around the collision between both halves.</p>
+      <div class="review-card-footer">
+        <span>BunkSoft Interactive LLC</span>
+        <a class="text-link" href="../reviews/blocks-for-babies/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="never&#039;s end"
+    data-review-studio="hypersect"
+    data-review-genre="tactical rpg"
+    data-review-group="pax-rising"
+  >
+    <a class="review-card-art" href="../reviews/nevers-end/" aria-label="Read Never&#039;s End review">
+      <img src="../assets/reviews/nevers-end.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Tactical RPG</span>
+        <time datetime="2025-09-02">Sep 2</time>
+      </div>
+      <h3><a href="../reviews/nevers-end/">Never&#039;s End</a></h3>
+      <p>Possession-based party building gives this open-world tactics game a genuinely different answer to the usual roster problem.</p>
+      <div class="review-card-footer">
+        <span>Hypersect</span>
+        <a class="text-link" href="../reviews/nevers-end/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+            </div>
+            <p class="review-empty" data-review-empty hidden>No reviews match that search.</p>
+          </div>
+        </section>
+      </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
+      </div>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="../reviews/">All reviews</a>
+        <a href="../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="../about/#crew">The crew</a>
+        <a href="../about/#standards">Editorial standards</a>
+        <a href="../about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

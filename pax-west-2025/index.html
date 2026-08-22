@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const supportedThemes = new Set(["light", "dark"]);
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme =
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Twenty PsychoBros retrospective reviews of indie games featured on the official PAX West 2025 event page." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PAX West 2025 indie review archive - PsychoBros" />
+    <meta property="og:description" content="Twenty PsychoBros retrospective reviews of indie games featured on the official PAX West 2025 event page." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/pax-west-2025/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>PAX West 2025 indie review archive - PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/pax-west-2025/" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Alumni+Sans:ital,wght@0,100;0,300;0,400;0,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+
+  </head>
+  <body class="publication-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../reviews/">Reviews</a>
+<a href="../pax-west-2025/" aria-current="page">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/">About</a>
+        </nav>
+        <div class="header-actions">
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../reviews/">Reviews</a>
+<a href="../pax-west-2025/" aria-current="page">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/">About</a>
+      </nav>
+    </header>
+
+      <main id="main" class="publication-main">
+        <section class="collection-hero" id="top">
+          <div class="shell collection-hero-grid">
+            <div class="reveal">
+              <p class="eyebrow"><span></span> Aug. 29 - Sept. 1, 2025 / Seattle</p>
+              <h1>PAX West 2025<br /> <span>indie review archive.</span></h1>
+            </div>
+            <div class="collection-note reveal">
+              <p class="section-index">Source note</p>
+              <p>This retrospective uses the official PAX West 2025 Steam event archive. Twelve games are verified PAX Rising Showcase selections; eight more are additional indie titles surfaced on the same official event page.</p>
+              <p>Indie MEGABOOTH did not publish a standalone 20-game PAX West 2025 lineup that we could independently verify, so the archive labels the two groups precisely.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section collection-section" aria-labelledby="collection-title">
+          <div class="shell">
+            <div class="publication-section-head reveal">
+              <div>
+                <p class="section-index">September 2025 / 20 entries</p>
+                <h2 id="collection-title">The complete collection.</h2>
+              </div>
+              <p>Short-form retrospective reviews focused on the pitch, the systems, and which kind of player should keep each game on the radar.</p>
+            </div>
+
+  <div class="review-ledger">
+
+      <a class="review-ledger-row reveal" href="../reviews/exovia/">
+        <span class="review-ledger-index">01</span>
+        <span class="review-ledger-title">Exovia</span>
+        <span class="review-ledger-genre">Zero-G Factory Simulation</span>
+        <time datetime="2025-09-30">Sep 30</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/akiiwan-relaxing-survival/">
+        <span class="review-ledger-index">02</span>
+        <span class="review-ledger-title">Akiiwan: Relaxing Survival</span>
+        <span class="review-ledger-genre">Relaxing Survival</span>
+        <time datetime="2025-09-28">Sep 28</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/fractured-blooms/">
+        <span class="review-ledger-index">03</span>
+        <span class="review-ledger-title">Fractured Blooms</span>
+        <span class="review-ledger-genre">Psychological Life Sim</span>
+        <time datetime="2025-09-26">Sep 26</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/moros-protocol/">
+        <span class="review-ledger-index">04</span>
+        <span class="review-ledger-title">Moros Protocol</span>
+        <span class="review-ledger-genre">Roguelite Retro FPS</span>
+        <time datetime="2025-09-25">Sep 25</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/voidsayer/">
+        <span class="review-ledger-index">05</span>
+        <span class="review-ledger-title">Voidsayer</span>
+        <span class="review-ledger-genre">Monster-Taming RPG</span>
+        <time datetime="2025-09-24">Sep 24</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/letter-lost/">
+        <span class="review-ledger-index">06</span>
+        <span class="review-ledger-title">Letter Lost</span>
+        <span class="review-ledger-genre">Workplace Horror Adventure</span>
+        <time datetime="2025-09-23">Sep 23</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/sky-of-tides/">
+        <span class="review-ledger-index">07</span>
+        <span class="review-ledger-title">Sky of Tides</span>
+        <span class="review-ledger-genre">Narrative RPG</span>
+        <time datetime="2025-09-21">Sep 21</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/adaptory/">
+        <span class="review-ledger-index">08</span>
+        <span class="review-ledger-title">Adaptory</span>
+        <span class="review-ledger-genre">Colony Simulation</span>
+        <time datetime="2025-09-20">Sep 20</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/sashimi-slayer/">
+        <span class="review-ledger-index">09</span>
+        <span class="review-ledger-title">Sashimi Slayer</span>
+        <span class="review-ledger-genre">Rhythm Action</span>
+        <time datetime="2025-09-18">Sep 18</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/no-stone-unturned/">
+        <span class="review-ledger-index">10</span>
+        <span class="review-ledger-title">No Stone Unturned</span>
+        <span class="review-ledger-genre">Comedy Detective Adventure</span>
+        <time datetime="2025-09-17">Sep 17</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/hank-drowning-on-dry-land/">
+        <span class="review-ledger-index">11</span>
+        <span class="review-ledger-title">Hank: Drowning On Dry Land</span>
+        <span class="review-ledger-genre">Narrative Adventure</span>
+        <time datetime="2025-09-15">Sep 15</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/table-tactics/">
+        <span class="review-ledger-index">12</span>
+        <span class="review-ledger-title">Table Tactics: physics-driven tabletop battles</span>
+        <span class="review-ledger-genre">Physics Strategy</span>
+        <time datetime="2025-09-14">Sep 14</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/arcane-eats/">
+        <span class="review-ledger-index">13</span>
+        <span class="review-ledger-title">Arcane Eats</span>
+        <span class="review-ledger-genre">Cooking Deckbuilder</span>
+        <time datetime="2025-09-12">Sep 12</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/draco-and-the-seven-scales/">
+        <span class="review-ledger-index">14</span>
+        <span class="review-ledger-title">Draco and the Seven Scales</span>
+        <span class="review-ledger-genre">Pirate Action Adventure</span>
+        <time datetime="2025-09-11">Sep 11</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/beatdown-city-survivors/">
+        <span class="review-ledger-index">15</span>
+        <span class="review-ledger-title">Beatdown City Survivors</span>
+        <span class="review-ledger-genre">Action Survivors-Like</span>
+        <time datetime="2025-09-09">Sep 9</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/terrible-lizards/">
+        <span class="review-ledger-index">16</span>
+        <span class="review-ledger-title">Terrible Lizards</span>
+        <span class="review-ledger-genre">Survival Horror</span>
+        <time datetime="2025-09-08">Sep 8</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/rogue-eclipse/">
+        <span class="review-ledger-index">17</span>
+        <span class="review-ledger-title">Rogue Eclipse</span>
+        <span class="review-ledger-genre">Spaceflight Roguelike</span>
+        <time datetime="2025-09-06">Sep 6</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/rollergirl/">
+        <span class="review-ledger-index">18</span>
+        <span class="review-ledger-title">RollerGirl</span>
+        <span class="review-ledger-genre">Slice-of-Life Adventure</span>
+        <time datetime="2025-09-05">Sep 5</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/blocks-for-babies/">
+        <span class="review-ledger-index">19</span>
+        <span class="review-ledger-title">Blocks for Babies</span>
+        <span class="review-ledger-genre">Arcade Roguelite</span>
+        <time datetime="2025-09-03">Sep 3</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="../reviews/nevers-end/">
+        <span class="review-ledger-index">20</span>
+        <span class="review-ledger-title">Never&#039;s End</span>
+        <span class="review-ledger-genre">Tactical RPG</span>
+        <time datetime="2025-09-02">Sep 2</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+  </div>
+          </div>
+        </section>
+      </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
+      </div>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="../reviews/">All reviews</a>
+        <a href="../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="../about/#crew">The crew</a>
+        <a href="../about/#standards">Editorial standards</a>
+        <a href="../about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

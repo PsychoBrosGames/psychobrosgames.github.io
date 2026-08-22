@@ -1,43 +1,34 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <script>
       (() => {
+        const supportedThemes = new Set(["light", "dark"]);
         const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
         const theme =
-          param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="PsychoBros is an independent gaming crew covering reviews, streams, commentary, and events from three very different player perspectives."
-    />
+    <meta name="description" content="PsychoBros reviews indie games through three perspectives: the Casual, the Tactician, and the All-Rounder." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="PsychoBros — Games hit different with the whole crew" />
-    <meta
-      property="og:description"
-      content="Reviews, streams, commentary, and event coverage for grown-up players with jobs, backlogs, and opinions."
-    />
+    <meta property="og:title" content="PsychoBros - Independent game reviews" />
+    <meta property="og:description" content="PsychoBros reviews indie games through three perspectives: the Casual, the Tactician, and the All-Rounder." />
     <meta property="og:url" content="https://psychobrosgames.github.io/" />
-    <meta
-      property="og:image"
-      content="https://psychobrosgames.github.io/assets/psychobros-social-card.png"
-    />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="PsychoBros — Games hit different with the whole crew"
-    />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content="https://psychobrosgames.github.io/assets/psychobros-social-card.png"
-    />
-    <title>PsychoBros — Independent Games Media</title>
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>PsychoBros - Independent game reviews</title>
     <link rel="canonical" href="https://psychobrosgames.github.io/" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,54 +38,45 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "PsychoBros",
-        "url": "https://psychobrosgames.github.io/",
-        "description": "Independent games media from three longtime friends with three very different player perspectives.",
-        "sameAs": ["https://github.com/PsychoBrosGames"]
-      }
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PsychoBros","url":"https://psychobrosgames.github.io/","description":"PsychoBros reviews indie games through three perspectives: the Casual, the Tactician, and the All-Rounder.","sameAs":["https://github.com/PsychoBrosGames"]}</script>
   </head>
-  <body>
+  <body class="publication-site home-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-header>
       <div class="shell header-inner">
-        <a class="brand" href="#top" aria-label="PsychoBros home">
-          <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-            <path
-              d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
-              fill="var(--cp-accent-soft)"
-              stroke="var(--cp-accent)"
-              stroke-width="2.5"
-            />
-            <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
-            <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-accent)" />
-            <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
-          </svg>
+        <a class="brand" href="" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
           <span>PSYCHO<span>BROS</span></span>
         </a>
-
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="#what-we-do">What we do</a>
-          <a href="#crew">The crew</a>
-          <a href="#standards">Our standards</a>
-          <a href="#contact">Contact</a>
+          <a href="reviews/">Reviews</a>
+<a href="pax-west-2025/">PAX West 2025</a>
+<a href="about/#crew">Crew</a>
+<a href="about/">About</a>
         </nav>
-
         <div class="header-actions">
-          <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
-            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
-            </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
-            </svg>
-          </button>
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
           <button
             class="icon-button menu-toggle"
             type="button"
@@ -107,766 +89,426 @@
           </button>
         </div>
       </div>
-
-      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-        <a href="#what-we-do">What we do</a>
-        <a href="#crew">The crew</a>
-        <a href="#standards">Our standards</a>
-        <a href="#contact">Contact</a>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="reviews/">Reviews</a>
+<a href="pax-west-2025/">PAX West 2025</a>
+<a href="about/#crew">Crew</a>
+<a href="about/">About</a>
       </nav>
     </header>
 
-    <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-grid shell">
-          <div class="hero-copy reveal">
-            <p class="eyebrow"><span></span> Independent games media</p>
-            <h1>Games hit different with the <span>whole crew.</span></h1>
-            <p class="hero-lede">
-              Three longtime friends. Three wildly different relationships with games. One honest
-              conversation about what is actually worth your time.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#what-we-do">
-                See what we cover
-                <svg viewBox="0 0 20 20" aria-hidden="true">
-                  <path d="m7 4 6 6-6 6" />
-                </svg>
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://github.com/PsychoBrosGames"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Press &amp; partnerships
+      <main id="main" class="publication-main">
+        <section class="review-hero" id="top">
+          <div class="shell review-hero-grid">
+            <div class="review-hero-copy reveal">
+              <p class="eyebrow"><span></span> Featured review / September 14, 2025</p>
+              <p class="review-hero-game">Physics Strategy &middot; Unbound Creations</p>
+              <h1>Table Tactics: physics-driven tabletop battles</h1>
+              <p class="review-hero-deck">Forget health bars. Win by using arrows, marbles, fireballs, traps, and pushes to physically knock miniatures off balance.</p>
+              <div class="review-hero-verdict">
+                <span>PsychoBros take</span>
+                <strong>Miniatures strategy where gravity writes the damage numbers.</strong>
+              </div>
+              <a class="button button-primary" href="reviews/table-tactics/">
+                Read the review <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
-            <ul class="hero-proof" aria-label="PsychoBros coverage">
-              <li><span>01</span> Reviews</li>
-              <li><span>02</span> Commentary</li>
-              <li><span>03</span> Streams</li>
-              <li><span>04</span> Events</li>
-            </ul>
-          </div>
-
-          <div class="hero-art reveal" aria-label="Three PsychoBros players around a game table">
-            <svg viewBox="0 0 680 620" role="img" aria-labelledby="hero-art-title hero-art-desc">
-              <title id="hero-art-title">The PsychoBros game night</title>
-              <desc id="hero-art-desc">
-                A stylized original illustration of three players gathered around a glowing game
-                table.
-              </desc>
-              <defs>
-                <pattern id="dot-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.5" fill="var(--cp-border)" />
-                </pattern>
-                <clipPath id="screen-clip">
-                  <rect x="168" y="102" width="344" height="234" rx="20" />
-                </clipPath>
-              </defs>
-
-              <rect x="24" y="22" width="632" height="574" rx="32" fill="url(#dot-grid)" />
-              <path
-                d="M87 94h89M504 528h89M577 120v64M112 444v58"
-                stroke="var(--cp-border-strong)"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-              <circle cx="112" cy="95" r="6" fill="var(--cp-accent)" />
-              <circle cx="577" cy="528" r="6" fill="var(--cp-accent)" />
-
-              <g class="hero-screen">
-                <rect
-                  x="150"
-                  y="84"
-                  width="380"
-                  height="270"
-                  rx="28"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <rect
-                  x="168"
-                  y="102"
-                  width="344"
-                  height="234"
-                  rx="20"
-                  fill="var(--cp-bg-elevated)"
-                />
-                <g clip-path="url(#screen-clip)">
-                  <path
-                    d="M168 274 248 198l50 44 72-82 142 132v44H168Z"
-                    fill="var(--cp-accent-soft)"
-                  />
-                  <path
-                    d="m168 274 80-76 50 44 72-82 142 132"
-                    fill="none"
-                    stroke="var(--cp-accent)"
-                    stroke-width="8"
-                    stroke-linejoin="round"
-                  />
-                  <circle cx="370" cy="160" r="20" fill="var(--cp-accent)" />
-                  <path
-                    d="m364 150 17 10-17 10Z"
-                    fill="var(--cp-accent-fg)"
-                    stroke="var(--cp-accent-fg)"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <path
-                  d="M290 354h100l16 38H274Z"
-                  fill="var(--cp-surface-soft)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-              </g>
-
-              <g class="player player-left">
-                <circle
-                  cx="136"
-                  cy="330"
-                  r="58"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <path
-                  d="M91 324c10-58 80-69 94-10-20-6-39-18-54-34-9 23-23 37-40 44Z"
-                  fill="var(--cp-accent)"
-                />
-                <circle cx="117" cy="335" r="4" fill="var(--cp-text)" />
-                <circle cx="151" cy="335" r="4" fill="var(--cp-text)" />
-                <path
-                  d="M120 356c10 7 21 7 31 0"
-                  fill="none"
-                  stroke="var(--cp-text)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M77 479c1-66 25-102 59-102s58 36 59 102"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <path d="M109 403h54" stroke="var(--cp-accent)" stroke-width="8" />
-              </g>
-
-              <g class="player player-center">
-                <circle
-                  cx="340"
-                  cy="418"
-                  r="60"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <path
-                  d="M288 404c12-62 92-62 104 0-18-12-31-26-41-44-17 20-38 35-63 44Z"
-                  fill="var(--cp-accent)"
-                />
-                <circle cx="321" cy="426" r="4" fill="var(--cp-text)" />
-                <circle cx="357" cy="426" r="4" fill="var(--cp-text)" />
-                <path
-                  d="M322 449c11 7 23 7 34 0"
-                  fill="none"
-                  stroke="var(--cp-text)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M269 585c2-74 29-111 71-111s69 37 71 111"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <path
-                  d="M318 508h44M340 486v44"
-                  stroke="var(--cp-accent)"
-                  stroke-width="8"
-                />
-              </g>
-
-              <g class="player player-right">
-                <circle
-                  cx="544"
-                  cy="330"
-                  r="58"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <path
-                  d="M497 313c10-50 75-60 94-11-30 4-61-4-85-22-1 14-4 25-9 33Z"
-                  fill="var(--cp-accent)"
-                />
-                <path
-                  d="M512 329h21M555 329h21"
-                  stroke="var(--cp-text)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <circle cx="522" cy="335" r="4" fill="var(--cp-text)" />
-                <circle cx="566" cy="335" r="4" fill="var(--cp-text)" />
-                <path
-                  d="M527 357c11 7 23 7 34 0"
-                  fill="none"
-                  stroke="var(--cp-text)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M485 479c1-66 25-102 59-102s58 36 59 102"
-                  fill="var(--cp-surface)"
-                  stroke="var(--cp-border-strong)"
-                  stroke-width="3"
-                />
-                <circle
-                  cx="544"
-                  cy="410"
-                  r="18"
-                  fill="var(--cp-accent-soft)"
-                  stroke="var(--cp-accent)"
-                  stroke-width="3"
-                />
-                <path d="m537 410 5 5 10-12" fill="none" stroke="var(--cp-accent)" stroke-width="3" />
-              </g>
-
-              <g class="controller">
-                <path
-                  d="M258 498h164a28 28 0 0 1 26 38l-12 34a24 24 0 0 1-40 8l-20-22h-72l-20 22a24 24 0 0 1-40-8l-12-34a28 28 0 0 1 26-38Z"
-                  fill="var(--cp-bg-elevated)"
-                  stroke="var(--cp-accent)"
-                  stroke-width="4"
-                />
-                <path d="M278 528h34M295 511v34" stroke="var(--cp-accent)" stroke-width="6" />
-                <circle cx="393" cy="520" r="6" fill="var(--cp-accent)" />
-                <circle cx="410" cy="537" r="6" fill="var(--cp-accent)" />
-              </g>
-            </svg>
-            <div class="art-badge art-badge-top">
-              <span class="status-dot"></span>
-              Party online
-            </div>
-            <div class="art-badge art-badge-bottom">
-              <span>XP</span>
-              Real-life perspective
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="signal-strip" aria-label="PsychoBros point of view">
-        <div class="shell signal-inner">
-          <p>For players with</p>
-          <span>jobs</span>
-          <i></i>
-          <span>backlogs</span>
-          <i></i>
-          <span>families</span>
-          <i></i>
-          <span>opinions</span>
-        </div>
-      </section>
-
-      <section class="section what-we-do" id="what-we-do">
-        <div class="shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2>Coverage with the group chat left in.</h2>
-            </div>
-            <p>
-              We make games media that sounds like people you would actually play with: informed,
-              funny, occasionally overcommitted, and always honest.
-            </p>
-          </div>
-
-          <div class="work-grid">
-            <article class="work-card work-card-featured reveal">
-              <div class="card-number">01</div>
-              <div class="work-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M12 9h24v30H12z" />
-                  <path d="M18 17h12M18 24h12M18 31h7" />
-                </svg>
-              </div>
-              <div>
-                <p class="card-kicker">The complete read</p>
-                <h3>Reviews with three save files</h3>
-                <p>
-                  One game, three perspectives: accessibility for newcomers, depth for diehards,
-                  and whether it earns a spot in a normal person's limited free time.
-                </p>
-              </div>
-            </article>
-
-            <article class="work-card reveal">
-              <div class="card-number">02</div>
-              <div class="work-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M10 13h28v19H26l-7 6v-6h-9z" />
-                  <path d="M17 20h14M17 25h9" />
-                </svg>
-              </div>
-              <div>
-                <p class="card-kicker">The ongoing argument</p>
-                <h3>Commentary</h3>
-                <p>
-                  Smart, unscripted takes on design, industry news, nostalgia, and the eternal
-                  question: who skipped the tutorial?
-                </p>
-              </div>
-            </article>
-
-            <article class="work-card reveal">
-              <div class="card-number">03</div>
-              <div class="work-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <rect x="9" y="11" width="30" height="23" rx="3" />
-                  <path d="m21 18 9 5-9 5zM18 40h12" />
-                </svg>
-              </div>
-              <div>
-                <p class="card-kicker">The live run</p>
-                <h3>Streams &amp; edited play</h3>
-                <p>
-                  Campaign nights, first impressions, challenge runs, and tight highlight cuts
-                  built to respect the audience's time.
-                </p>
-              </div>
-            </article>
-
-            <article class="work-card reveal">
-              <div class="card-number">04</div>
-              <div class="work-icon">
-                <svg viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M13 10h22v29H13z" />
-                  <path d="M18 10V6h12v4M18 18h12M18 25h12M18 32h8" />
-                </svg>
-              </div>
-              <div>
-                <p class="card-kicker">The floor report</p>
-                <h3>Events &amp; showcases</h3>
-                <p>
-                  Hands-on impressions, creator conversations, hidden gems, and the stories worth
-                  carrying home from the show floor.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section crew-section" id="crew">
-        <div class="shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2>Same couch. Different character builds.</h2>
-            </div>
-            <p>
-              Our disagreement is the format. Every game gets tested against three distinct ways
-              people actually play.
-            </p>
-          </div>
-
-          <div class="crew-grid">
-            <article class="crew-card reveal">
-              <div class="crew-portrait portrait-outsider" aria-hidden="true">
-                <svg viewBox="0 0 280 250">
-                  <circle cx="140" cy="104" r="58" />
-                  <path d="M70 244c6-70 29-102 70-102s64 32 70 102" />
-                  <path d="M92 94c13-61 87-69 99-9-28-7-50-23-65-46-7 25-18 43-34 55Z" />
-                  <circle cx="121" cy="108" r="4" />
-                  <circle cx="157" cy="108" r="4" />
-                  <path d="M122 128c11 7 23 7 34 0" />
-                  <path d="M110 180h60" />
-                </svg>
-                <span class="player-tag">Player 01</span>
-              </div>
-              <div class="crew-copy">
-                <p class="card-kicker">The outside perspective</p>
-                <h3>The Casual</h3>
-                <p>
-                  Not buried in every release calendar — and that is the point. Cuts through
-                  jargon, tests the welcome mat, and asks the question everyone else forgot.
-                </p>
-                <ul>
-                  <li>Gateway test</li>
-                  <li>Jargon detector</li>
-                  <li>Fresh-eyes verdict</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="crew-card reveal">
-              <div class="crew-portrait portrait-tactician" aria-hidden="true">
-                <svg viewBox="0 0 280 250">
-                  <circle cx="140" cy="104" r="58" />
-                  <path d="M70 244c6-70 29-102 70-102s64 32 70 102" />
-                  <path d="M87 91c15-64 94-62 106-2-19-8-36-23-49-46-14 22-33 38-57 48Z" />
-                  <circle cx="121" cy="108" r="4" />
-                  <circle cx="157" cy="108" r="4" />
-                  <path d="M122 128c11 7 23 7 34 0" />
-                  <path d="m121 179 19 19 19-19" />
-                </svg>
-                <span class="player-tag">Player 02</span>
-              </div>
-              <div class="crew-copy">
-                <p class="card-kicker">The deep-end perspective</p>
-                <h3>The Tactician</h3>
-                <p>
-                  Systems thinker, campaign planner, and unapologetic <cite>Descent</cite>
-                  evangelist. If a game has layers, he will find every one of them.
-                </p>
-                <ul>
-                  <li>Systems analysis</li>
-                  <li>Strategy depth</li>
-                  <li>Rulebook endurance</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="crew-card reveal">
-              <div class="crew-portrait portrait-all-rounder" aria-hidden="true">
-                <svg viewBox="0 0 280 250">
-                  <circle cx="140" cy="104" r="58" />
-                  <path d="M70 244c6-70 29-102 70-102s64 32 70 102" />
-                  <path d="M88 88c11-53 81-61 103-13-31 4-62-7-85-30-2 20-8 34-18 43Z" />
-                  <path d="M106 104h28M147 104h28M134 104h13" />
-                  <circle cx="121" cy="108" r="4" />
-                  <circle cx="160" cy="108" r="4" />
-                  <path d="M122 128c11 7 23 7 34 0" />
-                  <circle cx="140" cy="188" r="24" />
-                  <path d="m129 188 8 8 16-18" />
-                </svg>
-                <span class="player-tag">Player 03</span>
-              </div>
-              <div class="crew-copy">
-                <p class="card-kicker">The everyday perspective</p>
-                <h3>The All-Rounder</h3>
-                <p>
-                  Plays broadly, knows the language, and still remembers to go outside. The
-                  reality check for whether a game belongs in an actual weekly rotation.
-                </p>
-                <ul>
-                  <li>Broad genre taste</li>
-                  <li>Time-value check</li>
-                  <li>Group-fit verdict</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section lens-section" aria-labelledby="lens-title">
-        <div class="shell lens-grid">
-          <div class="lens-intro reveal">
-            <p class="eyebrow"><span></span> The PsychoBros lens</p>
-            <h2 id="lens-title">A review changes when the player changes.</h2>
-            <p>
-              Pick a perspective to see the questions we bring to every game. The final verdict is
-              stronger because it has to survive all three.
-            </p>
-          </div>
-
-          <div class="lens-console reveal">
-            <div class="lens-tabs" role="tablist" aria-label="Choose a review perspective">
-              <button
-                id="tab-casual"
-                class="lens-tab is-active"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                aria-controls="panel-casual"
-                data-lens="casual"
-              >
-                <span>01</span> Casual
-              </button>
-              <button
-                id="tab-tactician"
-                class="lens-tab"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-tactician"
-                data-lens="tactician"
-                tabindex="-1"
-              >
-                <span>02</span> Tactician
-              </button>
-              <button
-                id="tab-allrounder"
-                class="lens-tab"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-allrounder"
-                data-lens="allrounder"
-                tabindex="-1"
-              >
-                <span>03</span> All-Rounder
-              </button>
-            </div>
-
-            <div
-              class="lens-panel"
-              id="panel-casual"
-              role="tabpanel"
-              tabindex="0"
-              aria-labelledby="tab-casual"
-              data-panel="casual"
-            >
-              <p class="panel-label">Primary question</p>
-              <blockquote>“Will this game invite me in — or make me do homework first?”</blockquote>
-              <div class="meter-list">
-                <div>
-                  <span>Onboarding</span>
-                  <span class="meter"><i style="--meter: 92%"></i></span>
-                </div>
-                <div>
-                  <span>Clarity</span>
-                  <span class="meter"><i style="--meter: 78%"></i></span>
-                </div>
-                <div>
-                  <span>First-hour fun</span>
-                  <span class="meter"><i style="--meter: 86%"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="lens-panel"
-              id="panel-tactician"
-              role="tabpanel"
-              tabindex="0"
-              aria-labelledby="tab-tactician"
-              data-panel="tactician"
-              hidden
-            >
-              <p class="panel-label">Primary question</p>
-              <blockquote>“Does the system reward mastery after the novelty wears off?”</blockquote>
-              <div class="meter-list">
-                <div>
-                  <span>Decision depth</span>
-                  <span class="meter"><i style="--meter: 95%"></i></span>
-                </div>
-                <div>
-                  <span>Build variety</span>
-                  <span class="meter"><i style="--meter: 84%"></i></span>
-                </div>
-                <div>
-                  <span>Campaign legs</span>
-                  <span class="meter"><i style="--meter: 91%"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="lens-panel"
-              id="panel-allrounder"
-              role="tabpanel"
-              tabindex="0"
-              aria-labelledby="tab-allrounder"
-              data-panel="allrounder"
-              hidden
-            >
-              <p class="panel-label">Primary question</p>
-              <blockquote>“Is this the game our group will still choose next month?”</blockquote>
-              <div class="meter-list">
-                <div>
-                  <span>Time value</span>
-                  <span class="meter"><i style="--meter: 88%"></i></span>
-                </div>
-                <div>
-                  <span>Group fit</span>
-                  <span class="meter"><i style="--meter: 94%"></i></span>
-                </div>
-                <div>
-                  <span>Replay pull</span>
-                  <span class="meter"><i style="--meter: 82%"></i></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section standards-section" id="standards">
-        <div class="shell standards-grid">
-          <div class="standards-copy reveal">
-            <p class="eyebrow"><span></span> Our standards</p>
-            <h2>No manufactured hype. No hidden strings.</h2>
-            <p>
-              Access is useful. Trust is essential. Whether a game is bought, borrowed, previewed,
-              or provided by a partner, the audience gets the same unfiltered verdict.
-            </p>
-            <a class="text-link" href="#contact">
-              Work with the crew
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" /></svg>
+            <a class="review-hero-art reveal" href="reviews/table-tactics/" aria-label="Read Table Tactics: physics-driven tabletop battles review">
+              <img src="assets/reviews/table-tactics.svg" alt="" />
             </a>
           </div>
+        </section>
 
-          <div class="standards-list">
-            <article class="standard-item reveal">
-              <span>01</span>
-              <div>
-                <h3>Disclose the relationship</h3>
-                <p>Review keys, travel, sponsorships, and paid collaborations are labeled clearly.</p>
-              </div>
-            </article>
-            <article class="standard-item reveal">
-              <span>02</span>
-              <div>
-                <h3>Keep the verdict independent</h3>
-                <p>Partners can sponsor access or production — never the opinion.</p>
-              </div>
-            </article>
-            <article class="standard-item reveal">
-              <span>03</span>
-              <div>
-                <h3>Respect the audience's time</h3>
-                <p>Every piece should inform, entertain, or ideally do both. Filler gets cut.</p>
-              </div>
-            </article>
-            <article class="standard-item reveal">
-              <span>04</span>
-              <div>
-                <h3>Say who the game is for</h3>
-                <p>A game can miss one player and still be perfect for another. Context matters.</p>
-              </div>
-            </article>
+        <section class="review-strip" aria-label="Latest review coverage">
+          <div class="shell review-strip-inner">
+            <span>20 PAX West 2025 indie reviews</span>
+            <span>3 player perspectives</span>
+            <span>0 manufactured hype</span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section launch-section" aria-labelledby="launch-title">
-        <div class="shell">
-          <div class="section-heading reveal">
-            <div>
-              <h2 id="launch-title">The first campaigns are loading.</h2>
+        <section class="section latest-review-section" aria-labelledby="latest-title">
+          <div class="shell">
+            <div class="publication-section-head reveal">
+              <div>
+                <p class="section-index">01 / Latest</p>
+                <h2 id="latest-title">Fresh from the review queue.</h2>
+              </div>
+              <a class="text-link" href="reviews/">Browse all 20 reviews <span aria-hidden="true">&rarr;</span></a>
             </div>
-            <p>
-              Our opening editorial slate is built to establish the three-player format across
-              video, live, and written coverage.
-            </p>
-          </div>
+            <div class="review-card-grid">
 
-          <div class="launch-grid">
-            <article class="launch-card reveal">
-              <div class="launch-meta">
-                <span>Feature</span>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="exovia"
+    data-review-studio="byterockers&#039; games"
+    data-review-genre="zero-g factory simulation"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/exovia/" aria-label="Read Exovia review">
+      <img src="assets/reviews/exovia.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Zero-G Factory Simulation</span>
+        <time datetime="2025-09-30">Sep 30</time>
+      </div>
+      <h3><a href="reviews/exovia/">Exovia</a></h3>
+      <p>A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.</p>
+      <div class="review-card-footer">
+        <span>ByteRockers&#039; Games</span>
+        <a class="text-link" href="reviews/exovia/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="akiiwan: relaxing survival"
+    data-review-studio="little buffalo studios"
+    data-review-genre="relaxing survival"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/akiiwan-relaxing-survival/" aria-label="Read Akiiwan: Relaxing Survival review">
+      <img src="assets/reviews/akiiwan-relaxing-survival.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Relaxing Survival</span>
+        <time datetime="2025-09-28">Sep 28</time>
+      </div>
+      <h3><a href="reviews/akiiwan-relaxing-survival/">Akiiwan: Relaxing Survival</a></h3>
+      <p>Handcrafted biomes, changing moons, and field-recorded northern soundscapes replace the usual survival panic with careful attention.</p>
+      <div class="review-card-footer">
+        <span>Little Buffalo Studios</span>
+        <a class="text-link" href="reviews/akiiwan-relaxing-survival/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="fractured blooms"
+    data-review-studio="serenity forge"
+    data-review-genre="psychological life sim"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/fractured-blooms/" aria-label="Read Fractured Blooms review">
+      <img src="assets/reviews/fractured-blooms.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Psychological Life Sim</span>
+        <time datetime="2025-09-26">Sep 26</time>
+      </div>
+      <h3><a href="reviews/fractured-blooms/">Fractured Blooms</a></h3>
+      <p>Repairing a house, growing crops, and cooking meals become unsettling when Angie realizes the day will not stay finished.</p>
+      <div class="review-card-footer">
+        <span>Serenity Forge</span>
+        <a class="text-link" href="reviews/fractured-blooms/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="moros protocol"
+    data-review-studio="pixel reign"
+    data-review-genre="roguelite retro fps"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/moros-protocol/" aria-label="Read Moros Protocol review">
+      <img src="assets/reviews/moros-protocol.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Roguelite Retro FPS</span>
+        <time datetime="2025-09-25">Sep 25</time>
+      </div>
+      <h3><a href="reviews/moros-protocol/">Moros Protocol</a></h3>
+      <p>A memoryless soldier wakes aboard a derelict warship where shifting corridors turn retro FPS combat into a repeated escape attempt.</p>
+      <div class="review-card-footer">
+        <span>Pixel Reign</span>
+        <a class="text-link" href="reviews/moros-protocol/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="voidsayer"
+    data-review-studio="pavel auseitasau"
+    data-review-genre="monster-taming rpg"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/voidsayer/" aria-label="Read Voidsayer review">
+      <img src="assets/reviews/voidsayer.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Monster-Taming RPG</span>
+        <time datetime="2025-09-24">Sep 24</time>
+      </div>
+      <h3><a href="reviews/voidsayer/">Voidsayer</a></h3>
+      <p>More than one hundred tameable monsters fight back against the Abyss across a procedurally varied, interconnected world.</p>
+      <div class="review-card-footer">
+        <span>Pavel Auseitasau</span>
+        <a class="text-link" href="reviews/voidsayer/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+  <article
+    class="review-card review-card-standard reveal"
+    data-review-card
+    data-review-title="letter lost"
+    data-review-studio="flatnine games"
+    data-review-genre="workplace horror adventure"
+    data-review-group="official-pax"
+  >
+    <a class="review-card-art" href="reviews/letter-lost/" aria-label="Read Letter Lost review">
+      <img src="assets/reviews/letter-lost.svg" alt="" loading="lazy" />
+    </a>
+    <div class="review-card-body">
+      <div class="review-meta">
+        <span>Workplace Horror Adventure</span>
+        <time datetime="2025-09-23">Sep 23</time>
+      </div>
+      <h3><a href="reviews/letter-lost/">Letter Lost</a></h3>
+      <p>Stamping, sorting, and delivering mail inside a post office with mandatory housing turns cheerful procedure into a warning sign.</p>
+      <div class="review-card-footer">
+        <span>FlatNine Games</span>
+        <a class="text-link" href="reviews/letter-lost/">Read review <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section pax-ledger-section" aria-labelledby="pax-ledger-title">
+          <div class="shell">
+            <div class="publication-section-head reveal">
+              <div>
+                <p class="section-index">02 / PAX West 2025</p>
+                <h2 id="pax-ledger-title">Twenty indies. One month of field notes.</h2>
+              </div>
+              <p>The archive runs across September 2025 and covers the official PAX Rising slate plus additional indie games surfaced by the official PAX West event page.</p>
+            </div>
+
+  <div class="review-ledger">
+
+      <a class="review-ledger-row reveal" href="reviews/exovia/">
+        <span class="review-ledger-index">01</span>
+        <span class="review-ledger-title">Exovia</span>
+        <span class="review-ledger-genre">Zero-G Factory Simulation</span>
+        <time datetime="2025-09-30">Sep 30</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/akiiwan-relaxing-survival/">
+        <span class="review-ledger-index">02</span>
+        <span class="review-ledger-title">Akiiwan: Relaxing Survival</span>
+        <span class="review-ledger-genre">Relaxing Survival</span>
+        <time datetime="2025-09-28">Sep 28</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/fractured-blooms/">
+        <span class="review-ledger-index">03</span>
+        <span class="review-ledger-title">Fractured Blooms</span>
+        <span class="review-ledger-genre">Psychological Life Sim</span>
+        <time datetime="2025-09-26">Sep 26</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/moros-protocol/">
+        <span class="review-ledger-index">04</span>
+        <span class="review-ledger-title">Moros Protocol</span>
+        <span class="review-ledger-genre">Roguelite Retro FPS</span>
+        <time datetime="2025-09-25">Sep 25</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/voidsayer/">
+        <span class="review-ledger-index">05</span>
+        <span class="review-ledger-title">Voidsayer</span>
+        <span class="review-ledger-genre">Monster-Taming RPG</span>
+        <time datetime="2025-09-24">Sep 24</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/letter-lost/">
+        <span class="review-ledger-index">06</span>
+        <span class="review-ledger-title">Letter Lost</span>
+        <span class="review-ledger-genre">Workplace Horror Adventure</span>
+        <time datetime="2025-09-23">Sep 23</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/sky-of-tides/">
+        <span class="review-ledger-index">07</span>
+        <span class="review-ledger-title">Sky of Tides</span>
+        <span class="review-ledger-genre">Narrative RPG</span>
+        <time datetime="2025-09-21">Sep 21</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/adaptory/">
+        <span class="review-ledger-index">08</span>
+        <span class="review-ledger-title">Adaptory</span>
+        <span class="review-ledger-genre">Colony Simulation</span>
+        <time datetime="2025-09-20">Sep 20</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/sashimi-slayer/">
+        <span class="review-ledger-index">09</span>
+        <span class="review-ledger-title">Sashimi Slayer</span>
+        <span class="review-ledger-genre">Rhythm Action</span>
+        <time datetime="2025-09-18">Sep 18</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/no-stone-unturned/">
+        <span class="review-ledger-index">10</span>
+        <span class="review-ledger-title">No Stone Unturned</span>
+        <span class="review-ledger-genre">Comedy Detective Adventure</span>
+        <time datetime="2025-09-17">Sep 17</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/hank-drowning-on-dry-land/">
+        <span class="review-ledger-index">11</span>
+        <span class="review-ledger-title">Hank: Drowning On Dry Land</span>
+        <span class="review-ledger-genre">Narrative Adventure</span>
+        <time datetime="2025-09-15">Sep 15</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/table-tactics/">
+        <span class="review-ledger-index">12</span>
+        <span class="review-ledger-title">Table Tactics: physics-driven tabletop battles</span>
+        <span class="review-ledger-genre">Physics Strategy</span>
+        <time datetime="2025-09-14">Sep 14</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/arcane-eats/">
+        <span class="review-ledger-index">13</span>
+        <span class="review-ledger-title">Arcane Eats</span>
+        <span class="review-ledger-genre">Cooking Deckbuilder</span>
+        <time datetime="2025-09-12">Sep 12</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/draco-and-the-seven-scales/">
+        <span class="review-ledger-index">14</span>
+        <span class="review-ledger-title">Draco and the Seven Scales</span>
+        <span class="review-ledger-genre">Pirate Action Adventure</span>
+        <time datetime="2025-09-11">Sep 11</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/beatdown-city-survivors/">
+        <span class="review-ledger-index">15</span>
+        <span class="review-ledger-title">Beatdown City Survivors</span>
+        <span class="review-ledger-genre">Action Survivors-Like</span>
+        <time datetime="2025-09-09">Sep 9</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/terrible-lizards/">
+        <span class="review-ledger-index">16</span>
+        <span class="review-ledger-title">Terrible Lizards</span>
+        <span class="review-ledger-genre">Survival Horror</span>
+        <time datetime="2025-09-08">Sep 8</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/rogue-eclipse/">
+        <span class="review-ledger-index">17</span>
+        <span class="review-ledger-title">Rogue Eclipse</span>
+        <span class="review-ledger-genre">Spaceflight Roguelike</span>
+        <time datetime="2025-09-06">Sep 6</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/rollergirl/">
+        <span class="review-ledger-index">18</span>
+        <span class="review-ledger-title">RollerGirl</span>
+        <span class="review-ledger-genre">Slice-of-Life Adventure</span>
+        <time datetime="2025-09-05">Sep 5</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/blocks-for-babies/">
+        <span class="review-ledger-index">19</span>
+        <span class="review-ledger-title">Blocks for Babies</span>
+        <span class="review-ledger-genre">Arcade Roguelite</span>
+        <time datetime="2025-09-03">Sep 3</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a class="review-ledger-row reveal" href="reviews/nevers-end/">
+        <span class="review-ledger-index">20</span>
+        <span class="review-ledger-title">Never&#039;s End</span>
+        <span class="review-ledger-genre">Tactical RPG</span>
+        <time datetime="2025-09-02">Sep 2</time>
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+  </div>
+            <div class="ledger-action reveal">
+              <a class="button button-secondary" href="pax-west-2025/">Open the PAX West collection</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section home-lens-section" id="what-we-do" aria-labelledby="home-lens-title">
+          <div class="shell home-lens-grid">
+            <div class="reveal">
+              <p class="section-index">03 / The format</p>
+              <h2 id="home-lens-title">Every review has to survive three players.</h2>
+            </div>
+            <div class="home-lens-list">
+              <article class="reveal">
                 <span>01</span>
-              </div>
-              <h3>Why co-op campaigns still hit harder</h3>
-              <p>
-                The group dissects the design choices that turn a campaign from a schedule into a
-                shared story.
-              </p>
-              <div class="launch-status"><span></span> In production</div>
-            </article>
-            <article class="launch-card reveal">
-              <div class="launch-meta">
-                <span>Deep dive</span>
+                <h3>The Casual</h3>
+                <p>Is it welcoming, readable, and fun before the homework starts?</p>
+              </article>
+              <article class="reveal">
                 <span>02</span>
-              </div>
-              <h3><cite>Descent</cite>: the forever game</h3>
-              <p>
-                One superfan makes the case. Two skeptics test it. A beloved dungeon crawler faces
-                the full three-lens review.
-              </p>
-              <div class="launch-status"><span></span> In production</div>
-            </article>
-            <article class="launch-card reveal">
-              <div class="launch-meta">
-                <span>Challenge</span>
+                <h3>The Tactician</h3>
+                <p>Do the systems create real decisions after the novelty wears off?</p>
+              </article>
+              <article class="reveal">
                 <span>03</span>
-              </div>
-              <h3>Can a casual survive game night?</h3>
-              <p>
-                The crew stress-tests onboarding, table talk, and whether “easy to learn” survives
-                contact with a real newcomer.
-              </p>
-              <div class="launch-status"><span></span> In production</div>
-            </article>
+                <h3>The All-Rounder</h3>
+                <p>Does it earn a place in an actual weekly rotation?</p>
+              </article>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section class="contact-section" id="contact">
-        <div class="shell contact-card reveal">
-          <div class="contact-copy">
-            <p class="eyebrow eyebrow-light"><span></span> Press, partners &amp; PAX</p>
-            <h2>Put three honest players in the room.</h2>
-            <p>
-              We are available for review coverage, creator activations, developer interviews,
-              indie showcases, event access, and the kind of conversation that gets better after
-              the cameras stop.
-            </p>
-          </div>
-          <div class="contact-actions">
-            <a
-              class="button button-inverted"
-              href="https://github.com/PsychoBrosGames"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Contact the crew
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" /></svg>
-            </a>
-            <p>Independent. Audience-first. PAX-ready.</p>
-          </div>
-          <svg class="contact-controller" viewBox="0 0 300 220" aria-hidden="true">
-            <path
-              d="M62 73h176a39 39 0 0 1 37 52l-22 62a26 26 0 0 1-43 10l-31-34h-58l-31 34a26 26 0 0 1-43-10l-22-62a39 39 0 0 1 37-52Z"
-            />
-            <path d="M76 116h45M98.5 93.5v45" />
-            <circle cx="203" cy="106" r="8" />
-            <circle cx="224" cy="127" r="8" />
-          </svg>
-        </div>
-      </section>
-    </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="" aria-label="PsychoBros home">
 
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#top" aria-label="PsychoBros home">
-            <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-              <path
-                d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
-                fill="var(--cp-accent-soft)"
-                stroke="var(--cp-accent)"
-                stroke-width="2.5"
-              />
-              <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
-              <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-accent)" />
-              <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
-            </svg>
-            <span>PSYCHO<span>BROS</span></span>
-          </a>
-          <p>Games media for grown-up players with jobs, backlogs, and opinions.</p>
-        </div>
-        <div class="footer-nav">
-          <p>Explore</p>
-          <a href="#what-we-do">What we do</a>
-          <a href="#crew">The crew</a>
-          <a href="#standards">Our standards</a>
-        </div>
-        <div class="footer-nav">
-          <p>Connect</p>
-          <a href="https://github.com/PsychoBrosGames" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="#contact">Press &amp; partnerships</a>
-        </div>
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
       </div>
-      <div class="shell footer-bottom">
-        <p>© <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
-        <a href="#top">Back to top ↑</a>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="reviews/">All reviews</a>
+        <a href="pax-west-2025/">PAX West 2025</a>
       </div>
-    </footer>
-
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="about/#crew">The crew</a>
+        <a href="about/#standards">Editorial standards</a>
+        <a href="about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
     <script src="script.js"></script>
   </body>
 </html>

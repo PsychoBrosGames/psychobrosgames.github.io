@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const supportedThemes = new Set(["light", "dark"]);
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme =
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet the three PsychoBros perspectives, read the editorial standards, and find press and partnership information." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About the PsychoBros" />
+    <meta property="og:description" content="Meet the three PsychoBros perspectives, read the editorial standards, and find press and partnership information." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/about/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>About the PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/about/" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Alumni+Sans:ital,wght@0,100;0,300;0,400;0,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+
+  </head>
+  <body class="publication-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../reviews/">Reviews</a>
+<a href="../pax-west-2025/">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/" aria-current="page">About</a>
+        </nav>
+        <div class="header-actions">
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../reviews/">Reviews</a>
+<a href="../pax-west-2025/">PAX West 2025</a>
+<a href="../about/#crew">Crew</a>
+<a href="../about/" aria-current="page">About</a>
+      </nav>
+    </header>
+
+      <main id="main" class="publication-main">
+        <section class="about-hero" id="top">
+          <div class="shell about-hero-grid">
+            <div class="reveal">
+              <p class="eyebrow"><span></span> About PsychoBros</p>
+              <h1>Three friends.<br /><span>Three difficulty settings.</span></h1>
+            </div>
+            <p class="reveal">We review games the way a real group talks about them: one player needs a clean welcome, one wants every system opened up, and one decides whether the game survives next week's group chat.</p>
+          </div>
+        </section>
+
+        <section class="section about-crew-section" id="crew" aria-labelledby="crew-title">
+          <div class="shell">
+            <div class="publication-section-head reveal">
+              <div>
+                <p class="section-index">01 / The crew</p>
+                <h2 id="crew-title">Different character builds.</h2>
+              </div>
+              <p>Our disagreement is the format. Every game gets tested against three ways people actually play.</p>
+            </div>
+            <div class="about-role-list">
+              <article class="reveal">
+                <span>Player 01</span>
+                <h3>The Casual</h3>
+                <p>Not buried in every release calendar. Cuts through jargon, tests the welcome mat, and asks the question everyone else forgot.</p>
+                <strong>Gateway test / clarity / first-hour fun</strong>
+              </article>
+              <article class="reveal">
+                <span>Player 02</span>
+                <h3>The Tactician</h3>
+                <p>Systems thinker, campaign planner, and unapologetic Descent evangelist. If a game has layers, he will find every one.</p>
+                <strong>Decision depth / strategy / campaign legs</strong>
+              </article>
+              <article class="reveal">
+                <span>Player 03</span>
+                <h3>The All-Rounder</h3>
+                <p>Plays broadly, knows the language, and still remembers to go outside. The reality check for an actual weekly rotation.</p>
+                <strong>Time value / group fit / replay pull</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section standards-section" id="standards" aria-labelledby="standards-title">
+          <div class="shell standards-grid">
+            <div class="standards-copy reveal">
+              <p class="eyebrow"><span></span> Editorial standards</p>
+              <h2 id="standards-title">No manufactured hype. No hidden strings.</h2>
+              <p>Access is useful. Trust is essential. Whether a game is bought, borrowed, previewed, or provided by a partner, the audience gets the same unfiltered context.</p>
+            </div>
+            <div class="standards-list">
+              <article class="standard-item reveal"><span>01</span><div><h3>Disclose the relationship</h3><p>Review keys, travel, sponsorships, and paid collaborations are labeled clearly.</p></div></article>
+              <article class="standard-item reveal"><span>02</span><div><h3>Keep the verdict independent</h3><p>Partners can sponsor access or production - never the opinion.</p></div></article>
+              <article class="standard-item reveal"><span>03</span><div><h3>Respect the audience's time</h3><p>Every piece should inform, entertain, or ideally do both. Filler gets cut.</p></div></article>
+              <article class="standard-item reveal"><span>04</span><div><h3>Say what was reviewed</h3><p>Demo, preview build, public materials, or final release: the basis of every verdict is named.</p></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section press-section" id="press" aria-labelledby="press-title">
+          <div class="shell press-grid">
+            <div class="reveal">
+              <p class="section-index">02 / Press &amp; partnerships</p>
+              <h2 id="press-title">Put three honest players in the room.</h2>
+            </div>
+            <div class="reveal">
+              <p>Available for review coverage, creator activations, developer interviews, indie showcases, and event access. Editorial independence is not part of the negotiation.</p>
+              <a class="button button-primary" href="https://github.com/PsychoBrosGames" target="_blank" rel="noreferrer">Contact the crew</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
+      </div>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="../reviews/">All reviews</a>
+        <a href="../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="../about/#crew">The crew</a>
+        <a href="../about/#standards">Editorial standards</a>
+        <a href="../about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

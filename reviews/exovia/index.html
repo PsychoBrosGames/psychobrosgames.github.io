@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const supportedThemes = new Set(["light", "dark"]);
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme =
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Exovia review - PsychoBros" />
+    <meta property="og:description" content="A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/reviews/exovia/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>Exovia review - PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/reviews/exovia/" />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Alumni+Sans:ital,wght@0,100;0,300;0,400;0,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Exovia review","headline":"A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.","datePublished":"2025-09-30","dateModified":"2026-08-22","url":"https://psychobrosgames.github.io/reviews/exovia/","author":{"@type":"Organization","name":"PsychoBros","url":"https://psychobrosgames.github.io/"},"itemReviewed":{"@type":"VideoGame","name":"Exovia","author":{"@type":"Organization","name":"ByteRockers' Games"},"gamePlatform":"Windows","genre":"Zero-G Factory Simulation"},"reviewBody":"Exovia changes factory design by removing the floor. Floating production layouts and asteroid maps turn three-dimensional space into the central logistics problem, while the lack of danger and time pressure makes experimentation the point rather than the cost."}</script>
+  </head>
+  <body class="publication-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../../reviews/" aria-current="page">Reviews</a>
+<a href="../../pax-west-2025/">PAX West 2025</a>
+<a href="../../about/#crew">Crew</a>
+<a href="../../about/">About</a>
+        </nav>
+        <div class="header-actions">
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../../reviews/" aria-current="page">Reviews</a>
+<a href="../../pax-west-2025/">PAX West 2025</a>
+<a href="../../about/#crew">Crew</a>
+<a href="../../about/">About</a>
+      </nav>
+    </header>
+
+      <main id="main" class="publication-main">
+        <article class="review-article" id="top">
+          <header class="review-article-hero">
+            <div class="shell">
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a><span>/</span><a href="../">Reviews</a><span>/</span><span aria-current="page">Exovia</span>
+              </nav>
+              <div class="review-article-hero-grid">
+                <div class="reveal">
+                  <p class="eyebrow"><span></span> Official PAX West 2025 event page</p>
+                  <h1>Exovia</h1>
+                  <p class="review-article-deck">A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.</p>
+                  <dl class="review-facts">
+                    <div><dt>Developer</dt><dd>ByteRockers&#039; Games</dd></div>
+                    <div><dt>Genre</dt><dd>Zero-G Factory Simulation</dd></div>
+                    <div><dt>Platforms</dt><dd>Windows</dd></div>
+                    <div><dt>At PAX</dt><dd>Unreleased</dd></div>
+                  </dl>
+                </div>
+                <img class="review-article-cover reveal" src="../../assets/reviews/exovia.svg" alt="" />
+              </div>
+              <div class="review-byline">
+                <span>By PsychoBros</span>
+                <time datetime="2025-09-30">September 30, 2025</time>
+                <span>Retrospective archive</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="shell review-article-layout">
+            <aside class="review-verdict reveal" aria-label="Quick verdict">
+              <p class="section-index">Quick verdict</p>
+              <h2>Factory optimization without the conveyor-belt anxiety.</h2>
+              <p>Exovia changes factory design by removing the floor. Floating production layouts and asteroid maps turn three-dimensional space into the central logistics problem, while the lack of danger and time pressure makes experimentation the point rather than the cost.</p>
+              <dl>
+                <div><dt>The Casual</dt><dd>Low pressure</dd></div><div><dt>The Tactician</dt><dd>Spatial puzzle</dd></div><div><dt>The All-Rounder</dt><dd>Zen campaign</dd></div>
+              </dl>
+            </aside>
+
+            <div class="review-copy">
+              <section class="reveal" aria-labelledby="review-overview-title">
+                <h2 class="section-index" id="review-overview-title">What it is</h2>
+                <p>Factories are built in zero gravity around procedurally generated asteroids. Traditional conveyor belts give way to floating production layouts and logistics that use open space.</p><p>Asteroid seeds can be shared, and the game explicitly removes time pressure and danger. The challenge is self-directed optimization inside a calmer industrial sandbox.</p>
+              </section>
+
+              <section class="review-system-section reveal" aria-labelledby="review-system-title">
+                <h2 class="section-index" id="review-system-title">What stands out</h2>
+                <ul class="review-system-list">
+                  <li>Zero-gravity logistics replaces standard ground-based conveyor layouts.</li><li>Asteroids are procedurally generated and use shareable seeds.</li><li>There is no time pressure or danger; optimization is intentionally relaxed.</li>
+                </ul>
+              </section>
+
+              <section class="review-perspectives" aria-labelledby="perspectives-title">
+                <p class="section-index">The three-player read</p>
+                <h2 id="perspectives-title">One game. Three save files.</h2>
+                <div class="review-perspective-list">
+
+                    <article class="reveal">
+                      <span>01</span>
+                      <div>
+                        <p>The Casual</p>
+                        <h3>No failure clock creates room to learn spatial logistics.</h3>
+                        <p>Players can rebuild without losing a colony or fighting an attack. Three-dimensional construction still needs excellent camera controls and clear connection previews.</p>
+                      </div>
+                    </article>
+                    <article class="reveal">
+                      <span>02</span>
+                      <div>
+                        <p>The Tactician</p>
+                        <h3>Removing belts should create new constraints, not remove them.</h3>
+                        <p>The appeal is discovering how zero-G changes throughput and layout. Optimization needs measurable tradeoffs even when the game refuses to punish experimentation.</p>
+                      </div>
+                    </article>
+                    <article class="reveal">
+                      <span>03</span>
+                      <div>
+                        <p>The All-Rounder</p>
+                        <h3>A factory game can be a wind-down game.</h3>
+                        <p>Shareable seeds and no danger make Exovia easy to revisit without remembering a crisis state. Milestones and visual growth will be important for a sense of progress.</p>
+                      </div>
+                    </article>
+                </div>
+              </section>
+
+              <section class="review-fit-grid reveal" aria-labelledby="review-fit-title">
+                <h2 class="visually-hidden" id="review-fit-title">Who this game fits</h2>
+                <div>
+                  <h3 class="section-index">Best for</h3>
+                  <ul><li>Factory players who want a calmer optimization sandbox</li><li>Spatial thinkers interested in true three-dimensional layouts</li><li>Players who enjoy sharing seeds and comparing solutions</li></ul>
+                </div>
+                <div>
+                  <h3 class="section-index">Watch for</h3>
+                  <ul><li>Camera and placement controls in three dimensions</li><li>Meaningful constraints without danger or deadlines</li><li>Progression goals across a long-running factory</li></ul>
+                </div>
+              </section>
+
+              <section class="review-disclosure reveal" aria-labelledby="review-disclosure-title">
+                <h2 class="section-index" id="review-disclosure-title">Review basis &amp; sources</h2>
+                <p>Retrospective mini-review based on the game&#039;s appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.</p>
+                <ul>
+                  <li><a href="https://store.steampowered.com/sale/paxwest2025" target="_blank" rel="noreferrer">Official PAX West 2025 Steam event</a></li><li><a href="https://store.steampowered.com/app/3144430/" target="_blank" rel="noreferrer">Exovia on Steam</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <nav class="shell review-pagination" aria-label="More reviews">
+            <span></span>
+            <a href="../akiiwan-relaxing-survival/"><span>Older review</span><strong>Akiiwan: Relaxing Survival</strong></a>
+          </nav>
+        </article>
+      </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
+      </div>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="../../reviews/">All reviews</a>
+        <a href="../../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="../../about/#crew">The crew</a>
+        <a href="../../about/#standards">Editorial standards</a>
+        <a href="../../about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+    <script src="../../script.js"></script>
+  </body>
+</html>

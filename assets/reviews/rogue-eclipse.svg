@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Rogue Eclipse review artwork</title>
+  <desc id="desc">Original geometric PsychoBros artwork for Rogue Eclipse.</desc>
+  <rect width="1200" height="675" fill="oklch(7% 0.006 95)"/>
+  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(78% 0 0 / 0.16)"/>
+  <g fill="none" stroke="oklch(70% 0.12 188)" opacity="0.72">
+    <circle cx="662" cy="112" r="192" stroke-width="2"/>
+    <circle cx="832" cy="292" r="119" stroke-width="10"/>
+    <path d="M422 392  942 82  1122 392" stroke-width="5"/>
+  </g>
+  <path d="M790 0h410v675H940Z" fill="oklch(70% 0.12 188)" opacity="0.08"/>
+  <path d="M840 0h360v675H1060Z" fill="oklch(84% 0.19 80.46)" opacity="0.08"/>
+  <circle cx="1050" cy="118" r="16" fill="oklch(84% 0.19 80.46)"/>
+  <path d="M84 82h130" stroke="oklch(70% 0.12 188)" stroke-width="4"/>
+  <text x="84" y="126" fill="oklch(70% 0.12 188)" font-family="Consolas, monospace" font-size="18" letter-spacing="5">PAX WEST 2025 / REVIEW 17</text>
+  <text x="82" y="420" fill="oklch(91% 0 0)" font-family="Alumni Sans, Arial, sans-serif" font-size="74" font-weight="300">Rogue Eclipse</text>
+  <text x="84" y="620" fill="oklch(72% 0 0)" font-family="Albert Sans, Arial, sans-serif" font-size="22">HUSKRAFTS / Spaceflight Roguelike</text>
+  <text x="1114" y="620" fill="oklch(70% 0.12 188)" font-family="Consolas, monospace" font-size="20" text-anchor="end">PSYCHOBROS</text>
+</svg>

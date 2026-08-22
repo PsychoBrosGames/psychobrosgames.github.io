@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const supportedThemes = new Set(["light", "dark"]);
+        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme =
+          (supportedThemes.has(param) && param) ||
+          (supportedThemes.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("psychobros-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Rogue Eclipse review - PsychoBros" />
+    <meta property="og:description" content="Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/reviews/rogue-eclipse/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros game reviews" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>Rogue Eclipse review - PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/reviews/rogue-eclipse/" />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Alumni+Sans:ital,wght@0,100;0,300;0,400;0,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Rogue Eclipse review","headline":"Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular.","datePublished":"2025-09-06","dateModified":"2026-08-22","url":"https://psychobrosgames.github.io/reviews/rogue-eclipse/","author":{"@type":"Organization","name":"PsychoBros","url":"https://psychobrosgames.github.io/"},"itemReviewed":{"@type":"VideoGame","name":"Rogue Eclipse","author":{"@type":"Organization","name":"HUSKRAFTS"},"gamePlatform":"Windows","genre":"Spaceflight Roguelike"},"reviewBody":"Rogue Eclipse understands that a space roguelike needs more than upgrade menus: the flying itself has to feel dangerous and fast. Destructible environments and behemoth-scale enemies give its run structure a strong visual purpose, while its Arabesque Futurism helps it avoid generic military sci-fi."}</script>
+  </head>
+  <body class="publication-site">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../../reviews/" aria-current="page">Reviews</a>
+<a href="../../pax-west-2025/">PAX West 2025</a>
+<a href="../../about/#crew">Crew</a>
+<a href="../../about/">About</a>
+        </nav>
+        <div class="header-actions">
+
+  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
+    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../../reviews/" aria-current="page">Reviews</a>
+<a href="../../pax-west-2025/">PAX West 2025</a>
+<a href="../../about/#crew">Crew</a>
+<a href="../../about/">About</a>
+      </nav>
+    </header>
+
+      <main id="main" class="publication-main">
+        <article class="review-article" id="top">
+          <header class="review-article-hero">
+            <div class="shell">
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../">Home</a><span>/</span><a href="../">Reviews</a><span>/</span><span aria-current="page">Rogue Eclipse</span>
+              </nav>
+              <div class="review-article-hero-grid">
+                <div class="reveal">
+                  <p class="eyebrow"><span></span> PAX Rising Showcase</p>
+                  <h1>Rogue Eclipse</h1>
+                  <p class="review-article-deck">Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular.</p>
+                  <dl class="review-facts">
+                    <div><dt>Developer</dt><dd>HUSKRAFTS</dd></div>
+                    <div><dt>Genre</dt><dd>Spaceflight Roguelike</dd></div>
+                    <div><dt>Platforms</dt><dd>Windows</dd></div>
+                    <div><dt>At PAX</dt><dd>Unreleased</dd></div>
+                  </dl>
+                </div>
+                <img class="review-article-cover reveal" src="../../assets/reviews/rogue-eclipse.svg" alt="" />
+              </div>
+              <div class="review-byline">
+                <span>By PsychoBros</span>
+                <time datetime="2025-09-06">September 6, 2025</time>
+                <span>Retrospective archive</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="shell review-article-layout">
+            <aside class="review-verdict reveal" aria-label="Quick verdict">
+              <p class="section-index">Quick verdict</p>
+              <h2>Starfighter spectacle built for another run.</h2>
+              <p>Rogue Eclipse understands that a space roguelike needs more than upgrade menus: the flying itself has to feel dangerous and fast. Destructible environments and behemoth-scale enemies give its run structure a strong visual purpose, while its Arabesque Futurism helps it avoid generic military sci-fi.</p>
+              <dl>
+                <div><dt>The Casual</dt><dd>Control check</dd></div><div><dt>The Tactician</dt><dd>Build potential</dd></div><div><dt>The All-Rounder</dt><dd>One-more-run</dd></div>
+              </dl>
+            </aside>
+
+            <div class="review-copy">
+              <section class="reveal" aria-labelledby="review-overview-title">
+                <h2 class="section-index" id="review-overview-title">What it is</h2>
+                <p>The player is a pilot fighting for humanity&#039;s future through repeated arcade-style spaceflight runs. Ships can be upgraded as battles escalate from fighter skirmishes to encounters with enormous enemy machines.</p><p>Destructible environments broaden the combat space, while a visual direction inspired by Arabesque Futurism gives the ships and world a recognizable identity. The target is speed and spectacle without surrendering the build decisions expected from a roguelike.</p>
+              </section>
+
+              <section class="review-system-section reveal" aria-labelledby="review-system-title">
+                <h2 class="section-index" id="review-system-title">What stands out</h2>
+                <ul class="review-system-list">
+                  <li>Arcade starfighter controls are paired with a repeated roguelike run structure.</li><li>Battlefields include destructible environments and enemy behemoths.</li><li>The visual world draws on Arabesque Futurism.</li>
+                </ul>
+              </section>
+
+              <section class="review-perspectives" aria-labelledby="perspectives-title">
+                <p class="section-index">The three-player read</p>
+                <h2 id="perspectives-title">One game. Three save files.</h2>
+                <div class="review-perspective-list">
+
+                    <article class="reveal">
+                      <span>01</span>
+                      <div>
+                        <p>The Casual</p>
+                        <h3>The flight model decides who gets invited.</h3>
+                        <p>Speed is exciting only if orientation stays readable. Strong aim assistance and clear objectives would make the spectacle accessible without flattening the challenge.</p>
+                      </div>
+                    </article>
+                    <article class="reveal">
+                      <span>02</span>
+                      <div>
+                        <p>The Tactician</p>
+                        <h3>Destruction should create choices, not only particles.</h3>
+                        <p>Environmental damage is most valuable when it changes routes, exposes weak points, or creates cover. Ship upgrades need the same tactical specificity.</p>
+                      </div>
+                    </article>
+                    <article class="reveal">
+                      <span>03</span>
+                      <div>
+                        <p>The All-Rounder</p>
+                        <h3>A clean run length could make this rotation-ready.</h3>
+                        <p>Space combat and obvious boss scale are easy to return to. The question is whether progression respects players who want a satisfying session without committing an entire night.</p>
+                      </div>
+                    </article>
+                </div>
+              </section>
+
+              <section class="review-fit-grid reveal" aria-labelledby="review-fit-title">
+                <h2 class="visually-hidden" id="review-fit-title">Who this game fits</h2>
+                <div>
+                  <h3 class="section-index">Best for</h3>
+                  <ul><li>Starfighter fans who want arcade speed over simulation</li><li>Roguelike players drawn to visible build progression</li><li>Anyone looking for science fiction outside familiar military aesthetics</li></ul>
+                </div>
+                <div>
+                  <h3 class="section-index">Watch for</h3>
+                  <ul><li>Spatial readability at high speed</li><li>Upgrade variety across repeated runs</li><li>Whether destruction changes tactics or remains mostly visual</li></ul>
+                </div>
+              </section>
+
+              <section class="review-disclosure reveal" aria-labelledby="review-disclosure-title">
+                <h2 class="section-index" id="review-disclosure-title">Review basis &amp; sources</h2>
+                <p>Retrospective mini-review based on the game&#039;s verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.</p>
+                <ul>
+                  <li><a href="https://store.steampowered.com/sale/paxwest2025" target="_blank" rel="noreferrer">Official PAX West 2025 Steam event</a></li><li><a href="https://store.steampowered.com/app/782260/" target="_blank" rel="noreferrer">Rogue Eclipse on Steam</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <nav class="shell review-pagination" aria-label="More reviews">
+            <a href="../terrible-lizards/"><span>Newer review</span><strong>Terrible Lizards</strong></a>
+            <a href="../rollergirl/"><span>Older review</span><strong>RollerGirl</strong></a>
+          </nav>
+        </article>
+      </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="../../" aria-label="PsychoBros home">
+
+  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+    <path
+      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
+      fill="var(--cp-accent-soft)"
+      stroke="var(--cp-accent)"
+      stroke-width="2.5"
+    />
+    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
+    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
+    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  </svg>
+          <span>PSYCHO<span>BROS</span></span>
+        </a>
+        <p>Independent game reviews from three players with three very different save files.</p>
+      </div>
+      <div class="footer-nav">
+        <p>Read</p>
+        <a href="../../reviews/">All reviews</a>
+        <a href="../../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="footer-nav">
+        <p>About</p>
+        <a href="../../about/#crew">The crew</a>
+        <a href="../../about/#standards">Editorial standards</a>
+        <a href="../../about/#press">Press &amp; partnerships</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed.</p>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+    <script src="../../script.js"></script>
+  </body>
+</html>
