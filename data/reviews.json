@@ -62,7 +62,8 @@
         "label": "Never's End on Steam",
         "url": "https://store.steampowered.com/app/1999930/"
       }
-    ]
+    ],
+    "hype": 8.7
   },
   {
     "slug": "blocks-for-babies",
@@ -127,7 +128,8 @@
         "label": "Blocks for Babies on Steam",
         "url": "https://store.steampowered.com/app/2776770/"
       }
-    ]
+    ],
+    "hype": 7.4
   },
   {
     "slug": "rollergirl",
@@ -192,7 +194,8 @@
         "label": "RollerGirl on Steam",
         "url": "https://store.steampowered.com/app/2828540/"
       }
-    ]
+    ],
+    "hype": 8.2
   },
   {
     "slug": "rogue-eclipse",
@@ -257,7 +260,8 @@
         "label": "Rogue Eclipse on Steam",
         "url": "https://store.steampowered.com/app/782260/"
       }
-    ]
+    ],
+    "hype": 8.9
   },
   {
     "slug": "terrible-lizards",
@@ -322,7 +326,8 @@
         "label": "Terrible Lizards on Steam",
         "url": "https://store.steampowered.com/app/2920220/"
       }
-    ]
+    ],
+    "hype": 7.8
   },
   {
     "slug": "beatdown-city-survivors",
@@ -387,7 +392,8 @@
         "label": "Beatdown City Survivors on Steam",
         "url": "https://store.steampowered.com/app/3383040/"
       }
-    ]
+    ],
+    "hype": 8.5
   },
   {
     "slug": "draco-and-the-seven-scales",
@@ -452,7 +458,8 @@
         "label": "Draco and the Seven Scales on Steam",
         "url": "https://store.steampowered.com/app/2559690/"
       }
-    ]
+    ],
+    "hype": 7.6
   },
   {
     "slug": "arcane-eats",
@@ -517,7 +524,8 @@
         "label": "Arcane Eats on Steam",
         "url": "https://store.steampowered.com/app/2640090/"
       }
-    ]
+    ],
+    "hype": 8.3
   },
   {
     "slug": "table-tactics",
@@ -583,7 +591,8 @@
         "label": "Table Tactics on Steam",
         "url": "https://store.steampowered.com/app/3730680/"
       }
-    ]
+    ],
+    "hype": 9.1
   },
   {
     "slug": "hank-drowning-on-dry-land",
@@ -648,7 +657,8 @@
         "label": "Hank: Drowning On Dry Land on Steam",
         "url": "https://store.steampowered.com/app/1937880/"
       }
-    ]
+    ],
+    "hype": 8
   },
   {
     "slug": "no-stone-unturned",
@@ -713,7 +723,8 @@
         "label": "No Stone Unturned on Steam",
         "url": "https://store.steampowered.com/app/2453640/"
       }
-    ]
+    ],
+    "hype": 7.2
   },
   {
     "slug": "sashimi-slayer",
@@ -778,7 +789,8 @@
         "label": "Sashimi Slayer on Steam",
         "url": "https://store.steampowered.com/app/3671910/"
       }
-    ]
+    ],
+    "hype": 8.8
   },
   {
     "slug": "adaptory",
@@ -843,7 +855,8 @@
         "label": "Adaptory on Steam",
         "url": "https://store.steampowered.com/app/2201620/"
       }
-    ]
+    ],
+    "hype": 7.9
   },
   {
     "slug": "sky-of-tides",
@@ -908,7 +921,8 @@
         "label": "Sky of Tides on Steam",
         "url": "https://store.steampowered.com/app/1120330/"
       }
-    ]
+    ],
+    "hype": 8.6
   },
   {
     "slug": "letter-lost",
@@ -973,7 +987,8 @@
         "label": "Letter Lost on Steam",
         "url": "https://store.steampowered.com/app/3624790/"
       }
-    ]
+    ],
+    "hype": 7.5
   },
   {
     "slug": "voidsayer",
@@ -1038,7 +1053,8 @@
         "label": "Voidsayer on Steam",
         "url": "https://store.steampowered.com/app/2754370/"
       }
-    ]
+    ],
+    "hype": 8.4
   },
   {
     "slug": "moros-protocol",
@@ -1103,7 +1119,8 @@
         "label": "Moros Protocol on Steam",
         "url": "https://store.steampowered.com/app/1605250/"
       }
-    ]
+    ],
+    "hype": 9
   },
   {
     "slug": "fractured-blooms",
@@ -1168,7 +1185,8 @@
         "label": "Fractured Blooms on Steam",
         "url": "https://store.steampowered.com/app/3730310/"
       }
-    ]
+    ],
+    "hype": 8.1
   },
   {
     "slug": "akiiwan-relaxing-survival",
@@ -1233,7 +1251,8 @@
         "label": "Akiiwan: Relaxing Survival on Steam",
         "url": "https://store.steampowered.com/app/3673960/"
       }
-    ]
+    ],
+    "hype": 7.7
   },
   {
     "slug": "exovia",
@@ -1298,6 +1317,7 @@
         "label": "Exovia on Steam",
         "url": "https://store.steampowered.com/app/3144430/"
       }
-    ]
+    ],
+    "hype": 8.5
   }
 ]

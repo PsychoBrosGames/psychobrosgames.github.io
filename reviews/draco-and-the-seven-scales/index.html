@@ -5,198 +5,197 @@
     <meta charset="UTF-8" />
     <script>
       (() => {
-        const supportedThemes = new Set(["light", "dark"]);
-        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        document.documentElement.classList.add("js");
+        const ok = new Set(["light", "dark"]);
         const saved = localStorage.getItem("psychobros-theme");
-        const theme =
-          (supportedThemes.has(param) && param) ||
-          (supportedThemes.has(saved) && saved) ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const theme = (ok.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("psychobros-theme", theme);
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map." />
+    <meta name="description" content="Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map. A PsychoBros review of Draco and the Seven Scales by Ice Goat Games." />
+    <meta name="theme-color" content="#0b0d12" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Draco and the Seven Scales review - PsychoBros" />
-    <meta property="og:description" content="Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map." />
+    <meta property="og:site_name" content="PsychoBros" />
+    <meta property="og:title" content="Draco and the Seven Scales review — PsychoBros" />
+    <meta property="og:description" content="Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map. A PsychoBros review of Draco and the Seven Scales by Ice Goat Games." />
     <meta property="og:url" content="https://psychobrosgames.github.io/reviews/draco-and-the-seven-scales/" />
     <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="PsychoBros: three dads, zero media training" />
+    <meta property="og:image:alt" content="PsychoBros: game reviews from three dads" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
-    <title>Draco and the Seven Scales review - PsychoBros</title>
+    <title>Draco and the Seven Scales review — PsychoBros</title>
     <link rel="canonical" href="https://psychobrosgames.github.io/reviews/draco-and-the-seven-scales/" />
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","name":"Draco and the Seven Scales review","headline":"Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.","datePublished":"2025-09-11","dateModified":"2026-08-22","url":"https://psychobrosgames.github.io/reviews/draco-and-the-seven-scales/","author":{"@type":"Organization","name":"PsychoBros","url":"https://psychobrosgames.github.io/"},"itemReviewed":{"@type":"VideoGame","name":"Draco and the Seven Scales","author":{"@type":"Organization","name":"Ice Goat Games"},"gamePlatform":"Windows","genre":"Pirate Action Adventure"},"reviewBody":"Draco and the Seven Scales makes a strong case for putting the ship back into pirate adventure. Different sea routes open different dungeons, items, and puzzles, giving travel a strategic purpose beyond connecting islands."}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Draco and the Seven Scales review","description":"Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map. A PsychoBros review of Draco and the Seven Scales by Ice Goat Games.","datePublished":"2025-09-11","dateModified":"2025-09-11","url":"https://psychobrosgames.github.io/reviews/draco-and-the-seven-scales/","image":"https://psychobrosgames.github.io/assets/reviews/draco-and-the-seven-scales.svg","author":{"@type":"Organization","name":"PsychoBros"},"publisher":{"@type":"Organization","name":"PsychoBros","logo":{"@type":"ImageObject","url":"https://psychobrosgames.github.io/assets/favicon.svg"}},"about":{"@type":"VideoGame","name":"Draco and the Seven Scales","genre":"Pirate Action Adventure"}}</script>
   </head>
-  <body class="publication-site">
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" data-header>
-      <div class="shell header-inner">
+  <body class="page-review">
+    <a class="skip" href="#main">Skip to content</a>
+    
+    <header class="masthead" data-masthead>
+      <div class="wrap masthead__inner">
         <a class="brand" href="../../" aria-label="PsychoBros home">
-
-  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-    <path
-      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
-      fill="var(--cp-accent-soft)"
-      stroke="var(--cp-accent)"
-      stroke-width="2.5"
-    />
-    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
-    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
-    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
   </svg>
-          <span>PSYCHO<span>BROS</span></span>
+          <span class="brand__word">Psycho<em>Bros</em></span>
         </a>
-        <nav class="desktop-nav" aria-label="Main navigation">
+        <nav class="masthead__nav" aria-label="Main navigation">
           <a href="../../reviews/" aria-current="page">Reviews</a>
-<a href="../../pax-west-2025/">The PAX Pile</a>
-<a href="../../about/#crew">The Dads</a>
-<a href="../../about/">Fine Print</a>
+          <a href="../../pax-west-2025/">PAX West 2025</a>
+          <a href="../../about/#crew">The Dads</a>
+          <a href="../../about/">About &amp; Press</a>
         </nav>
-        <div class="header-actions">
-
-  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
-    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+        <div class="masthead__actions">
+          
+  <button class="iconbtn" type="button" data-theme-toggle aria-label="Switch color theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7" />
     </svg>
-    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
     </svg>
   </button>
-          <button
-            class="icon-button menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="mobile-nav"
-            aria-label="Open navigation"
-          >
-            <span></span>
-            <span></span>
+          <button class="iconbtn burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
-      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+      <nav class="mobilenav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
         <a href="../../reviews/" aria-current="page">Reviews</a>
-<a href="../../pax-west-2025/">The PAX Pile</a>
-<a href="../../about/#crew">The Dads</a>
-<a href="../../about/">Fine Print</a>
+          <a href="../../pax-west-2025/">PAX West 2025</a>
+          <a href="../../about/#crew">The Dads</a>
+          <a href="../../about/">About &amp; Press</a>
       </nav>
     </header>
-
-      <main id="main" class="publication-main">
-        <article class="review-article" id="top">
-          <header class="review-article-hero">
-            <div class="shell">
-              <nav class="breadcrumb" aria-label="Breadcrumb">
+    
+      <main id="main">
+        <span id="top"></span>
+        <article class="article">
+          <header class="pagehead pagehead--article">
+            <div class="wrap">
+              <nav class="crumbs" aria-label="Breadcrumb">
                 <a href="../../">Home</a><span>/</span><a href="../">Reviews</a><span>/</span><span aria-current="page">Draco and the Seven Scales</span>
               </nav>
-              <div class="review-article-hero-grid">
-                <div class="reveal">
-                  <p class="eyebrow"><span></span> PAX Rising Showcase</p>
-                  <h1>Draco and the Seven Scales</h1>
-                  <p class="review-article-deck">Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.</p>
-                  <p class="review-article-dad-take">Pirates, dragons, and a map we will absolutely hold upside down.</p>
-                  <dl class="review-facts">
-                    <div><dt>Developer</dt><dd>Ice Goat Games</dd></div>
-                    <div><dt>Genre</dt><dd>Pirate Action Adventure</dd></div>
-                    <div><dt>Platforms</dt><dd>Windows</dd></div>
-                    <div><dt>At PAX</dt><dd>Unreleased</dd></div>
-                  </dl>
-                </div>
-                <img class="review-article-cover reveal" src="../../assets/reviews/draco-and-the-seven-scales.svg" alt="" />
-              </div>
-              <div class="review-byline">
-                <span>By three dads with one shared calendar</span>
+              <p class="kicker">PAX Rising Showcase</p>
+              <h1>Draco and the Seven Scales</h1>
+              <p class="pagehead__deck">Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.</p>
+              <div class="byline byline--article">
+                <span>By <b>PsychoBros</b></span>
                 <time datetime="2025-09-11">September 11, 2025</time>
-                <span>PAX 2025 time capsule</span>
+                <span>Ice Goat Games</span>
               </div>
             </div>
           </header>
 
-          <div class="shell review-article-layout">
-            <aside class="review-verdict reveal" aria-label="Quick verdict">
-              <p class="section-index">The 30-second dad verdict</p>
-              <p class="review-verdict-joke">Pirates, dragons, and a map we will absolutely hold upside down.</p>
-              <h2>A pirate map that rewards taking the long route.</h2>
-              <p>Draco and the Seven Scales makes a strong case for putting the ship back into pirate adventure. Different sea routes open different dungeons, items, and puzzles, giving travel a strategic purpose beyond connecting islands.</p>
-              <dl>
-                <div><dt>Dad Who Skipped the Tutorial</dt><dd>Classic entry</dd></div><div><dt>The Descent Guy</dt><dd>Route planning</dd></div><div><dt>Normal-ish Dad</dt><dd>Comfort pick</dd></div>
-              </dl>
+          <div class="wrap article__hero reveal">
+            <img class="article__cover" src="../../assets/reviews/draco-and-the-seven-scales.svg" alt="Artwork for Draco and the Seven Scales" width="1200" height="675" fetchpriority="high" />
+            <div class="article__scorecard">
+              <p class="kicker">Dad Hype Meter</p>
+              <p class="article__score" data-tone="cool">7.6<i>/10</i></p>
+              <p class="article__band">Solid dad approval</p>
+              <p class="article__scorenote">An anticipation score, not a play-tested verdict. <a href="../../about/#standards">How this works</a></p>
+            </div>
+          </div>
+
+          <div class="wrap article__grid">
+            <aside class="article__side">
+              <div class="specs">
+                <h2 class="kicker">The basics</h2>
+                <dl>
+                  <div><dt>Developer</dt><dd>Ice Goat Games</dd></div>
+                  <div><dt>Genre</dt><dd>Pirate Action Adventure</dd></div>
+                  <div><dt>Platforms</dt><dd>Windows</dd></div>
+                  <div><dt>At the show</dt><dd>Unreleased</dd></div>
+                </dl>
+              </div>
+              <div class="specs">
+                <h2 class="kicker">Dad consensus</h2>
+                <dl>
+                  <div><dt>Dad Who Skipped the Tutorial</dt><dd>Classic entry</dd></div><div><dt>The Descent Guy</dt><dd>Route planning</dd></div><div><dt>Normal-ish Dad</dt><dd>Comfort pick</dd></div>
+                </dl>
+              </div>
             </aside>
 
-            <div class="review-copy">
-              <section class="reveal" aria-labelledby="review-overview-title">
-                <h2 class="section-index" id="review-overview-title">Okay, what is this thing?</h2>
+            <div class="article__body">
+              <div class="verdict reveal">
+                <p class="kicker">The thirty-second version</p>
+                <h2>A pirate map that rewards taking the long route.</h2>
+                <p class="verdict__joke">Pirates, dragons, and a map we will absolutely hold upside down.</p>
+                <p>Draco and the Seven Scales makes a strong case for putting the ship back into pirate adventure. Different sea routes open different dungeons, items, and puzzles, giving travel a strategic purpose beyond connecting islands.</p>
+              </div>
+
+              <section class="prose reveal" aria-labelledby="what-title">
+                <h2 id="what-title">Okay, what is this thing?</h2>
                 <p>Draco is a pirate captain trying to save what matters most to him. The adventure moves between top-down exploration on foot and travel by ship across a large pixel-art world.</p><p>Route choice matters because different passages lead to different dungeons, puzzles, and items. Rival captains, armadas, and sea monsters turn those routes into more than scenery.</p>
               </section>
 
-              <section class="review-system-section reveal" aria-labelledby="review-system-title">
-                <h2 class="section-index" id="review-system-title">Why it escaped the group chat</h2>
-                <ul class="review-system-list">
+              <section class="reveal" aria-labelledby="why-title">
+                <h2 class="h-rule" id="why-title">Why it escaped the group chat</h2>
+                <ul class="checklist">
                   <li>Exploration alternates between on-foot adventuring and sailing.</li><li>Different sea routes unlock distinct dungeons, items, and puzzles.</li><li>Boss threats include rival captains, armadas, and sea monsters.</li>
                 </ul>
               </section>
 
-              <section class="review-perspectives" aria-labelledby="perspectives-title">
-                <p class="section-index">The dad tribunal</p>
-                <h2 id="perspectives-title">Three dads enter. Agreement remains unlikely.</h2>
-                <div class="review-perspective-list">
-
-                    <article class="reveal">
-                      <span>01</span>
-                      <div>
-                        <p>Dad Who Skipped the Tutorial</p>
-                        <h3>The familiar top-down language helps.</h3>
-                        <p>Movement, dungeons, and bosses are easy to understand. The ship layer should add possibility without turning basic navigation into a tax.</p>
-                      </div>
-                    </article>
-                    <article class="reveal">
-                      <span>02</span>
-                      <div>
-                        <p>The Descent Guy</p>
-                        <h3>Navigation choices need lasting consequences.</h3>
-                        <p>Multiple routes are strategically meaningful when they change resources, equipment, and future options. If every path is eventually mandatory, the map becomes a checklist.</p>
-                      </div>
-                    </article>
-                    <article class="reveal">
-                      <span>03</span>
-                      <div>
-                        <p>Normal-ish Dad</p>
-                        <h3>A strong genre shape with one useful twist.</h3>
-                        <p>Pixel-art adventure is familiar territory, but meaningful sailing can distinguish this from another dungeon run. The balance between land and sea will decide its pace.</p>
-                      </div>
-                    </article>
+              <section class="reveal" aria-labelledby="tribunal-title">
+                <h2 class="h-rule" id="tribunal-title">Three dads enter</h2>
+                <div class="tribunal">
+                  
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">01</p>
+                    <div>
+                      <p class="tribunal__who">Dad Who Skipped the Tutorial</p>
+                      <h3>The familiar top-down language helps.</h3>
+                      <p>Movement, dungeons, and bosses are easy to understand. The ship layer should add possibility without turning basic navigation into a tax.</p>
+                    </div>
+                  </article>
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">02</p>
+                    <div>
+                      <p class="tribunal__who">The Descent Guy</p>
+                      <h3>Navigation choices need lasting consequences.</h3>
+                      <p>Multiple routes are strategically meaningful when they change resources, equipment, and future options. If every path is eventually mandatory, the map becomes a checklist.</p>
+                    </div>
+                  </article>
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">03</p>
+                    <div>
+                      <p class="tribunal__who">Normal-ish Dad</p>
+                      <h3>A strong genre shape with one useful twist.</h3>
+                      <p>Pixel-art adventure is familiar territory, but meaningful sailing can distinguish this from another dungeon run. The balance between land and sea will decide its pace.</p>
+                    </div>
+                  </article>
                 </div>
               </section>
 
-              <section class="review-fit-grid reveal" aria-labelledby="review-fit-title">
-                <h2 class="visually-hidden" id="review-fit-title">Who should play and what to watch for</h2>
-                <div>
-                  <h3 class="section-index">Invite these people</h3>
-                  <ul><li>Players who like classic top-down adventure structure</li><li>Explorers who want route choice to unlock different content</li><li>Pirate-game fans who expect the ship to matter</li></ul>
-                </div>
-                <div>
-                  <h3 class="section-index">Dad caveats</h3>
-                  <ul><li>Travel time between destinations</li><li>Whether alternate routes remain genuine choices</li><li>The balance between exploration, puzzles, and boss combat</li></ul>
+              <section class="reveal" aria-labelledby="fit-title">
+                <h2 class="visually-hidden" id="fit-title">Who it is for and what to watch</h2>
+                <div class="fit">
+                  <div class="fit__col fit__col--yes">
+                    <h3>Invite these people</h3>
+                    <ul><li>Players who like classic top-down adventure structure</li><li>Explorers who want route choice to unlock different content</li><li>Pirate-game fans who expect the ship to matter</li></ul>
+                  </div>
+                  <div class="fit__col fit__col--watch">
+                    <h3>Dad caveats</h3>
+                    <ul><li>Travel time between destinations</li><li>Whether alternate routes remain genuine choices</li><li>The balance between exploration, puzzles, and boss combat</li></ul>
+                  </div>
                 </div>
               </section>
 
-              <section class="review-disclosure reveal" aria-labelledby="review-disclosure-title">
-                <h2 class="section-index" id="review-disclosure-title">Receipts, because apparently this is journalism</h2>
+              <section class="receipts reveal" aria-labelledby="receipts-title">
+                <h2 class="kicker" id="receipts-title">Receipts</h2>
                 <p>Retrospective mini-review based on the game&#039;s verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.</p>
                 <ul>
                   <li><a href="https://store.steampowered.com/sale/paxwest2025" target="_blank" rel="noreferrer">Official PAX West 2025 Steam event</a></li><li><a href="https://store.steampowered.com/app/2559690/" target="_blank" rel="noreferrer">Draco and the Seven Scales on Steam</a></li>
@@ -205,48 +204,112 @@
             </div>
           </div>
 
-          <nav class="shell review-pagination" aria-label="More reviews">
-            <a href="../arcane-eats/"><span>Newer nonsense</span><strong>Arcane Eats</strong></a>
-            <a href="../beatdown-city-survivors/"><span>Older nonsense</span><strong>Beatdown City Survivors</strong></a>
+          <nav class="wrap pager" aria-label="More reviews">
+            <a class="pager__link" href="../arcane-eats/"><span>&larr; Newer</span><strong>Arcane Eats</strong></a>
+            <a class="pager__link pager__link--next" href="../beatdown-city-survivors/"><span>Older &rarr;</span><strong>Beatdown City Survivors</strong></a>
           </nav>
+
+          <section class="wrap section" aria-labelledby="related-title">
+            
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">Keep going</p>
+      <h2><span id="related-title">More reviews</span></h2>
+      
+    </div>
+    <a class="btn btn--ghost" href="../">All 20 <span aria-hidden="true">&rarr;</span></a>
+  </div>
+            <div class="grid">
+  <article class="card reveal"
+    data-card
+    data-title="exovia"
+    data-studio="byterockers&#039; games"
+    data-genre="zero-g factory simulation"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/exovia/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/reviews/exovia.svg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="hot"><b>8.5</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Zero-G Factory Simulation</span><time datetime="2025-09-30">Sep 30</time></p>
+      <h3 class="card__title"><a href="../../reviews/exovia/">Exovia</a></h3>
+      <p class="card__take">Build a factory in zero gravity. Misplace every wrench in three dimensions.</p>
+      <p class="card__foot"><span>ByteRockers&#039; Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="akiiwan: relaxing survival"
+    data-studio="little buffalo studios"
+    data-genre="relaxing survival"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/akiiwan-relaxing-survival/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/reviews/akiiwan-relaxing-survival.svg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="cool"><b>7.7</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Relaxing Survival</span><time datetime="2025-09-28">Sep 28</time></p>
+      <h3 class="card__title"><a href="../../reviews/akiiwan-relaxing-survival/">Akiiwan: Relaxing Survival</a></h3>
+      <p class="card__take">Survival crafting for people who would prefer nature not scream at them.</p>
+      <p class="card__foot"><span>Little Buffalo Studios</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="fractured blooms"
+    data-studio="serenity forge"
+    data-genre="psychological life sim"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/fractured-blooms/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/reviews/fractured-blooms.svg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>8.1</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Psychological Life Sim</span><time datetime="2025-09-26">Sep 26</time></p>
+      <h3 class="card__title"><a href="../../reviews/fractured-blooms/">Fractured Blooms</a></h3>
+      <p class="card__take">Cozy gardening, except Tuesday is broken and possibly watching you.</p>
+      <p class="card__foot"><span>Serenity Forge</span></p>
+    </div>
+  </article></div>
+          </section>
         </article>
       </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div>
-        <a class="brand footer-brand" href="../../" aria-label="PsychoBros home">
-
-  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-    <path
-      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
-      fill="var(--cp-accent-soft)"
-      stroke="var(--cp-accent)"
-      stroke-width="2.5"
-    />
-    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
-    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
-    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+    
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brandcol">
+        <a class="brand" href="../../" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
   </svg>
-          <span>PSYCHO<span>BROS</span></span>
+          <span class="brand__word">Psycho<em>Bros</em></span>
         </a>
-        <p>Game reviews from three dads, one group chat, and a suspicious number of opinions after bedtime.</p>
+        <p>Three dads in their forties reviewing games between school pickup and bedtime. One of us will not stop talking about Descent.</p>
       </div>
-      <div class="footer-nav">
-        <p>Read stuff</p>
-        <a href="../../reviews/">All the overthinking</a>
-        <a href="../../pax-west-2025/">The PAX pile</a>
+      <div class="foot__col">
+        <h2>Read</h2>
+        <a href="../../reviews/">All reviews</a>
+        <a href="../../pax-west-2025/">PAX West 2025</a>
       </div>
-      <div class="footer-nav">
-        <p>Responsible adult stuff</p>
+      <div class="foot__col">
+        <h2>The boring bits</h2>
         <a href="../../about/#crew">Meet the dads</a>
         <a href="../../about/#standards">How we stay honest</a>
-        <a href="../../about/#press">Press, parties &amp; snacks</a>
+        <a href="../../about/#press">Press &amp; partnerships</a>
+      </div>
+      <div class="foot__col">
+        <h2>Elsewhere</h2>
+        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <a href="../../about/#press">Get in touch</a>
       </div>
     </div>
-    <div class="shell footer-bottom">
+    <div class="wrap foot__bottom">
       <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
-      <a href="#top">Back to top &uarr;</a>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
     </div>
   </footer>
     <script src="../../script.js"></script>

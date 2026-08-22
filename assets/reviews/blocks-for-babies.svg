@@ -1,19 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">Blocks for Babies review artwork</title>
-  <desc id="desc">Original geometric PsychoBros artwork for Blocks for Babies.</desc>
-  <rect width="1200" height="675" fill="oklch(10% 0.015 20)"/>
-  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(96% 0.01 95 / 0.16)"/>
-  <g fill="none" stroke="oklch(66% 0.24 20)" opacity="0.9">
-    <circle cx="639" cy="209" r="169" stroke-width="12"/>
-    <circle cx="809" cy="389" r="105" stroke-width="20"/>
-    <path d="M399 489  919 179  1099 489" stroke-width="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t-blocksforbabies">
+  <title id="t-blocksforbabies">Blocks for Babies artwork</title>
+  <defs>
+    <linearGradient id="bg-blocksforbabies" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161c27"/>
+      <stop offset="1" stop-color="#0b0d12"/>
+    </linearGradient>
+    <radialGradient id="fade-blocksforbabies" cx="0.5" cy="0.46" r="0.78">
+      <stop offset="0.45" stop-color="#0b0d12" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0b0d12" stop-opacity="0.82"/>
+    </radialGradient>
+    <pattern id="grid-blocksforbabies" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#eef1f7" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-blocksforbabies)"/>
+  <rect width="1200" height="675" fill="url(#grid-blocksforbabies)"/>
+  <g>
+    <path d="M292 0 L420 0 L196 675 L68 675 Z" fill="#3ddceb" opacity="0.85"/>
+    <path d="M388 0 L516 0 L292 675 L164 675 Z" fill="#ff4b1f" opacity="0.28"/>
+    <path d="M484 0 L612 0 L388 675 L260 675 Z" fill="#3ddceb" opacity="0.85"/>
+    <path d="M580 0 L708 0 L484 675 L356 675 Z" fill="#ff4b1f" opacity="0.28"/>
+    <path d="M676 0 L804 0 L580 675 L452 675 Z" fill="#3ddceb" opacity="0.85"/>
+    <path d="M772 0 L900 0 L676 675 L548 675 Z" fill="#ff4b1f" opacity="0.28"/>
+    <path d="M868 0 L996 0 L772 675 L644 675 Z" fill="#3ddceb" opacity="0.85"/>
+    <path d="M964 0 L1092 0 L868 675 L740 675 Z" fill="#ff4b1f" opacity="0.28"/>
+    <path d="M1060 0 L1188 0 L964 675 L836 675 Z" fill="#3ddceb" opacity="0.85"/>
   </g>
-  <path d="M760 0h440v675H890Z" fill="oklch(66% 0.24 20)" opacity="0.2"/>
-  <path d="M900 0h300v675H1060Z" fill="oklch(78% 0.19 145)" opacity="0.15"/>
-  <circle cx="1050" cy="118" r="24" fill="oklch(78% 0.19 145)"/>
-  <rect x="84" y="70" width="268" height="58" fill="oklch(66% 0.24 20)"/>
-  <text x="104" y="108" fill="oklch(98% 0.005 95)" font-family="Arial Black, Arial, sans-serif" font-size="20" letter-spacing="3">DAD REVIEW 19</text>
-  <text x="82" y="390" fill="oklch(96% 0.01 95)" font-family="Arial Black, Arial, sans-serif" font-size="70" font-weight="900">Blocks for Babies</text>
-  <text x="84" y="620" fill="oklch(76% 0.01 95)" font-family="Albert Sans, Arial, sans-serif" font-size="22">BunkSoft Interactive LLC / Arcade Roguelite</text>
-  <text x="1114" y="620" fill="oklch(66% 0.24 20)" font-family="Arial Black, Arial, sans-serif" font-size="20" text-anchor="end">PSYCHOBROS</text>
+  <rect width="1200" height="675" fill="url(#fade-blocksforbabies)"/>
+  <rect y="659" width="1200" height="16" fill="#3ddceb"/>
+  <rect x="64" y="54" width="140" height="34" fill="#3ddceb"/>
+  <text x="78" y="78" fill="#0b0d12" font-family="'Arial Black',Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2.5">REVIEW 19</text>
 </svg>

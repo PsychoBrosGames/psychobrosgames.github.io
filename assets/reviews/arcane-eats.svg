@@ -1,19 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">Arcane Eats review artwork</title>
-  <desc id="desc">Original geometric PsychoBros artwork for Arcane Eats.</desc>
-  <rect width="1200" height="675" fill="oklch(10% 0.015 20)"/>
-  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(96% 0.01 95 / 0.16)"/>
-  <g fill="none" stroke="oklch(66% 0.24 20)" opacity="0.9">
-    <circle cx="602" cy="112" r="132" stroke-width="12"/>
-    <circle cx="772" cy="292" r="82" stroke-width="20"/>
-    <path d="M362 392  882 82  1062 392" stroke-width="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t-arcaneeats">
+  <title id="t-arcaneeats">Arcane Eats artwork</title>
+  <defs>
+    <linearGradient id="bg-arcaneeats" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161c27"/>
+      <stop offset="1" stop-color="#0b0d12"/>
+    </linearGradient>
+    <radialGradient id="fade-arcaneeats" cx="0.5" cy="0.46" r="0.78">
+      <stop offset="0.45" stop-color="#0b0d12" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0b0d12" stop-opacity="0.82"/>
+    </radialGradient>
+    <pattern id="grid-arcaneeats" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#eef1f7" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-arcaneeats)"/>
+  <rect width="1200" height="675" fill="url(#grid-arcaneeats)"/>
+  <g>
+    
+    <circle cx="573" cy="300" r="214" fill="none" stroke="#3ddceb" stroke-width="18"/>
+    <circle cx="573" cy="300" r="140" fill="none" stroke="#3ddceb" stroke-width="11" opacity="0.5"/>
+    <circle cx="573" cy="300" r="68" fill="#3ddceb"/>
+    <path d="M150 512h900" stroke="#ff4b1f" stroke-width="9"/>
+    <circle cx="906" cy="126" r="24" fill="#ff4b1f"/>
+    <circle cx="288" cy="150" r="12" fill="#ff4b1f" opacity="0.6"/>
   </g>
-  <path d="M760 0h440v675H890Z" fill="oklch(66% 0.24 20)" opacity="0.2"/>
-  <path d="M900 0h300v675H1060Z" fill="oklch(78% 0.19 145)" opacity="0.15"/>
-  <circle cx="1050" cy="118" r="24" fill="oklch(78% 0.19 145)"/>
-  <rect x="84" y="70" width="268" height="58" fill="oklch(66% 0.24 20)"/>
-  <text x="104" y="108" fill="oklch(98% 0.005 95)" font-family="Arial Black, Arial, sans-serif" font-size="20" letter-spacing="3">DAD REVIEW 13</text>
-  <text x="82" y="390" fill="oklch(96% 0.01 95)" font-family="Arial Black, Arial, sans-serif" font-size="70" font-weight="900">Arcane Eats</text>
-  <text x="84" y="620" fill="oklch(76% 0.01 95)" font-family="Albert Sans, Arial, sans-serif" font-size="22">Wonderbelly Games / Cooking Deckbuilder</text>
-  <text x="1114" y="620" fill="oklch(66% 0.24 20)" font-family="Arial Black, Arial, sans-serif" font-size="20" text-anchor="end">PSYCHOBROS</text>
+  <rect width="1200" height="675" fill="url(#fade-arcaneeats)"/>
+  <rect y="659" width="1200" height="16" fill="#3ddceb"/>
+  <rect x="64" y="54" width="140" height="34" fill="#3ddceb"/>
+  <text x="78" y="78" fill="#0b0d12" font-family="'Arial Black',Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2.5">REVIEW 13</text>
 </svg>

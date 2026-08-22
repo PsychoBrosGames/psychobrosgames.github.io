@@ -36,143 +36,152 @@ const shortDate = (date) =>
     timeZone: "UTC",
   }).format(new Date(`${date}T12:00:00Z`));
 
-const lensLabels = {
+const dadLabels = {
   "The Casual": "Dad Who Skipped the Tutorial",
   "The Tactician": "The Descent Guy",
   "The All-Rounder": "Normal-ish Dad",
 };
 
-const lensLabel = (name) => lensLabels[name] || name;
+const dadLabel = (name) => dadLabels[name] || name;
+
+const hypeBand = (hype) => {
+  if (hype >= 9) return "Group chat meltdown";
+  if (hype >= 8.5) return "Snacks were abandoned";
+  if (hype >= 8) return "Wishlisted immediately";
+  if (hype >= 7.5) return "Solid dad approval";
+  return "Cautious dad nodding";
+};
+
+const hypeTone = (hype) => (hype >= 8.5 ? "hot" : hype >= 7.8 ? "warm" : "cool");
+
+/* ---------------------------------------------------------------- chrome */
 
 const brandMark = `
-  <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-    <path
-      d="M9 12.5h26a5 5 0 0 1 4.72 6.66l-4.4 12.5a4.5 4.5 0 0 1-7.46 1.7L24.6 30h-5.2l-3.26 3.36a4.5 4.5 0 0 1-7.46-1.7l-4.4-12.5A5 5 0 0 1 9 12.5Z"
-      fill="var(--cp-accent-soft)"
-      stroke="var(--cp-accent)"
-      stroke-width="2.5"
-    />
-    <path d="M13 21h8M17 17v8" stroke="var(--cp-accent)" stroke-width="2.5" />
-    <circle cx="29" cy="19.5" r="1.75" fill="var(--cp-patina)" />
-    <circle cx="33.5" cy="24" r="1.75" fill="var(--cp-accent)" />
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
   </svg>`;
 
 const themeToggle = `
-  <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme">
-    <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" />
+  <button class="iconbtn" type="button" data-theme-toggle aria-label="Switch color theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7" />
     </svg>
-    <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
     </svg>
   </button>`;
 
+const navLinks = (prefix) => [
+  ["reviews", `${prefix}reviews/`, "Reviews"],
+  ["pax", `${prefix}pax-west-2025/`, "PAX West 2025"],
+  ["crew", `${prefix}about/#crew`, "The Dads"],
+  ["about", `${prefix}about/`, "About &amp; Press"],
+];
+
 const header = (prefix, active) => {
-  const links = [
-    ["reviews", `${prefix}reviews/`, "Reviews"],
-    ["pax", `${prefix}pax-west-2025/`, "The PAX Pile"],
-    ["crew", `${prefix}about/#crew`, "The Dads"],
-    ["about", `${prefix}about/`, "Fine Print"],
-  ];
-  const linkMarkup = links
+  const links = navLinks(prefix)
     .map(
       ([key, href, label]) =>
         `<a href="${href}"${active === key ? ' aria-current="page"' : ""}>${label}</a>`,
     )
-    .join("\n");
+    .join("\n          ");
 
   return `
-    <header class="site-header" data-header>
-      <div class="shell header-inner">
+    <header class="masthead" data-masthead>
+      <div class="wrap masthead__inner">
         <a class="brand" href="${prefix}" aria-label="PsychoBros home">
           ${brandMark}
-          <span>PSYCHO<span>BROS</span></span>
+          <span class="brand__word">Psycho<em>Bros</em></span>
         </a>
-        <nav class="desktop-nav" aria-label="Main navigation">
-          ${linkMarkup}
+        <nav class="masthead__nav" aria-label="Main navigation">
+          ${links}
         </nav>
-        <div class="header-actions">
+        <div class="masthead__actions">
           ${themeToggle}
-          <button
-            class="icon-button menu-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="mobile-nav"
-            aria-label="Open navigation"
-          >
-            <span></span>
-            <span></span>
+          <button class="iconbtn burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
-      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
-        ${linkMarkup}
+      <nav class="mobilenav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        ${links}
       </nav>
     </header>`;
 };
 
+const ticker = `
+  <div class="ticker">
+    <div class="wrap ticker__inner">
+      <span><b>20</b> reviews</span>
+      <span><b>1</b> show floor</span>
+      <span><b>3</b> dads</span>
+      <span><b>0</b> media training</span>
+      <span class="ticker__live"><i></i> September 2025 time capsule</span>
+    </div>
+  </div>`;
+
 const footer = (prefix) => `
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div>
-        <a class="brand footer-brand" href="${prefix}" aria-label="PsychoBros home">
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brandcol">
+        <a class="brand" href="${prefix}" aria-label="PsychoBros home">
           ${brandMark}
-          <span>PSYCHO<span>BROS</span></span>
+          <span class="brand__word">Psycho<em>Bros</em></span>
         </a>
-        <p>Game reviews from three dads, one group chat, and a suspicious number of opinions after bedtime.</p>
+        <p>Three dads in their forties reviewing games between school pickup and bedtime. One of us will not stop talking about Descent.</p>
       </div>
-      <div class="footer-nav">
-        <p>Read stuff</p>
-        <a href="${prefix}reviews/">All the overthinking</a>
-        <a href="${prefix}pax-west-2025/">The PAX pile</a>
+      <div class="foot__col">
+        <h2>Read</h2>
+        <a href="${prefix}reviews/">All reviews</a>
+        <a href="${prefix}pax-west-2025/">PAX West 2025</a>
       </div>
-      <div class="footer-nav">
-        <p>Responsible adult stuff</p>
+      <div class="foot__col">
+        <h2>The boring bits</h2>
         <a href="${prefix}about/#crew">Meet the dads</a>
         <a href="${prefix}about/#standards">How we stay honest</a>
-        <a href="${prefix}about/#press">Press, parties &amp; snacks</a>
+        <a href="${prefix}about/#press">Press &amp; partnerships</a>
+      </div>
+      <div class="foot__col">
+        <h2>Elsewhere</h2>
+        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <a href="${prefix}about/#press">Get in touch</a>
       </div>
     </div>
-    <div class="shell footer-bottom">
+    <div class="wrap foot__bottom">
       <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
-      <a href="#top">Back to top &uarr;</a>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
     </div>
   </footer>`;
 
-const pageHead = ({
-  title,
-  description,
-  canonical,
-  prefix,
-  type = "website",
-  structuredData,
-}) => `
+const pageHead = ({ title, description, canonical, prefix, type = "website", structuredData }) => `
   <head>
     <meta charset="UTF-8" />
     <script>
       (() => {
-        const supportedThemes = new Set(["light", "dark"]);
-        const param = new URLSearchParams(window.location.search).get("scoutTheme");
+        document.documentElement.classList.add("js");
+        const ok = new Set(["light", "dark"]);
         const saved = localStorage.getItem("psychobros-theme");
-        const theme =
-          (supportedThemes.has(param) && param) ||
-          (supportedThemes.has(saved) && saved) ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const theme = (ok.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("psychobros-theme", theme);
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="theme-color" content="#0b0d12" />
     <meta property="og:type" content="${type}" />
+    <meta property="og:site_name" content="PsychoBros" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${siteUrl}assets/psychobros-social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="PsychoBros: three dads, zero media training" />
+    <meta property="og:image:alt" content="PsychoBros: game reviews from three dads" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="${siteUrl}assets/psychobros-social-card.png" />
     <title>${escapeHtml(title)}</title>
@@ -180,25 +189,16 @@ const pageHead = ({
     <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="${prefix}styles.css" />
     ${structuredData ? `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>` : ""}
   </head>`;
 
-const pageShell = ({
-  head,
-  body,
-  prefix = "",
-  active = "",
-  bodyClass = "",
-}) => `<!doctype html>
+const pageShell = ({ head, body, prefix = "", active = "", bodyClass = "" }) => `<!doctype html>
 <html lang="en">
 ${head}
-  <body class="${bodyClass}">
-    <a class="skip-link" href="#main">Skip to content</a>
+  <body${bodyClass ? ` class="${bodyClass}"` : ""}>
+    <a class="skip" href="#main">Skip to content</a>
     ${header(prefix, active)}
     ${body}
     ${footer(prefix)}
@@ -207,58 +207,83 @@ ${head}
 </html>
 `;
 
-const reviewCard = (review, prefix, size = "standard") => `
-  <article
-    class="review-card review-card-${size} reveal"
-    data-review-card
-    data-review-title="${escapeHtml(review.title.toLowerCase())}"
-    data-review-studio="${escapeHtml(review.studio.toLowerCase())}"
-    data-review-genre="${escapeHtml(review.genre.toLowerCase())}"
-    data-review-group="${escapeHtml(review.groupKey)}"
-  >
-    <a class="review-card-art" href="${prefix}reviews/${review.slug}/" aria-label="Read ${escapeHtml(review.title)} review">
-      <img src="${prefix}assets/reviews/${review.slug}.svg" alt="" loading="lazy" />
+/* ------------------------------------------------------------ components */
+
+const scoreChip = (review, size = "") =>
+  `<span class="score${size ? ` score--${size}` : ""}" data-tone="${hypeTone(review.hype)}"><b>${review.hype.toFixed(1)}</b><i>hype</i></span>`;
+
+const cardArt = (review, prefix, sizes) =>
+  `<img src="${prefix}assets/reviews/${review.slug}.svg" alt="" loading="lazy" decoding="async" width="1200" height="675"${sizes ? ` sizes="${sizes}"` : ""} />`;
+
+const card = (review, prefix) => `
+  <article class="card reveal"
+    data-card
+    data-title="${escapeHtml(review.title.toLowerCase())}"
+    data-studio="${escapeHtml(review.studio.toLowerCase())}"
+    data-genre="${escapeHtml(review.genre.toLowerCase())}"
+    data-group="${escapeHtml(review.groupKey)}">
+    <a class="card__art" href="${prefix}reviews/${review.slug}/" tabindex="-1" aria-hidden="true">
+      ${cardArt(review, prefix, "(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw")}
+      ${scoreChip(review)}
     </a>
-    <div class="review-card-body">
-      <div class="review-meta">
-        <span>${escapeHtml(review.genre)}</span>
-        <time datetime="${review.date}">${shortDate(review.date)}</time>
-      </div>
-      <h3><a href="${prefix}reviews/${review.slug}/">${escapeHtml(review.title)}</a></h3>
-      <p class="review-card-dad-take">${escapeHtml(review.dadTake)}</p>
-      <div class="review-card-footer">
-        <span>${escapeHtml(review.studio)}</span>
-        <a class="text-link" href="${prefix}reviews/${review.slug}/">Read the overthink <span aria-hidden="true">&rarr;</span></a>
-      </div>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">${escapeHtml(review.genre)}</span><time datetime="${review.date}">${shortDate(review.date)}</time></p>
+      <h3 class="card__title"><a href="${prefix}reviews/${review.slug}/">${escapeHtml(review.title)}</a></h3>
+      <p class="card__take">${escapeHtml(review.dadTake)}</p>
+      <p class="card__foot"><span>${escapeHtml(review.studio)}</span></p>
     </div>
   </article>`;
 
-const reviewLedger = (items, prefix) => `
-  <div class="review-ledger">
-    ${items
-      .map(
-        (review, index) => `
-      <a class="review-ledger-row reveal" href="${prefix}reviews/${review.slug}/">
-        <span class="review-ledger-index">${String(index + 1).padStart(2, "0")}</span>
-        <span class="review-ledger-title">${escapeHtml(review.title)}</span>
-        <span class="review-ledger-genre">${escapeHtml(review.genre)}</span>
-        <time datetime="${review.date}">${shortDate(review.date)}</time>
-        <span aria-hidden="true">&rarr;</span>
-      </a>`,
-      )
-      .join("")}
+const railItem = (review, prefix) => `
+  <a class="rail__item reveal" href="${prefix}reviews/${review.slug}/">
+    <span class="rail__thumb">${cardArt(review, prefix, "120px")}</span>
+    <span class="rail__text">
+      <span class="rail__meta">${escapeHtml(review.genre)} &middot; ${shortDate(review.date)}</span>
+      <span class="rail__title">${escapeHtml(review.title)}</span>
+      <span class="rail__take">${escapeHtml(review.dadTake)}</span>
+    </span>
+    <span class="rail__score" data-tone="${hypeTone(review.hype)}">${review.hype.toFixed(1)}</span>
+  </a>`;
+
+const listRow = (review, prefix, index) => `
+  <a class="row reveal" href="${prefix}reviews/${review.slug}/">
+    <span class="row__n">${String(index + 1).padStart(2, "0")}</span>
+    <span class="row__thumb">${cardArt(review, prefix, "88px")}</span>
+    <span class="row__main">
+      <span class="row__title">${escapeHtml(review.title)}</span>
+      <span class="row__take">${escapeHtml(review.dadTake)}</span>
+    </span>
+    <span class="row__genre">${escapeHtml(review.genre)}</span>
+    <time class="row__date" datetime="${review.date}">${shortDate(review.date)}</time>
+    <span class="row__score" data-tone="${hypeTone(review.hype)}">${review.hype.toFixed(1)}</span>
+  </a>`;
+
+const sectionHead = ({ kicker, title, note, link }) => `
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">${kicker}</p>
+      <h2>${title}</h2>
+      ${note ? `<p class="sechead__note">${note}</p>` : ""}
+    </div>
+    ${link ? `<a class="btn btn--ghost" href="${link[0]}">${link[1]} <span aria-hidden="true">&rarr;</span></a>` : ""}
   </div>`;
 
+/* ------------------------------------------------------------------ home */
+
 const homePage = () => {
-  const featured = reviews.find((review) => review.featured) || reviews[0];
-  const latest = reviews.filter((review) => review.slug !== featured.slug).slice(0, 5);
+  const featured = reviews.find((r) => r.featured) || reviews[0];
+  const rest = reviews.filter((r) => r.slug !== featured.slug);
+  const rail = rest.slice(0, 6);
+  const grid = rest.slice(6, 14);
+  const more = rest.slice(14, 19);
   const description =
-    "Three dads review games between school pickup, bedtime, and one man's ongoing Descent monologue.";
+    "Game reviews from three dads in their forties. Twenty games from PAX West 2025, scored by how loud the group chat got.";
 
   return pageShell({
     active: "",
+    bodyClass: "page-home",
     head: pageHead({
-      title: "PsychoBros - Game reviews after bedtime",
+      title: "PsychoBros — Game reviews from three dads",
       description,
       canonical: siteUrl,
       prefix: "",
@@ -268,423 +293,517 @@ const homePage = () => {
         name: "PsychoBros",
         url: siteUrl,
         description,
+        logo: `${siteUrl}assets/favicon.svg`,
         sameAs: ["https://github.com/PsychoBrosGames"],
       },
     }),
-    bodyClass: "publication-site home-page",
     body: `
-      <main id="main" class="publication-main">
-        <section class="review-hero" id="top">
-          <div class="shell review-hero-grid">
-            <div class="review-hero-copy reveal">
-              <p class="dad-sticker">Three dads. No adult supervision.</p>
-              <p class="eyebrow"><span></span> Featured dad argument / ${formatDate(featured.date)}</p>
-              <p class="review-hero-game">${escapeHtml(featured.genre)} &middot; ${escapeHtml(featured.studio)}</p>
-              <h1>${escapeHtml(featured.title)}</h1>
-              <p class="review-hero-deck">${escapeHtml(featured.deck)}</p>
-              <div class="review-hero-verdict">
-                <span>Dad verdict</span>
-                <strong>${escapeHtml(featured.dadTake)}</strong>
-              </div>
-              <a class="button button-primary" href="reviews/${featured.slug}/">
-                Read the whole overthink <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-            <a class="review-hero-art reveal" href="reviews/${featured.slug}/" aria-label="Read ${escapeHtml(featured.title)} review">
-              <img src="assets/reviews/${featured.slug}.svg" alt="" />
+      <main id="main">
+        <span id="top"></span>
+        ${ticker}
+
+        <section class="lead wrap" aria-label="Featured review">
+          <article class="lead__main reveal">
+            <a class="lead__art" href="reviews/${featured.slug}/" tabindex="-1" aria-hidden="true">
+              <img src="assets/reviews/${featured.slug}.svg" alt="" width="1200" height="675" fetchpriority="high" />
+              ${scoreChip(featured, "lg")}
             </a>
+            <div class="lead__copy">
+              <p class="card__meta">
+                <span class="tag tag--flame">Featured</span>
+                <span class="tag">${escapeHtml(featured.genre)}</span>
+                <time datetime="${featured.date}">${formatDate(featured.date)}</time>
+              </p>
+              <h1 class="lead__title"><a href="reviews/${featured.slug}/">${escapeHtml(featured.title)}</a></h1>
+              <p class="lead__deck">${escapeHtml(featured.deck)}</p>
+              <blockquote class="pullquote">
+                <p>${escapeHtml(featured.dadTake)}</p>
+                <cite>The group chat, 11:40pm</cite>
+              </blockquote>
+              <p class="lead__foot">
+                <a class="btn btn--flame" href="reviews/${featured.slug}/">Read the review <span aria-hidden="true">&rarr;</span></a>
+                <span class="byline">${escapeHtml(featured.studio)}</span>
+              </p>
+            </div>
+          </article>
+
+          <div class="rail">
+            <p class="rail__head">Latest</p>
+            ${rail.map((r) => railItem(r, "")).join("")}
+            <a class="rail__all" href="reviews/">All 20 reviews <span aria-hidden="true">&rarr;</span></a>
           </div>
         </section>
 
-        <section class="review-strip" aria-label="Latest review coverage">
-          <div class="shell review-strip-inner">
-            <span>20 indie rabbit holes</span>
-            <span>3 dad opinions per game</span>
-            <span>0 matching bedtimes</span>
+        <section class="wrap section" aria-labelledby="latest-title">
+          ${sectionHead({
+            kicker: "The reviews",
+            title: '<span id="latest-title">Games we could not stop texting about</span>',
+            note: "Every game here was at PAX West 2025. We wrote them up across September, mostly after bedtime.",
+            link: ["reviews/", "See all"],
+          })}
+          <div class="grid">
+            ${grid.map((r) => card(r, "")).join("")}
           </div>
         </section>
 
-        <section class="section latest-review-section" aria-labelledby="latest-title">
-          <div class="shell">
-            <div class="publication-section-head reveal">
-              <div>
-                <p class="section-index">01 / New nonsense</p>
-                <h2 id="latest-title">Fresh from the folding-table newsroom.</h2>
-              </div>
-              <a class="text-link" href="reviews/">See all 20 questionable decisions <span aria-hidden="true">&rarr;</span></a>
+        <section class="band" aria-labelledby="hype-title">
+          <div class="wrap band__inner">
+            <div class="band__copy reveal">
+              <p class="kicker kicker--onflame">How the score works</p>
+              <h2 id="hype-title">The Dad Hype Meter</h2>
+              <p>It is not a play-tested review score, and we are not going to pretend otherwise. It is a number out of ten for how hard a game hijacked our group chat after PAX West 2025. Nine and up means somebody stopped loading the dishwasher mid-cycle.</p>
+              <a class="btn btn--ink" href="about/#standards">How we stay honest <span aria-hidden="true">&rarr;</span></a>
             </div>
-            <div class="review-card-grid">
-              ${latest.map((review) => reviewCard(review, "")).join("")}
-            </div>
+            <ul class="scale reveal">
+              <li><b data-tone="hot">9.0</b> <span>Group chat meltdown</span></li>
+              <li><b data-tone="hot">8.5</b> <span>Snacks were abandoned</span></li>
+              <li><b data-tone="warm">8.0</b> <span>Wishlisted immediately</span></li>
+              <li><b data-tone="warm">7.5</b> <span>Solid dad approval</span></li>
+              <li><b data-tone="cool">7.0</b> <span>Cautious dad nodding</span></li>
+            </ul>
           </div>
         </section>
 
-        <section class="section pax-ledger-section" aria-labelledby="pax-ledger-title">
-          <div class="shell">
-            <div class="publication-section-head reveal">
-              <div>
-                <p class="section-index">02 / The PAX pile</p>
-                <h2 id="pax-ledger-title">Twenty indies we would not shut up about.</h2>
-              </div>
-              <p>We went looking for one neat list and found a paperwork boss fight. Here are the official PAX Rising games plus eight more indies from the official event page.</p>
-            </div>
-            ${reviewLedger(reviews, "")}
-            <div class="ledger-action reveal">
-              <a class="button button-secondary" href="pax-west-2025/">Dig through the whole PAX pile</a>
-            </div>
+        <section class="wrap section" aria-labelledby="more-title">
+          ${sectionHead({
+            kicker: "Keep scrolling",
+            title: '<span id="more-title">More from the show floor</span>',
+            link: ["pax-west-2025/", "Full PAX collection"],
+          })}
+          <div class="rows">
+            ${more.map((r, i) => listRow(r, "", i)).join("")}
           </div>
         </section>
 
-        <section class="section home-lens-section" id="what-we-do" aria-labelledby="home-lens-title">
-          <div class="shell home-lens-grid">
-            <div class="reveal">
-              <p class="section-index">03 / The dad tribunal</p>
-              <h2 id="home-lens-title">Three dads enter. One usable verdict leaves.</h2>
-            </div>
-            <div class="home-lens-list">
-              <article class="reveal">
-                <span>01</span>
-                <h3>Dad Who Skipped the Tutorial</h3>
-                <p>Plays six games a year and keeps asking what all fourteen currencies are for.</p>
-              </article>
-              <article class="reveal">
-                <span>02</span>
-                <h3>The Descent Guy</h3>
-                <p>Will explain line of sight, campaign balance, and Descent whether prompted or not.</p>
-              </article>
-              <article class="reveal">
-                <span>03</span>
-                <h3>Normal-ish Dad</h3>
-                <p>Plays a healthy amount and stops the other two from reviewing the loading screen.</p>
-              </article>
-            </div>
+        <section class="wrap section" aria-labelledby="crew-title">
+          ${sectionHead({
+            kicker: "The tribunal",
+            title: '<span id="crew-title">Every review gets three opinions</span>',
+            note: "We each play differently, so we each review differently. Nobody has ever fully agreed on anything.",
+            link: ["about/#crew", "Meet the dads"],
+          })}
+          <div class="crew">
+            <article class="crew__card reveal">
+              <p class="crew__n">01</p>
+              <h3>Dad Who Skipped the Tutorial</h3>
+              <p>Plays maybe four games a year and refuses to read a single tooltip. If he cannot work it out in ninety seconds, he decides that is the game's problem. Our onboarding canary.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">02</p>
+              <h3>The Descent Guy</h3>
+              <p>Has opinions about six-degrees-of-freedom movement that predate two of his children. Will find the systems depth in anything, then compare it unfavourably to Descent.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">03</p>
+              <h3>Normal-ish Dad</h3>
+              <p>The control group. Plays a reasonable amount, finishes about half of it, and is the only one of us who checks whether a game is still fun at hour three.</p>
+            </article>
           </div>
         </section>
       </main>`,
   });
 };
 
-const reviewsPage = () =>
-  pageShell({
+/* --------------------------------------------------------------- reviews */
+
+const reviewsPage = () => {
+  const description =
+    "All twenty PsychoBros reviews from PAX West 2025, with a Dad Hype Meter score for each game.";
+
+  return pageShell({
     prefix: "../",
     active: "reviews",
-    bodyClass: "publication-site",
+    bodyClass: "page-archive",
     head: pageHead({
-      title: "Game reviews and dad arguments - PsychoBros",
-      description: "Browse every PsychoBros game review and filter by title, studio, genre, or PAX West showcase group.",
+      title: "All reviews — PsychoBros",
+      description,
       canonical: `${siteUrl}reviews/`,
       prefix: "../",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "PsychoBros reviews",
+        url: `${siteUrl}reviews/`,
+        description,
+      },
     }),
     body: `
-      <main id="main" class="publication-main">
-        <section class="archive-hero" id="top">
-          <div class="shell archive-hero-grid">
-            <div class="reveal">
-              <p class="eyebrow"><span></span> The backlog won</p>
-              <h1>Reviews, hot takes, and one dad who skipped the tutorial.</h1>
-            </div>
-            <p class="archive-hero-copy reveal">Search by game, studio, or genre. We cannot filter by “the one where Dave yelled at the inventory,” but we are working on it.</p>
+      <main id="main">
+        <span id="top"></span>
+        <section class="pagehead">
+          <div class="wrap">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">Reviews</span></nav>
+            <p class="kicker">The archive</p>
+            <h1>All twenty reviews</h1>
+            <p class="pagehead__deck">Every game we covered from PAX West 2025, newest first. Search it, filter it, or just scroll until something looks weird enough to click.</p>
           </div>
         </section>
-        <section class="section archive-section" aria-labelledby="archive-title">
-          <div class="shell">
-            <div class="review-tools reveal">
-              <label>
-                <span>Search the pile</span>
-                <input type="search" placeholder="Game, studio, genre, bad decision..." data-review-search />
-              </label>
-              <label>
-                <span>Which pile?</span>
-                <select data-review-group>
-                  <option value="all">Everything we argued about</option>
-                  <option value="pax-rising">PAX Rising Showcase</option>
-                  <option value="official-pax">Additional official PAX entries</option>
-                </select>
-              </label>
-              <p role="status" aria-live="polite" aria-atomic="true">
-                <strong data-review-count>${reviews.length}</strong>
-                <span data-review-label>arguments found</span>
-              </p>
+
+        <div class="wrap section">
+          <div class="filters">
+            <label class="field">
+              <span class="visually-hidden">Search reviews</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+              <input type="search" data-search placeholder="Search by game, studio, or genre" autocomplete="off" />
+            </label>
+            <div class="chips" role="group" aria-label="Filter by collection">
+              <button class="chip is-active" type="button" data-filter="all">All <b>20</b></button>
+              <button class="chip" type="button" data-filter="pax-rising">PAX Rising <b>12</b></button>
+              <button class="chip" type="button" data-filter="official-pax">Steam event <b>8</b></button>
             </div>
-            <h2 class="visually-hidden" id="archive-title">All reviews</h2>
-            <div class="review-card-grid review-card-grid-archive" data-review-results>
-              ${reviews.map((review) => reviewCard(review, "../")).join("")}
-            </div>
-            <p class="review-empty" data-review-empty hidden>Nope. Try a less specific dad word.</p>
           </div>
-        </section>
+          <p class="resultline" data-result aria-live="polite"></p>
+          <div class="grid" data-grid>
+            ${reviews.map((r) => card(r, "../")).join("")}
+          </div>
+          <p class="empty" data-empty hidden>No games match that. The dads are as confused as you are.</p>
+        </div>
       </main>`,
   });
+};
 
-const paxPage = () =>
-  pageShell({
+/* ------------------------------------------------------------------- pax */
+
+const paxPage = () => {
+  const rising = reviews.filter((r) => r.groupKey === "pax-rising");
+  const official = reviews.filter((r) => r.groupKey === "official-pax");
+  const description =
+    "The PsychoBros PAX West 2025 collection: twelve PAX Rising Showcase games and eight more from the official Steam event page.";
+
+  return pageShell({
     prefix: "../",
     active: "pax",
-    bodyClass: "publication-site",
+    bodyClass: "page-pax",
     head: pageHead({
-      title: "PAX West 2025 indie pile - PsychoBros",
-      description: "Twenty PsychoBros retrospective reviews of indie games featured on the official PAX West 2025 event page.",
+      title: "PAX West 2025 — PsychoBros",
+      description,
       canonical: `${siteUrl}pax-west-2025/`,
       prefix: "../",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "PAX West 2025 collection",
+        url: `${siteUrl}pax-west-2025/`,
+        description,
+      },
     }),
     body: `
-      <main id="main" class="publication-main">
-        <section class="collection-hero" id="top">
-          <div class="shell collection-hero-grid">
-            <div class="reveal">
-              <p class="eyebrow"><span></span> Aug. 29 - Sept. 1, 2025 / Seattle / comfortable shoes required</p>
-              <h1>PAX West 2025<br /> <span>the giant indie pile.</span></h1>
-            </div>
-            <div class="collection-note reveal">
-              <p class="section-index">Receipts, because apparently this is journalism</p>
-              <p>This retrospective uses the official PAX West 2025 Steam event archive. Twelve games are verified PAX Rising Showcase selections; eight more are additional indie titles surfaced on the same official event page.</p>
-              <p>Indie MEGABOOTH did not publish a standalone 20-game PAX West 2025 lineup that we could independently verify, so the archive labels the two groups precisely.</p>
-            </div>
+      <main id="main">
+        <span id="top"></span>
+        <section class="pagehead">
+          <div class="wrap">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">PAX West 2025</span></nav>
+            <p class="kicker">Collection</p>
+            <h1>PAX West 2025</h1>
+            <p class="pagehead__deck">Twenty games, one show, three dads who each came home with a different favourite. We split the list the way the show did.</p>
           </div>
         </section>
-        <section class="section collection-section" aria-labelledby="collection-title">
-          <div class="shell">
-            <div class="publication-section-head reveal">
-              <div>
-                <p class="section-index">September 2025 / 20 extremely normal obsessions</p>
-                <h2 id="collection-title">The whole beautiful mess.</h2>
-              </div>
-              <p>Short reviews about the pitch, the systems, and which dad will still be talking about the demo while everyone else is trying to find dinner.</p>
-            </div>
-            ${reviewLedger(reviews, "../")}
+
+        <div class="wrap section">
+          <div class="note">
+            <h2>Where this list comes from</h2>
+            <p>Twelve of these games are verified entries in the PAX Rising Showcase. The other eight are drawn from the official PAX West 2025 Steam event page. We have not claimed booth visits or hands-on time we did not have, and every review states exactly what it is based on.</p>
           </div>
+        </div>
+
+        <section class="wrap section" aria-labelledby="rising-title">
+          ${sectionHead({
+            kicker: `PAX Rising Showcase &middot; ${rising.length} games`,
+            title: '<span id="rising-title">The PAX Rising Showcase</span>',
+            note: "The official spotlight for smaller studios. This is where most of the arguing happened.",
+          })}
+          <div class="grid">${rising.map((r) => card(r, "../")).join("")}</div>
+        </section>
+
+        <section class="wrap section" aria-labelledby="official-title">
+          ${sectionHead({
+            kicker: `Official Steam event &middot; ${official.length} games`,
+            title: '<span id="official-title">Also on the official event page</span>',
+            note: "Listed on the official PAX West 2025 Steam event page, outside the Rising Showcase.",
+          })}
+          <div class="grid">${official.map((r) => card(r, "../")).join("")}</div>
         </section>
       </main>`,
   });
+};
 
-const aboutPage = () =>
-  pageShell({
+/* ----------------------------------------------------------------- about */
+
+const aboutPage = () => {
+  const description =
+    "Who the PsychoBros are, how we review games, and how to reach us about press access, review codes, and events.";
+
+  return pageShell({
     prefix: "../",
     active: "about",
-    bodyClass: "publication-site",
+    bodyClass: "page-about",
     head: pageHead({
-      title: "Meet the PsychoBros dads",
-      description: "Meet the three PsychoBros perspectives, read the editorial standards, and find press and partnership information.",
+      title: "About & Press — PsychoBros",
+      description,
       canonical: `${siteUrl}about/`,
       prefix: "../",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: "About PsychoBros",
+        url: `${siteUrl}about/`,
+        description,
+      },
     }),
     body: `
-      <main id="main" class="publication-main">
-        <section class="about-hero" id="top">
-          <div class="shell about-hero-grid">
-            <div class="reveal">
-              <p class="eyebrow"><span></span> About the highly trained professionals</p>
-              <h1>Three dads.<br /><span>Zero media training.</span></h1>
-            </div>
-            <p class="reveal">This started as three friends arguing about games and accidentally became a website. One barely plays, one has Descent opinions, and one is doing his best to keep this normal.</p>
+      <main id="main">
+        <span id="top"></span>
+        <section class="pagehead">
+          <div class="wrap">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">About &amp; Press</span></nav>
+            <p class="kicker">About</p>
+            <h1>Three dads, one group chat</h1>
+            <p class="pagehead__deck">PsychoBros is a small independent games site run by three friends in their forties. We cover indie games, we write up what we actually think, and we are extremely normal about it.</p>
           </div>
         </section>
 
-        <section class="section about-crew-section" id="crew" aria-labelledby="crew-title">
-          <div class="shell">
-            <div class="publication-section-head reveal">
-              <div>
-                <p class="section-index">01 / Meet the dads</p>
-                <h2 id="crew-title">A balanced party, if you squint.</h2>
-              </div>
-              <p>Our disagreement is the format. Our production studio is whichever room has the fewest LEGO bricks on the floor.</p>
-            </div>
-            <div class="about-role-list">
-              <article class="reveal">
-                <span>Dad 01</span>
-                <h3>Dad Who Skipped the Tutorial</h3>
-                <p>Plays roughly six games a year and therefore asks the questions normal humans ask. Frequently wonders why there are fourteen currencies.</p>
-                <strong>Clarity / first-hour fun / “which button?”</strong>
-              </article>
-              <article class="reveal">
-                <span>Dad 02</span>
-                <h3>The Descent Guy</h3>
-                <p>Owns opinions about line of sight, campaign design, and Descent expansions nobody else remembers asking about.</p>
-                <strong>Systems / strategy / one more Descent story</strong>
-              </article>
-              <article class="reveal">
-                <span>Dad 03</span>
-                <h3>Normal-ish Dad</h3>
-                <p>Actually plays a healthy amount of games and keeps the other two from turning every review into a hostage situation.</p>
-                <strong>Time value / group fit / adult supervision</strong>
-              </article>
-            </div>
+        <div class="wrap section prose prose--intro">
+          <p>We started PsychoBros because our group chat had quietly turned into an unpaid, unedited games publication, and one of us finally said "we should probably put this somewhere." Between us we have three very different tolerances for tutorials and one ongoing argument about whether Descent peaked in 1995.</p>
+          <p>Our first project was PAX West 2025: twenty games from the show, written up across September, each one run past all three of us before it went live.</p>
+        </div>
+
+        <section class="wrap section" id="crew" aria-labelledby="crew-heading">
+          ${sectionHead({ kicker: "The crew", title: '<span id="crew-heading">Meet the dads</span>' })}
+          <div class="crew crew--lg">
+            <article class="crew__card reveal">
+              <p class="crew__n">01</p>
+              <h3>Dad Who Skipped the Tutorial</h3>
+              <p class="crew__role">Accessibility &amp; first impressions</p>
+              <p>Plays four, maybe five games a year and has never willingly read a tooltip. He is our early warning system for confusing onboarding, unreadable UI, and games that assume you already know the genre. If he bounces in the first ten minutes, we say so.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">02</p>
+              <h3>The Descent Guy</h3>
+              <p class="crew__role">Systems &amp; mechanics</p>
+              <p>The reason this site exists. Deep and slightly alarming knowledge of movement systems, level design and difficulty curves, anchored by a thirty-year relationship with Descent. He finds the mechanical idea at the centre of a game faster than anyone we know.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">03</p>
+              <h3>Normal-ish Dad</h3>
+              <p class="crew__role">The control group</p>
+              <p>Plays a healthy amount, finishes roughly half of it, and owns the only functioning sense of proportion in the building. When the other two spiral, he asks the question that actually matters: is this still fun three hours in?</p>
+            </article>
           </div>
         </section>
 
-        <section class="section standards-section" id="standards" aria-labelledby="standards-title">
-          <div class="shell standards-grid">
-            <div class="standards-copy reveal">
-              <p class="eyebrow"><span></span> The surprisingly serious part</p>
-              <h2 id="standards-title">We joke around. The disclosures do not.</h2>
-              <p>Access is useful. Trust is essential. Whether a game is bought, borrowed, previewed, or handed to us next to a tray of tiny sandwiches, you get the same context.</p>
-            </div>
-            <div class="standards-list">
-              <article class="standard-item reveal"><span>01</span><div><h3>Tell you who paid for what</h3><p>Keys, travel, sponsorships, and suspiciously fancy appetizers get labeled clearly.</p></div></article>
-              <article class="standard-item reveal"><span>02</span><div><h3>No sponsor gets the controller</h3><p>Partners can sponsor access or production. The opinion stays in our grubby dad hands.</p></div></article>
-              <article class="standard-item reveal"><span>03</span><div><h3>Respect your tiny pocket of free time</h3><p>Every piece should inform, entertain, or ideally both before someone needs a snack.</p></div></article>
-              <article class="standard-item reveal"><span>04</span><div><h3>Say what we actually reviewed</h3><p>Demo, preview build, public materials, or final release: no pretending we played something we did not.</p></div></article>
-            </div>
-          </div>
+        <section class="wrap section" id="standards" aria-labelledby="standards-heading">
+          ${sectionHead({ kicker: "Editorial", title: '<span id="standards-heading">How we stay honest</span>' })}
+          <ol class="standards">
+            <li>
+              <h3>We say what every review is based on</h3>
+              <p>Each review carries a plain-language basis note. Our PAX West 2025 write-ups are retrospective mini-reviews built from the official PAX West 2025 Steam event page, the PAX Rising Showcase listing, and each game's own published materials. They are not final-release reviews and they never claim hands-on time we did not have.</p>
+            </li>
+            <li>
+              <h3>The Dad Hype Meter is a hype score, not a verdict</h3>
+              <p>The number on each review measures how much a game took over our group chat. It is anticipation, clearly labelled as anticipation. We are not going to hand out review scores for games we have not played to completion.</p>
+            </li>
+            <li>
+              <h3>Three perspectives, no forced consensus</h3>
+              <p>Every write-up is read through all three of us and we publish the places we disagree. A game that works brilliantly for one dad and loses another is more useful than an averaged shrug.</p>
+            </li>
+            <li>
+              <h3>Sources are linked, always</h3>
+              <p>Every review lists the sources it draws on so you can check our work. If we get something wrong, tell us and we will correct it in place with a note explaining what changed.</p>
+            </li>
+            <li>
+              <h3>We disclose anything we are given</h3>
+              <p>Review codes, event access, travel, hardware, snacks. If somebody gives us something, it goes in the disclosure line on that piece. Nobody has offered yet, but we are ready.</p>
+            </li>
+          </ol>
         </section>
 
-        <section class="section press-section" id="press" aria-labelledby="press-title">
-          <div class="shell press-grid">
-            <div class="reveal">
-              <p class="section-index">02 / Press, parties &amp; tiny sandwiches</p>
-              <h2 id="press-title">Need three middle-aged men near a canapé?</h2>
-            </div>
-            <div class="reveal">
-              <p>Available for review coverage, creator activations, developer interviews, indie showcases, and event access. We clean up reasonably well. Editorial independence is still not part of the negotiation.</p>
-              <a class="button button-primary" href="https://github.com/PsychoBrosGames" target="_blank" rel="noreferrer">Summon the dads</a>
-            </div>
+        <section class="wrap section" id="press" aria-labelledby="press-heading">
+          ${sectionHead({ kicker: "Press", title: '<span id="press-heading">Press &amp; partnerships</span>' })}
+          <div class="presskit">
+            <article class="presskit__card">
+              <h3>What we cover</h3>
+              <p>Indie and mid-size games across PC and console, with a bias toward interesting mechanical ideas and anything a busy adult can pick up in short sessions. Strategy, tactics, roguelites, immersive sims and well-made weird stuff.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>What we produce</h3>
+              <p>Written reviews and collections, three-perspective breakdowns, show coverage and commentary. Streaming and video are in progress. Everything is published here first.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>Review codes &amp; events</h3>
+              <p>We accept review codes and event access, and we disclose every one of them. We will always tell you honestly whether a game is a fit for our audience before you send anything over.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>Get in touch</h3>
+              <p>The fastest route is <a href="https://github.com/PsychoBrosGames" rel="noreferrer">github.com/PsychoBrosGames</a>. Publicists and event organisers: mention the show or title in the first line and one of us will reply, usually after bedtime.</p>
+            </article>
+          </div>
+          <div class="note note--flame">
+            <h2>Quick facts for your media list</h2>
+            <ul class="facts">
+              <li><b>Outlet</b> PsychoBros</li>
+              <li><b>Founded</b> 2025</li>
+              <li><b>Team</b> Three writers</li>
+              <li><b>Focus</b> Indie &amp; mid-size games</li>
+              <li><b>Format</b> Reviews, collections, commentary</li>
+              <li><b>Published</b> 20 reviews to date</li>
+            </ul>
           </div>
         </section>
       </main>`,
   });
+};
+
+/* ------------------------------------------------------------ review page */
 
 const reviewPage = (review, index) => {
   const previous = reviews[index - 1];
   const next = reviews[index + 1];
-  const canonical = `${siteUrl}reviews/${review.slug}/`;
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    name: `${review.title} review`,
-    headline: review.deck,
-    datePublished: review.date,
-    dateModified: modifiedDate,
-    url: canonical,
-    author: {
-      "@type": "Organization",
-      name: "PsychoBros",
-      url: siteUrl,
-    },
-    itemReviewed: {
-      "@type": "VideoGame",
-      name: review.title,
-      author: {
-        "@type": "Organization",
-        name: review.studio,
-      },
-      gamePlatform: review.platforms,
-      genre: review.genre,
-    },
-    reviewBody: review.verdict,
-  };
+  const related = reviews.filter((r) => r.slug !== review.slug).slice(0, 3);
+  const description = `${review.deck} A PsychoBros review of ${review.title} by ${review.studio}.`;
 
   return pageShell({
     prefix: "../../",
     active: "reviews",
-    bodyClass: "publication-site",
+    bodyClass: "page-review",
     head: pageHead({
-      title: `${review.title} review - PsychoBros`,
-      description: review.deck,
-      canonical,
+      title: `${review.title} review — PsychoBros`,
+      description,
+      canonical: `${siteUrl}reviews/${review.slug}/`,
       prefix: "../../",
       type: "article",
-      structuredData,
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: `${review.title} review`,
+        description,
+        datePublished: review.date,
+        dateModified: review.date,
+        url: `${siteUrl}reviews/${review.slug}/`,
+        image: `${siteUrl}assets/reviews/${review.slug}.svg`,
+        author: { "@type": "Organization", name: "PsychoBros" },
+        publisher: {
+          "@type": "Organization",
+          name: "PsychoBros",
+          logo: { "@type": "ImageObject", url: `${siteUrl}assets/favicon.svg` },
+        },
+        about: { "@type": "VideoGame", name: review.title, genre: review.genre },
+      },
     }),
     body: `
-      <main id="main" class="publication-main">
-        <article class="review-article" id="top">
-          <header class="review-article-hero">
-            <div class="shell">
-              <nav class="breadcrumb" aria-label="Breadcrumb">
+      <main id="main">
+        <span id="top"></span>
+        <article class="article">
+          <header class="pagehead pagehead--article">
+            <div class="wrap">
+              <nav class="crumbs" aria-label="Breadcrumb">
                 <a href="../../">Home</a><span>/</span><a href="../">Reviews</a><span>/</span><span aria-current="page">${escapeHtml(review.title)}</span>
               </nav>
-              <div class="review-article-hero-grid">
-                <div class="reveal">
-                  <p class="eyebrow"><span></span> ${escapeHtml(review.group)}</p>
-                  <h1>${escapeHtml(review.title)}</h1>
-                  <p class="review-article-deck">${escapeHtml(review.deck)}</p>
-                  <p class="review-article-dad-take">${escapeHtml(review.dadTake)}</p>
-                  <dl class="review-facts">
-                    <div><dt>Developer</dt><dd>${escapeHtml(review.studio)}</dd></div>
-                    <div><dt>Genre</dt><dd>${escapeHtml(review.genre)}</dd></div>
-                    <div><dt>Platforms</dt><dd>${escapeHtml(review.platforms)}</dd></div>
-                    <div><dt>At PAX</dt><dd>${escapeHtml(review.statusAtShow)}</dd></div>
-                  </dl>
-                </div>
-                <img class="review-article-cover reveal" src="../../assets/reviews/${review.slug}.svg" alt="" />
-              </div>
-              <div class="review-byline">
-                <span>By three dads with one shared calendar</span>
+              <p class="kicker">${escapeHtml(review.group)}</p>
+              <h1>${escapeHtml(review.title)}</h1>
+              <p class="pagehead__deck">${escapeHtml(review.deck)}</p>
+              <div class="byline byline--article">
+                <span>By <b>PsychoBros</b></span>
                 <time datetime="${review.date}">${formatDate(review.date)}</time>
-                <span>PAX 2025 time capsule</span>
+                <span>${escapeHtml(review.studio)}</span>
               </div>
             </div>
           </header>
 
-          <div class="shell review-article-layout">
-            <aside class="review-verdict reveal" aria-label="Quick verdict">
-              <p class="section-index">The 30-second dad verdict</p>
-              <p class="review-verdict-joke">${escapeHtml(review.dadTake)}</p>
-              <h2>${escapeHtml(review.verdictTitle)}</h2>
-              <p>${escapeHtml(review.verdict)}</p>
-              <dl>
-                ${review.lenses
-                  .map(
-                    (lens) =>
-                      `<div><dt>${escapeHtml(lensLabel(lens.name))}</dt><dd>${escapeHtml(lens.signal)}</dd></div>`,
-                  )
-                  .join("")}
-              </dl>
+          <div class="wrap article__hero reveal">
+            <img class="article__cover" src="../../assets/reviews/${review.slug}.svg" alt="Artwork for ${escapeHtml(review.title)}" width="1200" height="675" fetchpriority="high" />
+            <div class="article__scorecard">
+              <p class="kicker">Dad Hype Meter</p>
+              <p class="article__score" data-tone="${hypeTone(review.hype)}">${review.hype.toFixed(1)}<i>/10</i></p>
+              <p class="article__band">${hypeBand(review.hype)}</p>
+              <p class="article__scorenote">An anticipation score, not a play-tested verdict. <a href="../../about/#standards">How this works</a></p>
+            </div>
+          </div>
+
+          <div class="wrap article__grid">
+            <aside class="article__side">
+              <div class="specs">
+                <h2 class="kicker">The basics</h2>
+                <dl>
+                  <div><dt>Developer</dt><dd>${escapeHtml(review.studio)}</dd></div>
+                  <div><dt>Genre</dt><dd>${escapeHtml(review.genre)}</dd></div>
+                  <div><dt>Platforms</dt><dd>${escapeHtml(review.platforms)}</dd></div>
+                  <div><dt>At the show</dt><dd>${escapeHtml(review.statusAtShow)}</dd></div>
+                </dl>
+              </div>
+              <div class="specs">
+                <h2 class="kicker">Dad consensus</h2>
+                <dl>
+                  ${review.lenses
+                    .map(
+                      (l) =>
+                        `<div><dt>${escapeHtml(dadLabel(l.name))}</dt><dd>${escapeHtml(l.signal)}</dd></div>`,
+                    )
+                    .join("")}
+                </dl>
+              </div>
             </aside>
 
-            <div class="review-copy">
-              <section class="reveal" aria-labelledby="review-overview-title">
-                <h2 class="section-index" id="review-overview-title">Okay, what is this thing?</h2>
-                ${review.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+            <div class="article__body">
+              <div class="verdict reveal">
+                <p class="kicker">The thirty-second version</p>
+                <h2>${escapeHtml(review.verdictTitle)}</h2>
+                <p class="verdict__joke">${escapeHtml(review.dadTake)}</p>
+                <p>${escapeHtml(review.verdict)}</p>
+              </div>
+
+              <section class="prose reveal" aria-labelledby="what-title">
+                <h2 id="what-title">Okay, what is this thing?</h2>
+                ${review.overview.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
               </section>
 
-              <section class="review-system-section reveal" aria-labelledby="review-system-title">
-                <h2 class="section-index" id="review-system-title">Why it escaped the group chat</h2>
-                <ul class="review-system-list">
-                  ${review.facts.map((fact) => `<li>${escapeHtml(fact)}</li>`).join("")}
+              <section class="reveal" aria-labelledby="why-title">
+                <h2 class="h-rule" id="why-title">Why it escaped the group chat</h2>
+                <ul class="checklist">
+                  ${review.facts.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}
                 </ul>
               </section>
 
-              <section class="review-perspectives" aria-labelledby="perspectives-title">
-                <p class="section-index">The dad tribunal</p>
-                <h2 id="perspectives-title">Three dads enter. Agreement remains unlikely.</h2>
-                <div class="review-perspective-list">
+              <section class="reveal" aria-labelledby="tribunal-title">
+                <h2 class="h-rule" id="tribunal-title">Three dads enter</h2>
+                <div class="tribunal">
                   ${review.lenses
                     .map(
-                      (lens, lensIndex) => `
-                    <article class="reveal">
-                      <span>0${lensIndex + 1}</span>
-                      <div>
-                        <p>${escapeHtml(lensLabel(lens.name))}</p>
-                        <h3>${escapeHtml(lens.headline)}</h3>
-                        <p>${escapeHtml(lens.body)}</p>
-                      </div>
-                    </article>`,
+                      (l, i) => `
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">0${i + 1}</p>
+                    <div>
+                      <p class="tribunal__who">${escapeHtml(dadLabel(l.name))}</p>
+                      <h3>${escapeHtml(l.headline)}</h3>
+                      <p>${escapeHtml(l.body)}</p>
+                    </div>
+                  </article>`,
                     )
                     .join("")}
                 </div>
               </section>
 
-              <section class="review-fit-grid reveal" aria-labelledby="review-fit-title">
-                <h2 class="visually-hidden" id="review-fit-title">Who should play and what to watch for</h2>
-                <div>
-                  <h3 class="section-index">Invite these people</h3>
-                  <ul>${review.bestFor.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
-                </div>
-                <div>
-                  <h3 class="section-index">Dad caveats</h3>
-                  <ul>${review.watchFor.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <section class="reveal" aria-labelledby="fit-title">
+                <h2 class="visually-hidden" id="fit-title">Who it is for and what to watch</h2>
+                <div class="fit">
+                  <div class="fit__col fit__col--yes">
+                    <h3>Invite these people</h3>
+                    <ul>${review.bestFor.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>
+                  </div>
+                  <div class="fit__col fit__col--watch">
+                    <h3>Dad caveats</h3>
+                    <ul>${review.watchFor.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>
+                  </div>
                 </div>
               </section>
 
-              <section class="review-disclosure reveal" aria-labelledby="review-disclosure-title">
-                <h2 class="section-index" id="review-disclosure-title">Receipts, because apparently this is journalism</h2>
+              <section class="receipts reveal" aria-labelledby="receipts-title">
+                <h2 class="kicker" id="receipts-title">Receipts</h2>
                 <p>${escapeHtml(review.reviewBasis)}</p>
                 <ul>
                   ${review.sources
                     .map(
-                      (source) =>
-                        `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)}</a></li>`,
+                      (s) =>
+                        `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noreferrer">${escapeHtml(s.label)}</a></li>`,
                     )
                     .join("")}
                 </ul>
@@ -692,113 +811,172 @@ const reviewPage = (review, index) => {
             </div>
           </div>
 
-          <nav class="shell review-pagination" aria-label="More reviews">
+          <nav class="wrap pager" aria-label="More reviews">
             ${
               previous
-                ? `<a href="../${previous.slug}/"><span>Newer nonsense</span><strong>${escapeHtml(previous.title)}</strong></a>`
-                : "<span></span>"
+                ? `<a class="pager__link" href="../${previous.slug}/"><span>&larr; Newer</span><strong>${escapeHtml(previous.title)}</strong></a>`
+                : '<span class="pager__link pager__link--empty"></span>'
             }
             ${
               next
-                ? `<a href="../${next.slug}/"><span>Older nonsense</span><strong>${escapeHtml(next.title)}</strong></a>`
-                : "<span></span>"
+                ? `<a class="pager__link pager__link--next" href="../${next.slug}/"><span>Older &rarr;</span><strong>${escapeHtml(next.title)}</strong></a>`
+                : '<span class="pager__link pager__link--empty"></span>'
             }
           </nav>
+
+          <section class="wrap section" aria-labelledby="related-title">
+            ${sectionHead({
+              kicker: "Keep going",
+              title: '<span id="related-title">More reviews</span>',
+              link: ["../", "All 20"],
+            })}
+            <div class="grid">${related.map((r) => card(r, "../../")).join("")}</div>
+          </section>
         </article>
       </main>`,
   });
 };
 
-const wrapTitle = (title, lineLength = 20) => {
-  const words = title.split(" ");
-  const lines = [];
-  let current = "";
+/* ------------------------------------------------------------- cover art */
 
-  for (const word of words) {
-    const candidate = current ? `${current} ${word}` : word;
-    if (candidate.length > lineLength && current) {
-      lines.push(current);
-      current = word;
-    } else {
-      current = candidate;
-    }
-  }
-
-  if (current) lines.push(current);
-  return lines.slice(0, 3);
-};
+const FLAME = "#ff4b1f";
+const CYAN = "#3ddceb";
+const INK = "#0b0d12";
+const INK_2 = "#161c27";
+const PAPER = "#eef1f7";
 
 const reviewCover = (review, index) => {
-  const titleLines = wrapTitle(review.title);
   const seed = [...review.slug].reduce((total, character) => total + character.charCodeAt(0), 0);
-  const x = 590 + (seed % 180);
-  const y = 100 + (seed % 120);
-  const radius = 120 + (seed % 90);
-  const greenFirst = index % 3 === 1;
-  const accent = greenFirst ? "oklch(78% 0.19 145)" : "oklch(66% 0.24 20)";
-  const secondary = greenFirst ? "oklch(66% 0.24 20)" : "oklch(78% 0.19 145)";
+  const variant = seed % 6;
+  const cyanLed = Math.floor(seed / 6) % 2 === 0;
+  const hero = cyanLed ? CYAN : FLAME;
+  const support = cyanLed ? FLAME : CYAN;
+  const id = review.slug.replace(/[^a-z0-9]/g, "");
+  // Small deterministic jitter so no two covers line up pixel for pixel.
+  const jitter = (seed % 7) * 9 - 27;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">${escapeXml(review.title)} review artwork</title>
-  <desc id="desc">Original geometric PsychoBros artwork for ${escapeXml(review.title)}.</desc>
-  <rect width="1200" height="675" fill="oklch(10% 0.015 20)"/>
-  <path d="M0 1h1200M0 674h1200M600 0v675" stroke="oklch(96% 0.01 95 / 0.16)"/>
-  <g fill="none" stroke="${accent}" opacity="0.9">
-    <circle cx="${x}" cy="${y}" r="${radius}" stroke-width="12"/>
-    <circle cx="${x + 170}" cy="${y + 180}" r="${Math.round(radius * 0.62)}" stroke-width="20"/>
-    <path d="M${x - 240} ${y + 280}  ${x + 280} ${y - 30}  ${x + 460} ${y + 280}" stroke-width="12"/>
+  let art;
+  if (variant === 0) {
+    art = `
+    <circle cx="${600 + jitter}" cy="300" r="214" fill="none" stroke="${hero}" stroke-width="18"/>
+    <circle cx="${600 + jitter}" cy="300" r="140" fill="none" stroke="${hero}" stroke-width="11" opacity="0.5"/>
+    <circle cx="${600 + jitter}" cy="300" r="68" fill="${hero}"/>
+    <path d="M150 512h900" stroke="${support}" stroke-width="9"/>
+    <circle cx="906" cy="126" r="24" fill="${support}"/>
+    <circle cx="288" cy="150" r="12" fill="${support}" opacity="0.6"/>`;
+  } else if (variant === 1) {
+    art = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+      .map(
+        (i) =>
+          `<path d="M${292 + i * 96 + jitter} 0 L${420 + i * 96 + jitter} 0 L${196 + i * 96 + jitter} 675 L${68 + i * 96 + jitter} 675 Z" fill="${i % 2 ? support : hero}" opacity="${i % 2 ? 0.28 : 0.85}"/>`,
+      )
+      .join("\n    ");
+  } else if (variant === 2) {
+    const dots = [0, 1, 2, 3]
+      .map((r) =>
+        [0, 1, 2, 3, 4, 5, 6, 7, 8]
+          .map((c) => `<circle cx="${168 + c * 108}" cy="${104 + r * 62}" r="8"/>`)
+          .join(""),
+      )
+      .join("");
+    art = `
+    <path d="M304 596 A 296 296 0 0 1 896 596" fill="none" stroke="${hero}" stroke-width="26"/>
+    <path d="M396 596 A 204 204 0 0 1 804 596" fill="none" stroke="${support}" stroke-width="13" opacity="0.72"/>
+    <g fill="${hero}" opacity="0.5">${dots}</g>`;
+  } else if (variant === 3) {
+    art = `
+    <path d="M0 0 L742 0 L0 470 Z" fill="${hero}" opacity="0.9"/>
+    <path d="M1200 675 L1200 214 L560 675 Z" fill="${support}" opacity="0.42"/>
+    <path d="M${470 + jitter} 236 L${906 + jitter} 236 L${688 + jitter} 552 Z" fill="none" stroke="${hero}" stroke-width="16"/>
+    <circle cx="1020" cy="150" r="34" fill="${support}"/>`;
+  } else if (variant === 4) {
+    art = `
+    <rect x="${420 + jitter}" y="118" width="360" height="360" fill="none" stroke="${hero}" stroke-width="18" transform="rotate(45 ${600 + jitter} 298)"/>
+    <rect x="${500 + jitter}" y="198" width="200" height="200" fill="${support}" opacity="0.32" transform="rotate(45 ${600 + jitter} 298)"/>
+    <rect x="${560 + jitter}" y="258" width="80" height="80" fill="${hero}" transform="rotate(45 ${600 + jitter} 298)"/>
+    <path d="M96 604h1008" stroke="${support}" stroke-width="10" opacity="0.8"/>`;
+  } else {
+    const bars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      .map((i) => {
+        const height = 88 + ((seed + i * 37) % 11) * 38;
+        return `<rect x="${152 + i * 78}" y="${520 - height}" width="46" height="${height}" fill="${i % 3 === 0 ? support : hero}" opacity="${i % 3 === 0 ? 0.55 : 0.92}"/>`;
+      })
+      .join("\n    ");
+    art = `
+    ${bars}
+    <path d="M120 556h960" stroke="${hero}" stroke-width="8" opacity="0.5"/>`;
+  }
+
+  const tagWidth = 118 + String(index + 1).padStart(2, "0").length * 11;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t-${id}">
+  <title id="t-${id}">${escapeXml(review.title)} artwork</title>
+  <defs>
+    <linearGradient id="bg-${id}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${INK_2}"/>
+      <stop offset="1" stop-color="${INK}"/>
+    </linearGradient>
+    <radialGradient id="fade-${id}" cx="0.5" cy="0.46" r="0.78">
+      <stop offset="0.45" stop-color="${INK}" stop-opacity="0"/>
+      <stop offset="1" stop-color="${INK}" stop-opacity="0.82"/>
+    </radialGradient>
+    <pattern id="grid-${id}" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="${PAPER}" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-${id})"/>
+  <rect width="1200" height="675" fill="url(#grid-${id})"/>
+  <g>
+    ${art}
   </g>
-  <path d="M760 0h440v675H890Z" fill="${accent}" opacity="0.2"/>
-  <path d="M900 0h300v675H1060Z" fill="${secondary}" opacity="0.15"/>
-  <circle cx="1050" cy="118" r="24" fill="${secondary}"/>
-  <rect x="84" y="70" width="268" height="58" fill="${accent}"/>
-  <text x="104" y="108" fill="oklch(98% 0.005 95)" font-family="Arial Black, Arial, sans-serif" font-size="20" letter-spacing="3">DAD REVIEW ${String(index + 1).padStart(2, "0")}</text>
-  ${titleLines
-    .map(
-      (line, lineIndex) =>
-        `<text x="82" y="${390 + lineIndex * 78}" fill="oklch(96% 0.01 95)" font-family="Arial Black, Arial, sans-serif" font-size="70" font-weight="900">${escapeXml(line)}</text>`,
-    )
-    .join("\n")}
-  <text x="84" y="620" fill="oklch(76% 0.01 95)" font-family="Albert Sans, Arial, sans-serif" font-size="22">${escapeXml(review.studio)} / ${escapeXml(review.genre)}</text>
-  <text x="1114" y="620" fill="${accent}" font-family="Arial Black, Arial, sans-serif" font-size="20" text-anchor="end">PSYCHOBROS</text>
-</svg>`;
+  <rect width="1200" height="675" fill="url(#fade-${id})"/>
+  <rect y="659" width="1200" height="16" fill="${hero}"/>
+  <rect x="64" y="54" width="${tagWidth}" height="34" fill="${hero}"/>
+  <text x="78" y="78" fill="${INK}" font-family="'Arial Black',Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2.5">REVIEW ${String(index + 1).padStart(2, "0")}</text>
+</svg>
+`;
 };
 
-const writeFile = (relativePath, content) => {
-  const destination = path.join(rootDir, relativePath);
-  fs.mkdirSync(path.dirname(destination), { recursive: true });
-  const normalized = content.replace(/[ \t]+$/gm, "").replace(/\n*$/, "\n");
-  fs.writeFileSync(destination, normalized);
+/* ------------------------------------------------------------------ emit */
+
+const writeFile = (relativePath, contents) => {
+  const target = path.join(rootDir, relativePath);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, contents);
 };
 
 writeFile("index.html", homePage());
-writeFile(path.join("reviews", "index.html"), reviewsPage());
-writeFile(path.join("pax-west-2025", "index.html"), paxPage());
-writeFile(path.join("about", "index.html"), aboutPage());
+writeFile("reviews/index.html", reviewsPage());
+writeFile("pax-west-2025/index.html", paxPage());
+writeFile("about/index.html", aboutPage());
 
 reviews.forEach((review, index) => {
-  writeFile(path.join("reviews", review.slug, "index.html"), reviewPage(review, index));
-  writeFile(path.join("assets", "reviews", `${review.slug}.svg`), reviewCover(review, index));
+  writeFile(`reviews/${review.slug}/index.html`, reviewPage(review, index));
+  writeFile(`assets/reviews/${review.slug}.svg`, reviewCover(review, index));
 });
 
-const sitemapUrls = [
-  siteUrl,
-  `${siteUrl}reviews/`,
-  `${siteUrl}pax-west-2025/`,
-  `${siteUrl}about/`,
-  ...reviews.map((review) => `${siteUrl}reviews/${review.slug}/`),
+const urls = [
+  { loc: siteUrl, priority: "1.0" },
+  { loc: `${siteUrl}reviews/`, priority: "0.9" },
+  { loc: `${siteUrl}pax-west-2025/`, priority: "0.8" },
+  { loc: `${siteUrl}about/`, priority: "0.7" },
+  ...reviews.map((review) => ({
+    loc: `${siteUrl}reviews/${review.slug}/`,
+    priority: "0.6",
+    lastmod: review.date,
+  })),
 ];
 
 writeFile(
   "sitemap.xml",
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls
+${urls
   .map(
     (url) => `  <url>
-    <loc>${url}</loc>
-    <changefreq>${url === siteUrl ? "weekly" : "monthly"}</changefreq>
-    <priority>${url === siteUrl ? "1.0" : "0.8"}</priority>
+    <loc>${escapeXml(url.loc)}</loc>
+    <lastmod>${url.lastmod || modifiedDate}</lastmod>
+    <priority>${url.priority}</priority>
   </url>`,
   )
   .join("\n")}
@@ -806,4 +984,4 @@ ${sitemapUrls
 `,
 );
 
-console.log(`Built ${reviews.length} reviews and ${sitemapUrls.length} sitemap URLs.`);
+console.log(`Built ${reviews.length} reviews across ${urls.length} pages.`);

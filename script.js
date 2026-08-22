@@ -1,125 +1,137 @@
-const header = document.querySelector("[data-header]");
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileNav = document.querySelector(".mobile-nav");
-const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
-const themeToggle = document.querySelector(".theme-toggle");
-const revealItems = document.querySelectorAll(".reveal");
-const reviewSearch = document.querySelector("[data-review-search]");
-const reviewGroup = document.querySelector("[data-review-group]");
-const reviewCards = Array.from(document.querySelectorAll("[data-review-card]"));
-const reviewCount = document.querySelector("[data-review-count]");
-const reviewLabel = document.querySelector("[data-review-label]");
-const reviewEmpty = document.querySelector("[data-review-empty]");
+(() => {
+  "use strict";
 
-const legacyHomeDestination = {
-  "#crew": "about/#crew",
-  "#standards": "about/#standards",
-  "#contact": "about/#press",
-}[window.location.hash];
+  const root = document.documentElement;
 
-if (document.body.classList.contains("home-page") && legacyHomeDestination) {
-  window.location.replace(new URL(legacyHomeDestination, window.location.href));
-}
+  /* ------------------------------------------------------------- footer year */
 
-const updateHeader = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 16);
-};
-
-const closeMenu = () => {
-  header?.classList.remove("is-menu-open");
-  document.body.classList.remove("menu-open");
-  menuToggle?.setAttribute("aria-expanded", "false");
-  menuToggle?.setAttribute("aria-label", "Open navigation");
-  mobileNav?.setAttribute("aria-hidden", "true");
-  mobileNav?.setAttribute("inert", "");
-};
-
-menuToggle?.addEventListener("click", () => {
-  const isOpen = header?.classList.toggle("is-menu-open") ?? false;
-  document.body.classList.toggle("menu-open", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-  mobileNav?.setAttribute("aria-hidden", String(!isOpen));
-  mobileNav?.toggleAttribute("inert", !isOpen);
-});
-
-mobileNavLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && header?.classList.contains("is-menu-open")) {
-    closeMenu();
-    menuToggle?.focus();
-  }
-});
-
-window.addEventListener("scroll", updateHeader, { passive: true });
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 1040) {
-    closeMenu();
-  }
-});
-updateHeader();
-
-themeToggle?.addEventListener("click", () => {
-  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = nextTheme;
-  localStorage.setItem("psychobros-theme", nextTheme);
-
-  const url = new URL(window.location.href);
-  url.searchParams.set("scoutTheme", nextTheme);
-  window.history.replaceState({}, "", url);
-});
-
-const filterReviews = () => {
-  const query = reviewSearch?.value.trim().toLowerCase() ?? "";
-  const group = reviewGroup?.value ?? "all";
-  let visibleCount = 0;
-
-  reviewCards.forEach((card) => {
-    const searchableText = [
-      card.dataset.reviewTitle,
-      card.dataset.reviewStudio,
-      card.dataset.reviewGenre,
-    ]
-      .filter(Boolean)
-      .join(" ");
-    const matchesQuery = !query || searchableText.includes(query);
-    const matchesGroup = group === "all" || card.dataset.reviewGroup === group;
-    const isVisible = matchesQuery && matchesGroup;
-
-    card.hidden = !isVisible;
-    if (isVisible) visibleCount += 1;
+  document.querySelectorAll("[data-year]").forEach((node) => {
+    node.textContent = String(new Date().getFullYear());
   });
 
-  if (reviewCount) reviewCount.textContent = String(visibleCount);
-  if (reviewLabel) {
-    reviewLabel.textContent = visibleCount === 1 ? "argument found" : "arguments found";
+  /* ------------------------------------------------------------------ theme */
+
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("psychobros-theme", next);
+      } catch {
+        /* private mode — theme just will not persist */
+      }
+    });
   }
-  if (reviewEmpty) reviewEmpty.hidden = visibleCount !== 0;
-};
 
-reviewSearch?.addEventListener("input", filterReviews);
-reviewGroup?.addEventListener("change", filterReviews);
+  /* ------------------------------------------------------------ mobile menu */
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const mobileNav = document.getElementById("mobile-nav");
 
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
+  const setMenu = (open) => {
+    if (!menuToggle || !mobileNav) return;
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    mobileNav.classList.toggle("is-open", open);
+    mobileNav.setAttribute("aria-hidden", String(!open));
+    if (open) {
+      mobileNav.removeAttribute("inert");
+    } else {
+      mobileNav.setAttribute("inert", "");
+    }
+  };
+
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener("click", () => {
+      setMenu(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    mobileNav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setMenu(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+        setMenu(false);
+        menuToggle.focus();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 860) setMenu(false);
+    });
+  }
+
+  /* ----------------------------------------------------------------- reveal */
+
+  const revealables = document.querySelectorAll(".reveal");
+  const showAll = () => revealables.forEach((node) => node.classList.add("is-in"));
+
+  if (!("IntersectionObserver" in window) || revealables.length === 0) {
+    showAll();
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+    );
+
+    revealables.forEach((node) => observer.observe(node));
+
+    // Safety net: nothing on this site is ever allowed to stay invisible.
+    window.setTimeout(showAll, 2500);
+  }
+
+  /* --------------------------------------------------------- archive filter */
+
+  const grid = document.querySelector("[data-grid]");
+  if (grid) {
+    const cards = Array.from(grid.querySelectorAll("[data-card]"));
+    const search = document.querySelector("[data-search]");
+    const chips = Array.from(document.querySelectorAll("[data-filter]"));
+    const resultLine = document.querySelector("[data-result]");
+    const empty = document.querySelector("[data-empty]");
+    let activeGroup = "all";
+
+    const apply = () => {
+      const term = (search?.value || "").trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const matchesGroup = activeGroup === "all" || card.dataset.group === activeGroup;
+        const haystack = `${card.dataset.title} ${card.dataset.studio} ${card.dataset.genre}`;
+        const matchesTerm = !term || haystack.includes(term);
+        const show = matchesGroup && matchesTerm;
+        card.hidden = !show;
+        if (show) visible += 1;
       });
-    },
-    { threshold: 0.12 },
-  );
 
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
+      if (resultLine) {
+        resultLine.textContent =
+          visible === cards.length
+            ? `Showing all ${cards.length} reviews`
+            : `${visible} of ${cards.length} reviews`;
+      }
+      if (empty) empty.hidden = visible !== 0;
+    };
 
-const year = document.querySelector("[data-year]");
-if (year) year.textContent = new Date().getFullYear();
+    search?.addEventListener("input", apply);
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        activeGroup = chip.dataset.filter || "all";
+        chips.forEach((other) => other.classList.toggle("is-active", other === chip));
+        apply();
+      });
+    });
+
+    apply();
+  }
+})();
