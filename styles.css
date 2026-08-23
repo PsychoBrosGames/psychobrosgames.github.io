@@ -1378,13 +1378,15 @@ p {
 
 /* ------------------------------------------------------------------- pax */
 
-/* Rides on the .note--blue shell for its border, padding and background. This
-   only adds the two-column split and the availability list. */
+/* Rides on the .note--blue shell for its border, padding and background. That
+   shell only carries margin-top, so the bottom margin has to come from here or
+   the press-kit cards butt straight against this card's border. */
 .pax {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: var(--pb-gap);
   align-items: start;
+  margin-bottom: var(--pb-gap);
 }
 
 .pax__copy h3 {
