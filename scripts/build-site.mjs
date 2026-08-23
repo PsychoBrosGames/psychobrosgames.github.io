@@ -31,6 +31,7 @@ const artCredit = (review) => {
 };
 
 const siteUrl = "https://psychobrosgames.github.io/";
+const contactEmail = "contact@psychobros.games";
 const modifiedDate = "2026-08-22";
 
 const escapeHtml = (value = "") =>
@@ -66,13 +67,18 @@ const dadLabels = {
 
 const dadLabel = (name) => dadLabels[name] || name;
 
-const hypeBand = (hype) => {
-  if (hype >= 9) return "Group chat meltdown";
-  if (hype >= 8.5) return "Snacks were abandoned";
-  if (hype >= 8) return "Wishlisted immediately";
-  if (hype >= 7.5) return "Solid dad approval";
-  return "Cautious dad nodding";
-};
+/** The one source of truth for the meter. Both the review scorecard and the
+    homepage scale panel read this list, so the rungs can never drift apart.
+    `tone` is the panel's swatch only; score chips use hypeTone() below. */
+const HYPE_BANDS = [
+  { at: "9.0", min: 9, tone: "hot", label: "Hi hooked, I'm Dad" },
+  { at: "8.5", min: 8.5, tone: "hot", label: "Snack-rificed dinner" },
+  { at: "8.0", min: 8, tone: "warm", label: "Cart me impressed" },
+  { at: "7.5", min: 7.5, tone: "warm", label: "Dad-equate" },
+  { at: "7.0", min: 0, tone: "cool", label: "Lawn still got mowed" },
+];
+
+const hypeBand = (hype) => HYPE_BANDS.find((band) => hype >= band.min).label;
 
 const hypeTone = (hype) => (hype >= 8.5 ? "hot" : hype >= 7.8 ? "warm" : "cool");
 
@@ -214,7 +220,7 @@ const footer = (prefix) => `
       </div>
       <div class="foot__col">
         <h2>Contact</h2>
-        <a href="${prefix}about/#press">Get in touch</a>
+        <a href="mailto:${contactEmail}">${contactEmail}</a>
       </div>
     </div>
     <div class="wrap foot__bottom">
@@ -390,7 +396,7 @@ const homePage = () => {
         url: siteUrl,
         description,
         logo: `${siteUrl}assets/favicon.svg`,
-        sameAs: ["https://github.com/PsychoBrosGames"],
+        email: contactEmail,
       },
     }),
     body: `
@@ -447,15 +453,14 @@ const homePage = () => {
             <div class="band__copy reveal">
               <p class="kicker kicker--onblue">How the score works</p>
               <h2 id="hype-title">The Dad Hype Meter</h2>
-              <p>It is a number out of ten for how hard a game hijacked our group chat. For the games we actually played, that is our verdict and we will stand behind it. For the PAX West write-ups it is pure anticipation, and those are labelled so you know the difference. Nine and up means somebody stopped loading the dishwasher mid-cycle.</p>
+              <p>It is a number out of ten for how hard a game hijacked our group chat. For the games we actually played, that is our verdict and we will stand behind it. For the PAX West write-ups it is pure anticipation, and those are labeled so you know the difference. Nine and up means somebody left the dishwasher half-loaded, which around here counts as a standing ovation.</p>
               <a class="btn btn--ink" href="about/#standards">How we stay honest <span aria-hidden="true">&rarr;</span></a>
             </div>
             <ul class="scale reveal">
-              <li><b data-tone="hot">9.0</b> <span>Group chat meltdown</span></li>
-              <li><b data-tone="hot">8.5</b> <span>Snacks were abandoned</span></li>
-              <li><b data-tone="warm">8.0</b> <span>Wishlisted immediately</span></li>
-              <li><b data-tone="warm">7.5</b> <span>Solid dad approval</span></li>
-              <li><b data-tone="cool">7.0</b> <span>Cautious dad nodding</span></li>
+              ${HYPE_BANDS.map(
+                (band) =>
+                  `<li><b data-tone="${band.tone}">${band.at}</b> <span>${escapeHtml(band.label)}</span></li>`
+              ).join("\n              ")}
             </ul>
           </div>
         </section>
@@ -856,7 +861,7 @@ const aboutPage = () => {
             </article>
             <article class="presskit__card">
               <h3>Get in touch</h3>
-              <p>The fastest route is <a href="https://github.com/PsychoBrosGames" rel="noreferrer">github.com/PsychoBrosGames</a>. Publicists and event organisers: mention the show or title in the first line and one of us will reply, usually after bedtime.</p>
+              <p>The fastest route is <a href="mailto:${contactEmail}">${contactEmail}</a>. Publicists and event organizers: mention the show or title in the first line and one of us will reply, usually after bedtime.</p>
             </article>
           </div>
           <div class="note note--blue">

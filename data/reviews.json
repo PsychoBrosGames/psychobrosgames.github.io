@@ -5,7 +5,7 @@
     "studio": "GAME FREAK inc.",
     "date": "2026-08-16",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S",
     "tags": [
       "AA",
       "Action",
@@ -72,7 +72,7 @@
     "studio": "House House",
     "date": "2026-08-13",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, Switch 2",
     "tags": [
       "Indie",
       "Adventure"
@@ -137,7 +137,7 @@
     "studio": "Yacht Club Games",
     "date": "2026-06-28",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS5, Xbox Series X|S, Switch, Switch 2",
     "tags": [
       "Indie",
       "Action",
@@ -203,7 +203,7 @@
     "studio": "Playground Games",
     "date": "2026-06-07",
     "genre": "Racing",
-    "platforms": "Windows",
+    "platforms": "Windows, Xbox Series X|S",
     "tags": [
       "AAA",
       "Racing",
@@ -270,7 +270,7 @@
     "studio": "The Game Bakers",
     "date": "2026-03-12",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5",
     "tags": [
       "Indie",
       "Action",
@@ -337,7 +337,7 @@
     "studio": "Team Cherry",
     "date": "2025-10-16",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS5, PS4, Xbox Series X|S, Xbox One, Switch, Switch 2",
     "tags": [
       "Indie",
       "Action",
@@ -403,7 +403,7 @@
     "studio": "Supergiant Games",
     "date": "2025-10-04",
     "genre": "Action",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, Xbox Series X|S, Switch, Switch 2",
     "tags": [
       "AA",
       "Action",
@@ -610,7 +610,7 @@
     "studio": "Serenity Forge",
     "date": "2025-09-26",
     "genre": "Psychological Life Sim",
-    "platforms": "Windows",
+    "platforms": "Windows, Xbox Series X|S, Xbox One",
     "statusAtShow": "Unreleased; date TBA",
     "deck": "A cozy life sim about restoring a house, growing crops, and slowly realizing the day is not actually ending.",
     "verdictTitle": "Cozy chores weaponized by a time loop.",
@@ -1456,7 +1456,7 @@
     "studio": "NuChallenger",
     "date": "2025-09-09",
     "genre": "Action Survivors-Like",
-    "platforms": "Windows",
+    "platforms": "Windows, Xbox Series X|S, Xbox One",
     "statusAtShow": "Unreleased",
     "deck": "Zombie survival becomes an immersive-sim toy box where puddles, gas, cars and knife-slippers all count as tactical options.",
     "verdictTitle": "A systems-first survivors game with a mean toy box.",
@@ -1882,7 +1882,7 @@
     "studio": "Sandfall Interactive",
     "date": "2025-05-14",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S",
     "tags": [
       "AA",
       "Action",
@@ -1948,7 +1948,7 @@
     "studio": "Dogubomb",
     "date": "2025-05-11",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, Xbox Series X|S, Switch 2",
     "tags": [
       "Indie",
       "Adventure",
@@ -2014,7 +2014,7 @@
     "studio": "Hazelight Studios",
     "date": "2025-03-19",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S, Switch 2",
     "tags": [
       "AA",
       "Action",
@@ -2080,7 +2080,7 @@
     "studio": "Mossmouth",
     "date": "2024-10-01",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -2147,7 +2147,7 @@
     "studio": "Game Science",
     "date": "2024-09-30",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S",
     "tags": [
       "AAA",
       "Action",
@@ -2214,7 +2214,7 @@
     "studio": "Billy Basso",
     "date": "2024-06-09",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -2280,7 +2280,7 @@
     "studio": "LocalThunk",
     "date": "2024-02-29",
     "genre": "Strategy",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch, Switch 2",
     "tags": [
       "Indie",
       "Strategy"
@@ -2345,7 +2345,7 @@
     "studio": "Arrowhead Game Studios",
     "date": "2024-02-28",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S",
     "tags": [
       "AAA",
       "Action"
@@ -2410,7 +2410,7 @@
     "studio": "Geometric Interactive",
     "date": "2023-10-30",
     "genre": "Adventure",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Adventure"
@@ -2475,7 +2475,7 @@
     "studio": "Larian Studios",
     "date": "2023-08-12",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, Xbox Series X|S",
     "tags": [
       "AAA",
       "Adventure",
@@ -2542,7 +2542,7 @@
     "studio": "MINTROCKET",
     "date": "2023-07-18",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch, Switch 2",
     "tags": [
       "Indie",
       "Adventure",
@@ -2609,7 +2609,7 @@
     "studio": "CAPCOM Co., Ltd.",
     "date": "2023-05-04",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S",
     "tags": [
       "AAA",
       "Action",
@@ -2675,7 +2675,7 @@
     "studio": "Tour De Pizza",
     "date": "2023-02-08",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, Switch",
     "tags": [
       "Indie",
       "Action"
@@ -2740,7 +2740,7 @@
     "studio": "poncle",
     "date": "2022-11-09",
     "genre": "Action",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -2806,7 +2806,7 @@
     "studio": "Massive Monster",
     "date": "2022-09-22",
     "genre": "Action",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, Linux, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -2873,7 +2873,7 @@
     "studio": "BlueTwelve Studio",
     "date": "2022-08-19",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch, Switch 2",
     "tags": [
       "AA",
       "Adventure"
@@ -2938,7 +2938,7 @@
     "studio": "Angel Matrix",
     "date": "2022-06-29",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -3004,7 +3004,7 @@
     "studio": "FromSoftware, Inc.",
     "date": "2022-03-05",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One",
     "tags": [
       "AAA",
       "Action",
@@ -3070,7 +3070,7 @@
     "studio": "Daniel Mullins Games",
     "date": "2021-11-19",
     "genre": "Adventure",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Adventure",
@@ -3136,7 +3136,7 @@
     "studio": "Arkane Studios",
     "date": "2021-10-25",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, Xbox Series X|S",
     "tags": [
       "AAA",
       "Action"
@@ -3201,7 +3201,7 @@
     "studio": "CAPCOM Co., Ltd.",
     "date": "2021-05-19",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch, Switch 2",
     "tags": [
       "AAA",
       "Action"
@@ -3266,7 +3266,7 @@
     "studio": "Hazelight Studios",
     "date": "2021-04-03",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AA",
       "Action",
@@ -3332,7 +3332,7 @@
     "studio": "Iron Gate AB",
     "date": "2021-02-22",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, Xbox Series X|S, Xbox One",
     "tags": [
       "Indie",
       "Action",
@@ -3399,7 +3399,7 @@
     "studio": "Supergiant Games",
     "date": "2020-09-26",
     "genre": "Action",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -3465,7 +3465,7 @@
     "studio": "Ghost Ship Games",
     "date": "2020-06-24",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One",
     "tags": [
       "AA",
       "Action"
@@ -3530,7 +3530,7 @@
     "studio": "id Software",
     "date": "2020-04-19",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AAA",
       "Action"
@@ -3661,7 +3661,7 @@
     "studio": "Moon Studios GmbH",
     "date": "2020-03-23",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AA",
       "Action"
@@ -3726,7 +3726,7 @@
     "studio": "ZA/UM",
     "date": "2019-10-24",
     "genre": "RPG",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "Indie",
       "RPG"
@@ -3791,7 +3791,7 @@
     "studio": "FromSoftware, Inc.",
     "date": "2019-04-10",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One",
     "tags": [
       "AAA",
       "Action",
@@ -3857,7 +3857,7 @@
     "studio": "CAPCOM Co., Ltd.",
     "date": "2019-04-07",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One",
     "tags": [
       "AAA",
       "Action"
@@ -3922,7 +3922,7 @@
     "studio": "Mega Crit",
     "date": "2019-03-06",
     "genre": "Strategy",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Strategy"
@@ -3987,7 +3987,7 @@
     "studio": "CAPCOM Co., Ltd.",
     "date": "2019-02-06",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, macOS, PS5, PS4, Xbox Series X|S, Xbox One",
     "tags": [
       "AAA",
       "Action"
@@ -4052,7 +4052,7 @@
     "studio": "Lucas Pope",
     "date": "2018-11-07",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Adventure"
@@ -4117,7 +4117,7 @@
     "studio": "Motion Twin",
     "date": "2018-09-17",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS5, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -4183,7 +4183,7 @@
     "studio": "CAPCOM Co., Ltd.",
     "date": "2018-09-08",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One",
     "tags": [
       "AAA",
       "Action"
@@ -4248,7 +4248,7 @@
     "studio": "Unknown Worlds Entertainment",
     "date": "2018-02-05",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AA",
       "Adventure"
@@ -4313,7 +4313,7 @@
     "studio": "Maddy Makes Games Inc.",
     "date": "2018-02-03",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -4379,7 +4379,7 @@
     "studio": "Studio MDHR Entertainment Inc.",
     "date": "2017-10-19",
     "genre": "Action",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action"
@@ -4444,7 +4444,7 @@
     "studio": "Larian Studios",
     "date": "2017-09-23",
     "genre": "Adventure",
-    "platforms": "Windows, macOS",
+    "platforms": "Windows, macOS, PS4, Xbox One, Switch",
     "tags": [
       "AA",
       "Adventure",
@@ -4511,7 +4511,7 @@
     "studio": "Arkane Studios",
     "date": "2017-05-17",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One",
     "tags": [
       "AAA",
       "Action",
@@ -4577,7 +4577,7 @@
     "studio": "Square Enix",
     "date": "2017-04-28",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One, Switch",
     "tags": [
       "AAA",
       "Action",
@@ -4643,7 +4643,7 @@
     "studio": "Team Cherry",
     "date": "2017-03-27",
     "genre": "Action",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Action",
@@ -4709,7 +4709,7 @@
     "studio": "id Software",
     "date": "2016-05-21",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One, Switch",
     "tags": [
       "AAA",
       "Action"
@@ -4774,7 +4774,7 @@
     "studio": "FromSoftware, Inc.",
     "date": "2016-05-12",
     "genre": "Action",
-    "platforms": "Windows",
+    "platforms": "Windows, PS4, Xbox One",
     "tags": [
       "AAA",
       "Action"
@@ -4839,7 +4839,7 @@
     "studio": "Campo Santo",
     "date": "2016-03-22",
     "genre": "Adventure",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "Adventure"
@@ -4904,7 +4904,7 @@
     "studio": "ConcernedApe",
     "date": "2016-03-17",
     "genre": "RPG",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "RPG",
@@ -4970,7 +4970,7 @@
     "studio": "Firaxis Games",
     "date": "2016-02-17",
     "genre": "Strategy",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "AAA",
       "Strategy"
@@ -5035,7 +5035,7 @@
     "studio": "Bethesda Game Studios",
     "date": "2015-12-21",
     "genre": "RPG",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One",
     "tags": [
       "AAA",
       "RPG"
@@ -5100,7 +5100,7 @@
     "studio": "Steel Crate Games",
     "date": "2015-10-28",
     "genre": "Indie",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie"
     ],
@@ -5164,7 +5164,7 @@
     "studio": "tobyfox",
     "date": "2015-10-16",
     "genre": "RPG",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS4, Xbox One, Switch",
     "tags": [
       "Indie",
       "RPG"
@@ -5229,7 +5229,7 @@
     "studio": "CD PROJEKT RED",
     "date": "2015-05-27",
     "genre": "RPG",
-    "platforms": "Windows",
+    "platforms": "Windows, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AAA",
       "RPG"
@@ -5294,7 +5294,7 @@
     "studio": "Colossal Order",
     "date": "2015-03-23",
     "genre": "Simulation",
-    "platforms": "Windows, macOS, Linux",
+    "platforms": "Windows, macOS, Linux, PS5, PS4, Xbox Series X|S, Xbox One, Switch",
     "tags": [
       "AA",
       "Simulation",
