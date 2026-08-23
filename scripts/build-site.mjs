@@ -32,7 +32,13 @@ const artCredit = (review) => {
 
 const siteUrl = "https://psychobrosgames.github.io/";
 const contactEmail = "contact@psychobros.games";
-const modifiedDate = "2026-08-22";
+/** A prefilled subject saves a publicist a decision and makes replies easy to
+    triage. Single parameter only — a second would need a literal `&amp;`. */
+const mailto = (subject) =>
+  subject
+    ? `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}`
+    : `mailto:${contactEmail}`;
+const modifiedDate = "2026-08-23";
 
 const escapeHtml = (value = "") =>
   String(value)
@@ -695,9 +701,30 @@ const yearPage = (year) => {
 
 /* ----------------------------------------------------------------- about */
 
+/** Six picks that let a publicist confirm we publish real coverage in about two
+    clicks. Chosen for range — big-budget racing through tiny indie — and every
+    one is a game we actually played, never a PAX anticipation write-up. */
+const PRESS_PICKS = [
+  "hades-ii",
+  "hollow-knight-silksong",
+  "forza-horizon-6",
+  "mina-the-hollower",
+  "cairn",
+  "ufo-50",
+];
+
+/** Resolved at build time so a renamed slug fails the build instead of quietly
+    shipping a press page with dead links on it. */
+const pressPicks = () =>
+  PRESS_PICKS.map((slug) => {
+    const match = reviews.find((r) => r.slug === slug);
+    if (!match) throw new Error(`Press pick "${slug}" is not in data/reviews.json`);
+    return match;
+  });
+
 const aboutPage = () => {
   const description =
-    "Who the PsychoBros are, how we review games, and how to reach us about press access, review codes, and events.";
+    "An independent games publication run by three longtime friends. AAA and indie reviews, press contact, review codes, and all three of us at PAX West 2026.";
 
   return pageShell({
     prefix: "../",
@@ -724,13 +751,13 @@ const aboutPage = () => {
             <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">About &amp; Press</span></nav>
             <p class="kicker">About</p>
             <h1>Three dads, one group chat</h1>
-            <p class="pagehead__deck">PsychoBros is a small independent games site run by three friends in their forties. We cover indie games, we write up what we actually think, and we are extremely normal about it.</p>
+            <p class="pagehead__deck">PsychoBros is an independent games publication run by three friends in their forties. We cover big releases and small ones, we write up what we actually think, and we are extremely normal about it.</p>
           </div>
         </section>
 
         <div class="wrap section prose prose--intro">
           <p>We started PsychoBros because our group chat had quietly turned into an unpaid, unedited games publication, and one of us finally said "we should probably put this somewhere." We have been playing together since 2015, back when two of us had no children and the third had one who could not yet operate a door handle. Between us we have three very different tolerances for tutorials and one ongoing argument about whether Descent peaked in 1995.</p>
-          <p>These days we write up whatever we are actually playing — hundred-million-dollar blockbusters, twelve-dollar indies, and the occasional thing nobody else on earth reviewed. We covered PAX West one year and produced the biggest batch of write-ups we have ever managed in a single month. We have not tried to top it since.</p>
+          <p>These days we write up whatever we are actually playing — hundred-million-dollar blockbusters, twelve-dollar indies, and the occasional thing nobody else on earth reviewed. We covered <a href="../tags/pax-west/">PAX West</a> one year and produced the biggest batch of write-ups we have ever managed in a single month. We have not tried to top it since.</p>
         </div>
 
         <section class="wrap section" id="crew" aria-labelledby="crew-heading">
@@ -807,13 +834,38 @@ const aboutPage = () => {
             </li>
             <li>
               <h3>We disclose anything we are given</h3>
-              <p>Review codes, event access, travel, hardware, snacks. If somebody gives us something, it goes in the disclosure line on that piece. Nobody has offered yet, but we are ready.</p>
+              <p>Review codes, event access, travel, hardware, snacks. If somebody gives us something, it goes in the disclosure line on that piece. We like free stuff as much as the next three dads; we just tell you where it came from.</p>
             </li>
           </ol>
         </section>
 
         <section class="wrap section" id="press" aria-labelledby="press-heading">
           ${sectionHead({ kicker: "Press", title: '<span id="press-heading">Press &amp; partnerships</span>' })}
+
+          <div class="note note--blue pax">
+            <div class="pax__copy">
+              <p class="kicker">PAX West 2026</p>
+              <h3>All three dads will be in Seattle</h3>
+              <p>All three of us are on the show floor this year, covering new releases, indie discoveries, hands-on previews, developer conversations, and whatever we end up arguing about on the flight home.</p>
+              <p class="pax__mail">Scheduling and invitations: <a href="${mailto()}">${contactEmail}</a></p>
+              <p class="pax__cta">
+                <a class="btn btn--blue" href="${mailto("PsychoBros — PAX West 2026")}">Contact PsychoBros <span aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn--ghost" href="../tags/pax-west/">See our PAX West coverage <span aria-hidden="true">&rarr;</span></a>
+              </p>
+            </div>
+            <div class="pax__avail">
+              <h4>We are available for</h4>
+              <ul>
+                <li>Hands-on previews</li>
+                <li>Developer interviews</li>
+                <li>Press appointments</li>
+                <li>Review opportunities</li>
+                <li>Publisher and studio events</li>
+                <li>Media and creator receptions</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="presskit">
             <article class="presskit__card">
               <h3>What we cover</h3>
@@ -821,7 +873,7 @@ const aboutPage = () => {
             </article>
             <article class="presskit__card">
               <h3>What we produce</h3>
-              <p>Written reviews and collections, three-perspective breakdowns, show coverage and commentary. Streaming and video are in progress. Everything is published here first.</p>
+              <p>Written reviews and collections, three-perspective breakdowns, show coverage and commentary. Everything is published here first.</p>
             </article>
             <article class="presskit__card">
               <h3>Review codes &amp; events</h3>
@@ -841,7 +893,23 @@ const aboutPage = () => {
               <li><b>Focus</b> AAA, indie &amp; everything between</li>
               <li><b>Format</b> Reviews, collections, commentary</li>
               <li><b>Published</b> ${reviews.length} reviews to date</li>
+              <li><b>PAX West 2026</b> Three writers on-site</li>
+              <li><b>Contact</b> <a href="${mailto()}">${contactEmail}</a></li>
             </ul>
+          </div>
+        </section>
+
+        <section class="wrap section" id="coverage" aria-labelledby="coverage-heading">
+          ${sectionHead({
+            kicker: "Selected coverage",
+            title: '<span id="coverage-heading">A few things we have been playing</span>',
+            note: "A cross-section of the archive: big-budget racing, a roguelike sequel that ate a summer, and indies nobody paid us to care about.",
+            link: ["../reviews/", `All ${reviews.length} reviews`],
+          })}
+          <div class="grid grid--press">
+            ${pressPicks()
+              .map((r) => card(r, "../"))
+              .join("")}
           </div>
         </section>
       </main>`,

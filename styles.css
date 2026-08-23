@@ -763,6 +763,13 @@ p {
   gap: var(--pb-gap);
 }
 
+/* Press picks. A wider track floor than the archive grid so six cards land as
+   clean rows (3 / 2 / 1) rather than a ragged 4 + 2. The min() stops the track
+   overflowing on very narrow screens; below 620px the .grid rule takes over. */
+.grid--press {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -1367,6 +1374,62 @@ p {
   color: var(--pb-blue);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------------- pax */
+
+/* Rides on the .note--blue shell for its border, padding and background. This
+   only adds the two-column split and the availability list. */
+.pax {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--pb-gap);
+  align-items: start;
+}
+
+.pax__copy h3 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+}
+
+/* Long address in a narrow column: break it rather than push the card wide. */
+.pax__mail a {
+  color: var(--pb-blue);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* .btn is white-space: nowrap, so the row has to be free to wrap instead. */
+.pax__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.15rem;
+}
+
+.pax__avail h4 {
+  font-family: var(--pb-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pb-faint);
+}
+
+.pax__avail ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pax__avail li {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--pb-line);
+  color: var(--pb-dim);
+  font-size: 0.92rem;
 }
 
 /* --------------------------------------------------------------- article */
@@ -2045,6 +2108,10 @@ a.tag:hover {
   .sechead {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .pax {
+    grid-template-columns: 1fr;
   }
 }
 
