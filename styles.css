@@ -1412,12 +1412,111 @@ p {
   padding-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
+.article__figure {
+  margin: 0;
+  min-width: 0;
+}
+
 .article__cover {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid var(--pb-line);
   border-radius: var(--pb-radius-lg);
+  display: block;
+}
+
+/* Image credit. Deliberately quiet but always present: this is publisher art
+   used editorially, so it is attributed on every single instance. */
+.article__credit {
+  margin: 0.6rem 0 0;
+  font-family: var(--pb-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--pb-dim);
+}
+
+.article__credit a {
+  color: var(--pb-dim);
+  text-underline-offset: 2px;
+}
+
+.article__credit a:hover,
+.article__credit a:focus-visible {
+  color: var(--pb-flame);
+}
+
+/* Column two of the article hero. Stacking the key art under the scorecard
+   fills what was otherwise a tall empty gutter beside the 16:9 cover. */
+.article__aside {
+  display: grid;
+  gap: var(--pb-gap);
+  align-content: start;
+  min-width: 0;
+}
+
+/* Official capsule art, given its own credited slot rather than being used as
+   card art, where twenty competing logo lockups would read as a storefront
+   instead of a publication. */
+.keyart {
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.2rem;
+  border: 1px solid var(--pb-line);
+  border-radius: var(--pb-radius-lg);
+  background: var(--pb-surface);
+}
+
+.keyart .kicker {
+  margin: 0 0 0.75rem;
+}
+
+.keyart img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--pb-radius-lg) - 4px);
+  border: 1px solid var(--pb-line);
+}
+
+.keyart figcaption {
+  margin-top: 0.6rem;
+  font-family: var(--pb-mono);
+  font-size: 0.68rem;
+  color: var(--pb-dim);
+}
+
+.shots {
+  margin: 2rem 0 0;
+}
+
+.shots__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.shots__grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--pb-line);
+  border-radius: var(--pb-radius);
+}
+
+.shots figcaption {
+  margin-top: 0.65rem;
+  font-family: var(--pb-mono);
+  font-size: 0.7rem;
+  color: var(--pb-dim);
+}
+
+@media (max-width: 620px) {
+  .shots__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .article__scorecard {
@@ -1821,6 +1920,28 @@ p {
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   color: var(--pb-faint);
+}
+
+/* Rights line drops to its own row so it does not squeeze the copyright and
+   back-to-top link in the space-between flex row above it. */
+.foot__rights {
+  flex-basis: 100%;
+  order: 3;
+  margin: 0;
+  max-width: 70ch;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+.foot__rights a {
+  color: var(--pb-dim);
+  text-underline-offset: 2px;
+}
+
+.foot__rights a:hover,
+.foot__rights a:focus-visible {
+  color: var(--pb-flame);
 }
 
 .totop:hover {

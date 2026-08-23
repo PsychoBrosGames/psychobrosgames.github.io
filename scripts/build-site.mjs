@@ -8,6 +8,28 @@ const reviews = JSON.parse(
   fs.readFileSync(path.join(rootDir, "data", "reviews.json"), "utf8"),
 ).sort((left, right) => right.date.localeCompare(left.date));
 
+/* Official press art, keyed by slug. Produced by scripts/fetch-press-art.mjs
+   (pulls each game's own Steam store listing, already cited in that review's
+   sources) then scripts/optimize-press-art.py. Missing entries fall back to the
+   generated SVG cover, so the site still builds if the manifest is absent. */
+const pressArtPath = path.join(rootDir, "data", "press-art.json");
+const pressArt = fs.existsSync(pressArtPath)
+  ? JSON.parse(fs.readFileSync(pressArtPath, "utf8"))
+  : {};
+
+const art = (review) => pressArt[review.slug] || null;
+
+/** Attribution string for a game's imagery. Publisher is only named separately
+    when it differs from the developer, which is the common indie case. */
+const artCredit = (review) => {
+  const a = art(review);
+  if (!a) return null;
+  const devs = (a.developers || []).join(", ");
+  const pubs = (a.publishers || []).join(", ");
+  if (devs && pubs && devs !== pubs) return `${devs} / ${pubs}`;
+  return devs || pubs || review.studio;
+};
+
 const siteUrl = "https://psychobrosgames.github.io/";
 const modifiedDate = "2026-08-22";
 
@@ -153,11 +175,30 @@ const footer = (prefix) => `
     </div>
     <div class="wrap foot__bottom">
       <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
+      <p class="foot__rights">Game screenshots and key art are official press assets belonging to their respective developers and publishers, used editorially. <a href="${prefix}about/#standards">Image policy</a>.</p>
       <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
     </div>
   </footer>`;
 
-const pageHead = ({ title, description, canonical, prefix, type = "website", structuredData }) => `
+/** Per-page social image. Review pages pass the game's own press screenshot,
+    which shares far better than a generic site card; everything else falls back
+    to the house card. */
+const defaultSocialImage = {
+  url: `${siteUrl}assets/psychobros-social-card.png`,
+  width: 1200,
+  height: 630,
+  alt: "PsychoBros: game reviews from three dads",
+};
+
+const pageHead = ({
+  title,
+  description,
+  canonical,
+  prefix,
+  type = "website",
+  structuredData,
+  socialImage = defaultSocialImage,
+}) => `
   <head>
     <meta charset="UTF-8" />
     <script>
@@ -178,12 +219,12 @@ const pageHead = ({ title, description, canonical, prefix, type = "website", str
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${canonical}" />
-    <meta property="og:image" content="${siteUrl}assets/psychobros-social-card.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="PsychoBros: game reviews from three dads" />
+    <meta property="og:image" content="${socialImage.url}" />
+    <meta property="og:image:width" content="${socialImage.width}" />
+    <meta property="og:image:height" content="${socialImage.height}" />
+    <meta property="og:image:alt" content="${escapeHtml(socialImage.alt)}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="${siteUrl}assets/psychobros-social-card.png" />
+    <meta name="twitter:image" content="${socialImage.url}" />
     <title>${escapeHtml(title)}</title>
     <link rel="canonical" href="${canonical}" />
     <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml" />
@@ -212,8 +253,16 @@ ${head}
 const scoreChip = (review, size = "") =>
   `<span class="score${size ? ` score--${size}` : ""}" data-tone="${hypeTone(review.hype)}"><b>${review.hype.toFixed(1)}</b><i>hype</i></span>`;
 
-const cardArt = (review, prefix, sizes) =>
-  `<img src="${prefix}assets/reviews/${review.slug}.svg" alt="" loading="lazy" decoding="async" width="1200" height="675"${sizes ? ` sizes="${sizes}"` : ""} />`;
+/** Card/thumb imagery. Prefers official press art, falls back to the generated
+    SVG cover for any game without a manifest entry. Alt stays empty because in
+    every card context the title sits adjacent as real text. */
+const cardArt = (review, prefix, sizes, variant = "cover") => {
+  const a = art(review);
+  const file = a && a[variant] ? a[variant] : null;
+  const src = file ? `${prefix}${file}` : `${prefix}assets/reviews/${review.slug}.svg`;
+  const [w, h] = variant === "thumb" ? [480, 270] : [1200, 675];
+  return `<img src="${src}" alt="" loading="lazy" decoding="async" width="${w}" height="${h}"${sizes ? ` sizes="${sizes}"` : ""} />`;
+};
 
 const card = (review, prefix) => `
   <article class="card reveal"
@@ -236,7 +285,7 @@ const card = (review, prefix) => `
 
 const railItem = (review, prefix) => `
   <a class="rail__item reveal" href="${prefix}reviews/${review.slug}/">
-    <span class="rail__thumb">${cardArt(review, prefix, "120px")}</span>
+    <span class="rail__thumb">    ${cardArt(review, prefix, "120px", "thumb")}</span>
     <span class="rail__text">
       <span class="rail__meta">${escapeHtml(review.genre)} &middot; ${shortDate(review.date)}</span>
       <span class="rail__title">${escapeHtml(review.title)}</span>
@@ -248,7 +297,7 @@ const railItem = (review, prefix) => `
 const listRow = (review, prefix, index) => `
   <a class="row reveal" href="${prefix}reviews/${review.slug}/">
     <span class="row__n">${String(index + 1).padStart(2, "0")}</span>
-    <span class="row__thumb">${cardArt(review, prefix, "88px")}</span>
+    <span class="row__thumb">    ${cardArt(review, prefix, "88px", "thumb")}</span>
     <span class="row__main">
       <span class="row__title">${escapeHtml(review.title)}</span>
       <span class="row__take">${escapeHtml(review.dadTake)}</span>
@@ -305,7 +354,7 @@ const homePage = () => {
         <section class="lead wrap" aria-label="Featured review">
           <article class="lead__main reveal">
             <a class="lead__art" href="reviews/${featured.slug}/" tabindex="-1" aria-hidden="true">
-              <img src="assets/reviews/${featured.slug}.svg" alt="" width="1200" height="675" fetchpriority="high" />
+              <img src="${art(featured)?.cover ? art(featured).cover : `assets/reviews/${featured.slug}.svg`}" alt="" width="1200" height="675" fetchpriority="high" />
               ${scoreChip(featured, "lg")}
             </a>
             <div class="lead__copy">
@@ -611,6 +660,10 @@ const aboutPage = () => {
               <p>Every review lists the sources it draws on so you can check our work. If we get something wrong, tell us and we will correct it in place with a note explaining what changed.</p>
             </li>
             <li>
+              <h3>Game images belong to the people who made them</h3>
+              <p>Screenshots and key art on this site are the official press assets published by each game's developer on its own Steam store listing, used editorially alongside our coverage of that specific game. Every image is credited to its developer and publisher where it appears, and links back to the source listing. We do not alter artwork beyond cropping and resizing it to fit the page. If you made one of these games and would rather we used different images, or none at all, email us and it is done the same day.</p>
+            </li>
+            <li>
               <h3>We disclose anything we are given</h3>
               <p>Review codes, event access, travel, hardware, snacks. If somebody gives us something, it goes in the disclosure line on that piece. Nobody has offered yet, but we are ready.</p>
             </li>
@@ -671,6 +724,14 @@ const reviewPage = (review, index) => {
       canonical: `${siteUrl}reviews/${review.slug}/`,
       prefix: "../../",
       type: "article",
+      socialImage: art(review)?.cover
+        ? {
+            url: `${siteUrl}${art(review).cover}`,
+            width: 1200,
+            height: 675,
+            alt: `Screenshot from ${review.title}`,
+          }
+        : defaultSocialImage,
       structuredData: {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -679,7 +740,7 @@ const reviewPage = (review, index) => {
         datePublished: review.date,
         dateModified: review.date,
         url: `${siteUrl}reviews/${review.slug}/`,
-        image: `${siteUrl}assets/reviews/${review.slug}.svg`,
+        image: `${siteUrl}${art(review)?.cover || `assets/reviews/${review.slug}.svg`}`,
         author: { "@type": "Organization", name: "PsychoBros" },
         publisher: {
           "@type": "Organization",
@@ -710,12 +771,30 @@ const reviewPage = (review, index) => {
           </header>
 
           <div class="wrap article__hero reveal">
-            <img class="article__cover" src="../../assets/reviews/${review.slug}.svg" alt="Artwork for ${escapeHtml(review.title)}" width="1200" height="675" fetchpriority="high" />
-            <div class="article__scorecard">
-              <p class="kicker">Dad Hype Meter</p>
-              <p class="article__score" data-tone="${hypeTone(review.hype)}">${review.hype.toFixed(1)}<i>/10</i></p>
-              <p class="article__band">${hypeBand(review.hype)}</p>
-              <p class="article__scorenote">An anticipation score, not a play-tested verdict. <a href="../../about/#standards">How this works</a></p>
+            <figure class="article__figure">
+              <img class="article__cover" src="${art(review)?.cover ? `../../${art(review).cover}` : `../../assets/reviews/${review.slug}.svg`}" alt="Screenshot from ${escapeHtml(review.title)}" width="1200" height="675" fetchpriority="high" />
+              ${
+                artCredit(review)
+                  ? `<figcaption class="article__credit">Press image courtesy of ${escapeHtml(artCredit(review))}. Sourced from the game's <a href="${art(review).storeUrl}" rel="noopener">official Steam listing</a>.</figcaption>`
+                  : `<figcaption class="article__credit">Original PsychoBros artwork.</figcaption>`
+              }
+            </figure>
+            <div class="article__aside">
+              <div class="article__scorecard">
+                <p class="kicker">Dad Hype Meter</p>
+                <p class="article__score" data-tone="${hypeTone(review.hype)}">${review.hype.toFixed(1)}<i>/10</i></p>
+                <p class="article__band">${hypeBand(review.hype)}</p>
+                <p class="article__scorenote">An anticipation score, not a play-tested verdict. <a href="../../about/#standards">How this works</a></p>
+              </div>
+              ${
+                art(review)?.keyArt
+                  ? `<figure class="keyart">
+                <h2 class="kicker">Official key art</h2>
+                <img src="../../${art(review).keyArt}" alt="Official key art for ${escapeHtml(review.title)}" width="460" height="215" loading="lazy" decoding="async" />
+                <figcaption>&copy; ${escapeHtml(artCredit(review))}</figcaption>
+              </figure>`
+                  : ""
+              }
             </div>
           </div>
 
@@ -755,6 +834,22 @@ const reviewPage = (review, index) => {
                 <h2 id="what-title">Okay, what is this thing?</h2>
                 ${review.overview.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
               </section>
+
+              ${
+                (art(review)?.gallery || []).length
+                  ? `<figure class="shots reveal">
+                <div class="shots__grid">
+                  ${art(review)
+                    .gallery.map(
+                      (g, i) =>
+                        `<img src="../../${g}" alt="Screenshot ${i + 2} from ${escapeHtml(review.title)}" width="800" height="450" loading="lazy" decoding="async" />`,
+                    )
+                    .join("")}
+                </div>
+                <figcaption>Press screenshots courtesy of ${escapeHtml(artCredit(review))}.</figcaption>
+              </figure>`
+                  : ""
+              }
 
               <section class="reveal" aria-labelledby="why-title">
                 <h2 class="h-rule" id="why-title">Why it escaped the group chat</h2>
