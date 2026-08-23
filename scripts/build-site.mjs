@@ -322,9 +322,11 @@ const sectionHead = ({ kicker, title, note, link }) => `
 const homePage = () => {
   const featured = reviews.find((r) => r.featured) || reviews[0];
   const rest = reviews.filter((r) => r.slug !== featured.slug);
-  const rail = rest.slice(0, 6);
-  const grid = rest.slice(6, 14);
-  const more = rest.slice(14, 19);
+  // The rail sits beside the taller lead card, so it carries seven items to
+  // keep both columns roughly the same height.
+  const rail = rest.slice(0, 7);
+  const grid = rest.slice(7, 15);
+  const more = rest.slice(15, 19);
   const description =
     "Game reviews from three dads in their forties. Twenty games from PAX West 2025, scored by how loud the group chat got.";
 
