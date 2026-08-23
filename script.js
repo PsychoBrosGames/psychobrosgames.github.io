@@ -5,7 +5,7 @@
 
   /* ------------------------------------------------------------- footer year */
 
-  document.querySelectorAll("[data-year]").forEach((node) => {
+  document.querySelectorAll("[data-current-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
