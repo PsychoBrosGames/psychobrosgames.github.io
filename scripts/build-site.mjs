@@ -84,7 +84,7 @@ const tagSlug = (tag) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-/** PAX write-ups score anticipation; everything else scores a game we finished.
+/** PAX write-ups score anticipation; everything else scores a game we played.
     The chip label has to tell the truth about which one you are looking at. */
 const isHype = (review) => review.scoreKind !== "verdict";
 const scoreWord = (review) => (isHype(review) ? "hype" : "score");
@@ -204,7 +204,7 @@ const footer = (prefix) => `
         <h2>Read</h2>
         <a href="${prefix}reviews/">All reviews</a>
         <a href="${prefix}years/">Browse by year</a>
-        <a href="${prefix}tags/pax-west-2025/">PAX West 2025</a>
+        <a href="${prefix}tags/pax-west/">PAX West</a>
       </div>
       <div class="foot__col">
         <h2>The boring bits</h2>
@@ -435,7 +435,7 @@ const homePage = () => {
           ${sectionHead({
             kicker: "The reviews",
             title: '<span id="latest-title">Games we could not stop texting about</span>',
-            note: "Ten years of games, mostly written up after bedtime. Some of these are twelve-quid indies. Some cost more than our first cars.",
+            note: "Ten years of games, mostly written up after bedtime. Some of these are twelve-dollar indies. Some cost more than our first cars.",
             link: ["reviews/", "See all"],
           })}
           <div class="grid">
@@ -448,7 +448,7 @@ const homePage = () => {
             <div class="band__copy reveal">
               <p class="kicker kicker--onblue">How the score works</p>
               <h2 id="hype-title">The Dad Hype Meter</h2>
-              <p>It is a number out of ten for how hard a game hijacked our group chat. For the games we actually finished, that is our verdict and we will stand behind it. For the PAX West 2025 write-ups it is pure anticipation, and those are labelled so you know the difference. Nine and up means somebody stopped loading the dishwasher mid-cycle.</p>
+              <p>It is a number out of ten for how hard a game hijacked our group chat. For the games we actually played, that is our verdict and we will stand behind it. For the PAX West write-ups it is pure anticipation, and those are labelled so you know the difference. Nine and up means somebody stopped loading the dishwasher mid-cycle.</p>
               <a class="btn btn--ink" href="about/#standards">How we stay honest <span aria-hidden="true">&rarr;</span></a>
             </div>
             <ul class="scale reveal">
@@ -524,7 +524,7 @@ const reviewsPage = () => {
   const years = allYears();
   // Curated rather than top-N: the raw leaders are all broad genre tags, which
   // makes for a duller filter row than tier + the show tag.
-  const chipOrder = ["AAA", "Indie", "RPG", "Strategy", "PAX West 2025"];
+  const chipOrder = ["AAA", "Indie", "RPG", "Strategy", "PAX West"];
   const tags = allTags();
   const chipTags = chipOrder.map((label) => tags.find((t) => t.label === label)).filter(Boolean);
   const description = `All ${reviews.length} PsychoBros reviews, ${years[years.length - 1]} to ${years[0]}, with a Dad Hype Meter score for each game.`;
@@ -783,7 +783,7 @@ const aboutPage = () => {
 
         <div class="wrap section prose prose--intro">
           <p>We started PsychoBros because our group chat had quietly turned into an unpaid, unedited games publication, and one of us finally said "we should probably put this somewhere." We have been playing together since 2015, back when two of us had no children and the third had one who could not yet operate a door handle. Between us we have three very different tolerances for tutorials and one ongoing argument about whether Descent peaked in 1995.</p>
-          <p>These days we write up whatever we are actually playing — hundred-million-dollar blockbusters, twelve-quid indies, and the occasional thing nobody else on earth reviewed. In September 2025 we covered PAX West, which is still the largest single batch of games we have written up in one month.</p>
+          <p>These days we write up whatever we are actually playing — hundred-million-dollar blockbusters, twelve-dollar indies, and the occasional thing nobody else on earth reviewed. We covered PAX West one year and produced the biggest batch of write-ups we have ever managed in a single month. We have not tried to top it since.</p>
         </div>
 
         <section class="wrap section" id="crew" aria-labelledby="crew-heading">
@@ -815,11 +815,11 @@ const aboutPage = () => {
           <ol class="standards">
             <li>
               <h3>We say what every review is based on</h3>
-              <p>Each review carries a plain-language basis note. Most of our reviews are written after we have played the game, and they say so. Our PAX West 2025 write-ups are the exception: those are retrospective mini-reviews built from the official PAX West 2025 Steam event page, the PAX Rising Showcase listing, and each game's own published materials. They are not final-release reviews and they never claim hands-on time we did not have.</p>
+              <p>Every review says what it is based on. Most of them we played, and they say so. The PAX West write-ups are the exception — those are built from Steam pages and the show's own listings, because we were reading about those games rather than playing them. We would rather tell you that than let you assume otherwise.</p>
             </li>
             <li>
               <h3>The Dad Hype Meter tells you which kind of score it is</h3>
-              <p>The number on each review measures how much a game took over our group chat. On a game we played, that is our verdict. On the PAX West 2025 entries it is anticipation, clearly labelled as anticipation. We are not going to hand out review scores for games we have not played.</p>
+              <p>The number measures how much a game took over our group chat. On something we played, that is our verdict. On the PAX West entries it is anticipation, and it says so on the page. Handing out review scores for games we have not played would be a bit much, even for us.</p>
             </li>
             <li>
               <h3>Three perspectives, no forced consensus</h3>
@@ -1229,9 +1229,9 @@ const writeFile = (relativePath, contents) => {
   fs.writeFileSync(target, contents);
 };
 
-/** The PAX collection had its own published URL before it became a tag. Old
-    links stay alive rather than 404ing. */
-const redirectPage = (target, label, canonical) => `<!doctype html>
+/** The PAX collection has had two published URLs: a standalone page, then a
+    dated tag. Both stay alive rather than 404ing. */
+const redirectPage = (target, label, canonical, prefix = "../") => `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -1240,11 +1240,11 @@ const redirectPage = (target, label, canonical) => `<!doctype html>
     <link rel="canonical" href="${canonical}" />
     <meta name="robots" content="noindex, follow" />
     <meta http-equiv="refresh" content="0; url=${target}" />
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="${prefix}styles.css" />
   </head>
   <body>
     <main id="main" class="wrap section">
-      <p>This collection is a tag now. <a href="${target}">Continue to ${escapeHtml(label)}</a>.</p>
+      <p>This collection lives at <a href="${target}">${escapeHtml(label)}</a> now.</p>
     </main>
   </body>
 </html>
@@ -1264,7 +1264,11 @@ pagedTags().forEach((tag) => {
 });
 writeFile(
   "pax-west-2025/index.html",
-  redirectPage("../tags/pax-west-2025/", "PAX West 2025", `${siteUrl}tags/pax-west-2025/`),
+  redirectPage("../tags/pax-west/", "PAX West", `${siteUrl}tags/pax-west/`),
+);
+writeFile(
+  "tags/pax-west-2025/index.html",
+  redirectPage("../pax-west/", "PAX West", `${siteUrl}tags/pax-west/`, "../../"),
 );
 
 reviews.forEach((review, index) => {
