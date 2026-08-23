@@ -1039,8 +1039,8 @@ const reviewPage = (review, index) => {
                   : ""
               }
 
-              <section class="reveal" aria-labelledby="why-title">
-                <h2 class="h-rule" id="why-title">Why it escaped the group chat</h2>
+              <section class="reveal" aria-labelledby="short-version-title">
+                <h2 class="h-rule" id="short-version-title">The short version</h2>
                 <ul class="checklist">
                   ${review.facts.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}
                 </ul>
