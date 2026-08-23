@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        document.documentElement.classList.add("js");
+        const ok = new Set(["light", "dark"]);
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme = (ok.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Game reviews from three dads in their forties. Twenty games from PAX West 2025, scored by how loud the group chat got." />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PsychoBros" />
+    <meta property="og:title" content="PsychoBros — Game reviews from three dads" />
+    <meta property="og:description" content="Game reviews from three dads in their forties. Twenty games from PAX West 2025, scored by how loud the group chat got." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros: game reviews from three dads" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>PsychoBros — Game reviews from three dads</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PsychoBros","url":"https://psychobrosgames.github.io/","description":"Game reviews from three dads in their forties. Twenty games from PAX West 2025, scored by how loud the group chat got.","logo":"https://psychobrosgames.github.io/assets/favicon.svg","sameAs":["https://github.com/PsychoBrosGames"]}</script>
+  </head>
+  <body class="page-home">
+    <a class="skip" href="#main">Skip to content</a>
+    
+    <header class="masthead" data-masthead>
+      <div class="wrap masthead__inner">
+        <a class="brand" href="" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <nav class="masthead__nav" aria-label="Main navigation">
+          <a href="reviews/">Reviews</a>
+          <a href="pax-west-2025/">PAX West 2025</a>
+          <a href="about/#crew">The Dads</a>
+          <a href="about/">About &amp; Press</a>
+        </nav>
+        <div class="masthead__actions">
+          
+  <button class="iconbtn" type="button" data-theme-toggle aria-label="Switch color theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7" />
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button class="iconbtn burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobilenav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="reviews/">Reviews</a>
+          <a href="pax-west-2025/">PAX West 2025</a>
+          <a href="about/#crew">The Dads</a>
+          <a href="about/">About &amp; Press</a>
+      </nav>
+    </header>
+    
+      <main id="main">
+        <span id="top"></span>
+        
+  <div class="ticker">
+    <div class="wrap ticker__inner">
+      <span><b>20</b> reviews</span>
+      <span><b>1</b> show floor</span>
+      <span><b>3</b> dads</span>
+      <span><b>0</b> media training</span>
+      <span class="ticker__live"><i></i> September 2025 time capsule</span>
+    </div>
+  </div>
+
+        <section class="lead wrap" aria-label="Featured review">
+          <article class="lead__main reveal">
+            <a class="lead__art" href="reviews/table-tactics/" tabindex="-1" aria-hidden="true">
+              <img src="assets/press/table-tactics/cover.jpg" alt="" width="1200" height="675" fetchpriority="high" />
+              <span class="score score--lg" data-tone="hot"><b>9.1</b><i>hype</i></span>
+            </a>
+            <div class="lead__copy">
+              <p class="card__meta">
+                <span class="tag tag--flame">Featured</span>
+                <span class="tag">Physics Strategy</span>
+                <time datetime="2025-09-14">September 14, 2025</time>
+              </p>
+              <h1 class="lead__title"><a href="reviews/table-tactics/">Table Tactics: physics-driven tabletop battles</a></h1>
+              <p class="lead__deck">Forget health bars. Win by using arrows, marbles, fireballs, traps, and pushes to physically knock miniatures off balance.</p>
+              <blockquote class="pullquote">
+                <p>Finally, a strategy game where knocking things over counts as planning.</p>
+                <cite>The group chat, 11:40pm</cite>
+              </blockquote>
+              <p class="lead__foot">
+                <a class="btn btn--flame" href="reviews/table-tactics/">Read the review <span aria-hidden="true">&rarr;</span></a>
+                <span class="byline">Unbound Creations</span>
+              </p>
+            </div>
+          </article>
+
+          <div class="rail">
+            <p class="rail__head">Latest</p>
+            
+  <a class="rail__item reveal" href="reviews/exovia/">
+    <span class="rail__thumb">    <img src="assets/press/exovia/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Zero-G Factory Simulation &middot; Sep 30</span>
+      <span class="rail__title">Exovia</span>
+      <span class="rail__take">Build a factory in zero gravity. Misplace every wrench in three dimensions.</span>
+    </span>
+    <span class="rail__score" data-tone="hot">8.5</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/akiiwan-relaxing-survival/">
+    <span class="rail__thumb">    <img src="assets/press/akiiwan-relaxing-survival/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Relaxing Survival &middot; Sep 28</span>
+      <span class="rail__title">Akiiwan: Relaxing Survival</span>
+      <span class="rail__take">Survival crafting for people who would prefer nature not scream at them.</span>
+    </span>
+    <span class="rail__score" data-tone="cool">7.7</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/fractured-blooms/">
+    <span class="rail__thumb">    <img src="assets/press/fractured-blooms/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Psychological Life Sim &middot; Sep 26</span>
+      <span class="rail__title">Fractured Blooms</span>
+      <span class="rail__take">Cozy gardening, except Tuesday is broken and possibly watching you.</span>
+    </span>
+    <span class="rail__score" data-tone="warm">8.1</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/moros-protocol/">
+    <span class="rail__thumb">    <img src="assets/press/moros-protocol/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Roguelite Retro FPS &middot; Sep 25</span>
+      <span class="rail__title">Moros Protocol</span>
+      <span class="rail__take">The spaceship is haunted, the guns are loud, and bedtime was an hour ago.</span>
+    </span>
+    <span class="rail__score" data-tone="hot">9.0</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/voidsayer/">
+    <span class="rail__thumb">    <img src="assets/press/voidsayer/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Monster-Taming RPG &middot; Sep 24</span>
+      <span class="rail__title">Voidsayer</span>
+      <span class="rail__take">Catch monsters, fight oblivion, remember which dad named them all.</span>
+    </span>
+    <span class="rail__score" data-tone="warm">8.4</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/letter-lost/">
+    <span class="rail__thumb">    <img src="assets/press/letter-lost/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Workplace Horror Adventure &middot; Sep 23</span>
+      <span class="rail__title">Letter Lost</span>
+      <span class="rail__take">Neither rain nor snow nor workplace horror will stop this delivery.</span>
+    </span>
+    <span class="rail__score" data-tone="cool">7.5</span>
+  </a>
+  <a class="rail__item reveal" href="reviews/sky-of-tides/">
+    <span class="rail__thumb">    <img src="assets/press/sky-of-tides/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="120px" /></span>
+    <span class="rail__text">
+      <span class="rail__meta">Narrative RPG &middot; Sep 21</span>
+      <span class="rail__title">Sky of Tides</span>
+      <span class="rail__take">The world broke apart. Great news for anyone who hates normal maps.</span>
+    </span>
+    <span class="rail__score" data-tone="hot">8.6</span>
+  </a>
+            <a class="rail__all" href="reviews/">All 20 reviews <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </section>
+
+        <section class="wrap section" aria-labelledby="latest-title">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">The reviews</p>
+      <h2><span id="latest-title">Games we could not stop texting about</span></h2>
+      <p class="sechead__note">Every game here was at PAX West 2025. We wrote them up across September, mostly after bedtime.</p>
+    </div>
+    <a class="btn btn--ghost" href="reviews/">See all <span aria-hidden="true">&rarr;</span></a>
+  </div>
+          <div class="grid">
+            
+  <article class="card reveal"
+    data-card
+    data-title="adaptory"
+    data-studio="stormcloak games"
+    data-genre="colony simulation"
+    data-group="official-pax">
+    <a class="card__art" href="reviews/adaptory/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/adaptory/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>7.9</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Colony Simulation</span><time datetime="2025-09-20">Sep 20</time></p>
+      <h3 class="card__title"><a href="reviews/adaptory/">Adaptory</a></h3>
+      <p class="card__take">A colony sim where even the air has a spreadsheet.</p>
+      <p class="card__foot"><span>Stormcloak Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="sashimi slayer"
+    data-studio="shrimp fried rice games"
+    data-genre="rhythm action"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/sashimi-slayer/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/sashimi-slayer/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="hot"><b>8.8</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Rhythm Action</span><time datetime="2025-09-18">Sep 18</time></p>
+      <h3 class="card__title"><a href="reviews/sashimi-slayer/">Sashimi Slayer</a></h3>
+      <p class="card__take">We came for the sword controller and stayed because our arms hurt.</p>
+      <p class="card__foot"><span>Shrimp Fried Rice Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="no stone unturned"
+    data-studio="wise monkey entertainment ltd."
+    data-genre="comedy detective adventure"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/no-stone-unturned/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/no-stone-unturned/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="cool"><b>7.2</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Comedy Detective Adventure</span><time datetime="2025-09-17">Sep 17</time></p>
+      <h3 class="card__title"><a href="reviews/no-stone-unturned/">No Stone Unturned</a></h3>
+      <p class="card__take">A chicken is dead. Three dads are now emotionally overinvested.</p>
+      <p class="card__foot"><span>Wise Monkey Entertainment Ltd.</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="hank: drowning on dry land"
+    data-studio="my next games"
+    data-genre="narrative adventure"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/hank-drowning-on-dry-land/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/hank-drowning-on-dry-land/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>8.0</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Narrative Adventure</span><time datetime="2025-09-15">Sep 15</time></p>
+      <h3 class="card__title"><a href="reviews/hank-drowning-on-dry-land/">Hank: Drowning On Dry Land</a></h3>
+      <p class="card__take">Thirty minutes of cartoon noir, poison, and excellent reasons to hydrate.</p>
+      <p class="card__foot"><span>My Next Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="arcane eats"
+    data-studio="wonderbelly games"
+    data-genre="cooking deckbuilder"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/arcane-eats/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/arcane-eats/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>8.3</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Cooking Deckbuilder</span><time datetime="2025-09-12">Sep 12</time></p>
+      <h3 class="card__title"><a href="reviews/arcane-eats/">Arcane Eats</a></h3>
+      <p class="card__take">The dinner rush now has spells, cards, and still no clean spoons.</p>
+      <p class="card__foot"><span>Wonderbelly Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="draco and the seven scales"
+    data-studio="ice goat games"
+    data-genre="pirate action adventure"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/draco-and-the-seven-scales/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/draco-and-the-seven-scales/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="cool"><b>7.6</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Pirate Action Adventure</span><time datetime="2025-09-11">Sep 11</time></p>
+      <h3 class="card__title"><a href="reviews/draco-and-the-seven-scales/">Draco and the Seven Scales</a></h3>
+      <p class="card__take">Pirates, dragons, and a map we will absolutely hold upside down.</p>
+      <p class="card__foot"><span>Ice Goat Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="beatdown city survivors"
+    data-studio="nuchallenger"
+    data-genre="action survivors-like"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/beatdown-city-survivors/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/beatdown-city-survivors/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="hot"><b>8.5</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Action Survivors-Like</span><time datetime="2025-09-09">Sep 9</time></p>
+      <h3 class="card__title"><a href="reviews/beatdown-city-survivors/">Beatdown City Survivors</a></h3>
+      <p class="card__take">The city has problems. Your solution is mostly uppercuts.</p>
+      <p class="card__foot"><span>NuChallenger</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="terrible lizards"
+    data-studio="wdr studios llc"
+    data-genre="survival horror"
+    data-group="pax-rising">
+    <a class="card__art" href="reviews/terrible-lizards/" tabindex="-1" aria-hidden="true">
+      <img src="assets/press/terrible-lizards/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>7.8</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Survival Horror</span><time datetime="2025-09-08">Sep 8</time></p>
+      <h3 class="card__title"><a href="reviews/terrible-lizards/">Terrible Lizards</a></h3>
+      <p class="card__take">Road trip rule one: never trust the dinosaur-shaped roadside attraction.</p>
+      <p class="card__foot"><span>WDR Studios LLC</span></p>
+    </div>
+  </article>
+          </div>
+        </section>
+
+        <section class="band" aria-labelledby="hype-title">
+          <div class="wrap band__inner">
+            <div class="band__copy reveal">
+              <p class="kicker kicker--onflame">How the score works</p>
+              <h2 id="hype-title">The Dad Hype Meter</h2>
+              <p>It is not a play-tested review score, and we are not going to pretend otherwise. It is a number out of ten for how hard a game hijacked our group chat after PAX West 2025. Nine and up means somebody stopped loading the dishwasher mid-cycle.</p>
+              <a class="btn btn--ink" href="about/#standards">How we stay honest <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <ul class="scale reveal">
+              <li><b data-tone="hot">9.0</b> <span>Group chat meltdown</span></li>
+              <li><b data-tone="hot">8.5</b> <span>Snacks were abandoned</span></li>
+              <li><b data-tone="warm">8.0</b> <span>Wishlisted immediately</span></li>
+              <li><b data-tone="warm">7.5</b> <span>Solid dad approval</span></li>
+              <li><b data-tone="cool">7.0</b> <span>Cautious dad nodding</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="wrap section" aria-labelledby="more-title">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">Keep scrolling</p>
+      <h2><span id="more-title">More from the show floor</span></h2>
+      
+    </div>
+    <a class="btn btn--ghost" href="pax-west-2025/">Full PAX collection <span aria-hidden="true">&rarr;</span></a>
+  </div>
+          <div class="rows">
+            
+  <a class="row reveal" href="reviews/rogue-eclipse/">
+    <span class="row__n">01</span>
+    <span class="row__thumb">    <img src="assets/press/rogue-eclipse/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="88px" /></span>
+    <span class="row__main">
+      <span class="row__title">Rogue Eclipse</span>
+      <span class="row__take">Space is vast, beautiful, and apparently full of things that need exploding.</span>
+    </span>
+    <span class="row__genre">Spaceflight Roguelike</span>
+    <time class="row__date" datetime="2025-09-06">Sep 6</time>
+    <span class="row__score" data-tone="hot">8.9</span>
+  </a>
+  <a class="row reveal" href="reviews/rollergirl/">
+    <span class="row__n">02</span>
+    <span class="row__thumb">    <img src="assets/press/rollergirl/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="88px" /></span>
+    <span class="row__main">
+      <span class="row__title">RollerGirl</span>
+      <span class="row__take">A broken car, good music, and zero desire to call roadside assistance.</span>
+    </span>
+    <span class="row__genre">Slice-of-Life Adventure</span>
+    <time class="row__date" datetime="2025-09-05">Sep 5</time>
+    <span class="row__score" data-tone="warm">8.2</span>
+  </a>
+  <a class="row reveal" href="reviews/blocks-for-babies/">
+    <span class="row__n">03</span>
+    <span class="row__thumb">    <img src="assets/press/blocks-for-babies/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="88px" /></span>
+    <span class="row__main">
+      <span class="row__title">Blocks for Babies</span>
+      <span class="row__take">Tetris got a shotgun. We have follow-up questions.</span>
+    </span>
+    <span class="row__genre">Arcade Roguelite</span>
+    <time class="row__date" datetime="2025-09-03">Sep 3</time>
+    <span class="row__score" data-tone="cool">7.4</span>
+  </a>
+  <a class="row reveal" href="reviews/nevers-end/">
+    <span class="row__n">04</span>
+    <span class="row__thumb">    <img src="assets/press/nevers-end/thumb.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" sizes="88px" /></span>
+    <span class="row__main">
+      <span class="row__title">Never&#039;s End</span>
+      <span class="row__take">Possession: cheaper than recruiting and somehow worse for HR.</span>
+    </span>
+    <span class="row__genre">Tactical RPG</span>
+    <time class="row__date" datetime="2025-09-02">Sep 2</time>
+    <span class="row__score" data-tone="hot">8.7</span>
+  </a>
+          </div>
+        </section>
+
+        <section class="wrap section" aria-labelledby="crew-title">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">The tribunal</p>
+      <h2><span id="crew-title">Every review gets three opinions</span></h2>
+      <p class="sechead__note">We each play differently, so we each review differently. Nobody has ever fully agreed on anything.</p>
+    </div>
+    <a class="btn btn--ghost" href="about/#crew">Meet the dads <span aria-hidden="true">&rarr;</span></a>
+  </div>
+          <div class="crew">
+            <article class="crew__card reveal">
+              <p class="crew__n">01</p>
+              <h3>Dad Who Skipped the Tutorial</h3>
+              <p>Plays maybe four games a year and refuses to read a single tooltip. If he cannot work it out in ninety seconds, he decides that is the game's problem. Our onboarding canary.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">02</p>
+              <h3>The Descent Guy</h3>
+              <p>Has opinions about six-degrees-of-freedom movement that predate two of his children. Will find the systems depth in anything, then compare it unfavourably to Descent.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">03</p>
+              <h3>Normal-ish Dad</h3>
+              <p>The control group. Plays a reasonable amount, finishes about half of it, and is the only one of us who checks whether a game is still fun at hour three.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brandcol">
+        <a class="brand" href="" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <p>Three dads in their forties reviewing games between school pickup and bedtime. One of us will not stop talking about Descent.</p>
+      </div>
+      <div class="foot__col">
+        <h2>Read</h2>
+        <a href="reviews/">All reviews</a>
+        <a href="pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="foot__col">
+        <h2>The boring bits</h2>
+        <a href="about/#crew">Meet the dads</a>
+        <a href="about/#standards">How we stay honest</a>
+        <a href="about/#press">Press &amp; partnerships</a>
+      </div>
+      <div class="foot__col">
+        <h2>Elsewhere</h2>
+        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <a href="about/#press">Get in touch</a>
+      </div>
+    </div>
+    <div class="wrap foot__bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
+      <p class="foot__rights">Game screenshots and key art are official press assets belonging to their respective developers and publishers, used editorially. <a href="about/#standards">Image policy</a>.</p>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

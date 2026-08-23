@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        document.documentElement.classList.add("js");
+        const ok = new Set(["light", "dark"]);
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme = (ok.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Who the PsychoBros are, how we review games, and how to reach us about press access, review codes, and events." />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PsychoBros" />
+    <meta property="og:title" content="About &amp; Press — PsychoBros" />
+    <meta property="og:description" content="Who the PsychoBros are, how we review games, and how to reach us about press access, review codes, and events." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/about/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PsychoBros: game reviews from three dads" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/psychobros-social-card.png" />
+    <title>About &amp; Press — PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/about/" />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About PsychoBros","url":"https://psychobrosgames.github.io/about/","description":"Who the PsychoBros are, how we review games, and how to reach us about press access, review codes, and events."}</script>
+  </head>
+  <body class="page-about">
+    <a class="skip" href="#main">Skip to content</a>
+    
+    <header class="masthead" data-masthead>
+      <div class="wrap masthead__inner">
+        <a class="brand" href="../" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <nav class="masthead__nav" aria-label="Main navigation">
+          <a href="../reviews/">Reviews</a>
+          <a href="../pax-west-2025/">PAX West 2025</a>
+          <a href="../about/#crew">The Dads</a>
+          <a href="../about/" aria-current="page">About &amp; Press</a>
+        </nav>
+        <div class="masthead__actions">
+          
+  <button class="iconbtn" type="button" data-theme-toggle aria-label="Switch color theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7" />
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button class="iconbtn burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobilenav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../reviews/">Reviews</a>
+          <a href="../pax-west-2025/">PAX West 2025</a>
+          <a href="../about/#crew">The Dads</a>
+          <a href="../about/" aria-current="page">About &amp; Press</a>
+      </nav>
+    </header>
+    
+      <main id="main">
+        <span id="top"></span>
+        <section class="pagehead">
+          <div class="wrap">
+            <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">About &amp; Press</span></nav>
+            <p class="kicker">About</p>
+            <h1>Three dads, one group chat</h1>
+            <p class="pagehead__deck">PsychoBros is a small independent games site run by three friends in their forties. We cover indie games, we write up what we actually think, and we are extremely normal about it.</p>
+          </div>
+        </section>
+
+        <div class="wrap section prose prose--intro">
+          <p>We started PsychoBros because our group chat had quietly turned into an unpaid, unedited games publication, and one of us finally said "we should probably put this somewhere." Between us we have three very different tolerances for tutorials and one ongoing argument about whether Descent peaked in 1995.</p>
+          <p>Our first project was PAX West 2025: twenty games from the show, written up across September, each one run past all three of us before it went live.</p>
+        </div>
+
+        <section class="wrap section" id="crew" aria-labelledby="crew-heading">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">The crew</p>
+      <h2><span id="crew-heading">Meet the dads</span></h2>
+      
+    </div>
+    
+  </div>
+          <div class="crew crew--lg">
+            <article class="crew__card reveal">
+              <p class="crew__n">01</p>
+              <h3>Dad Who Skipped the Tutorial</h3>
+              <p class="crew__role">Accessibility &amp; first impressions</p>
+              <p>Plays four, maybe five games a year and has never willingly read a tooltip. He is our early warning system for confusing onboarding, unreadable UI, and games that assume you already know the genre. If he bounces in the first ten minutes, we say so.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">02</p>
+              <h3>The Descent Guy</h3>
+              <p class="crew__role">Systems &amp; mechanics</p>
+              <p>The reason this site exists. Deep and slightly alarming knowledge of movement systems, level design and difficulty curves, anchored by a thirty-year relationship with Descent. He finds the mechanical idea at the centre of a game faster than anyone we know.</p>
+            </article>
+            <article class="crew__card reveal">
+              <p class="crew__n">03</p>
+              <h3>Normal-ish Dad</h3>
+              <p class="crew__role">The control group</p>
+              <p>Plays a healthy amount, finishes roughly half of it, and owns the only functioning sense of proportion in the building. When the other two spiral, he asks the question that actually matters: is this still fun three hours in?</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="wrap section" id="standards" aria-labelledby="standards-heading">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">Editorial</p>
+      <h2><span id="standards-heading">How we stay honest</span></h2>
+      
+    </div>
+    
+  </div>
+          <ol class="standards">
+            <li>
+              <h3>We say what every review is based on</h3>
+              <p>Each review carries a plain-language basis note. Our PAX West 2025 write-ups are retrospective mini-reviews built from the official PAX West 2025 Steam event page, the PAX Rising Showcase listing, and each game's own published materials. They are not final-release reviews and they never claim hands-on time we did not have.</p>
+            </li>
+            <li>
+              <h3>The Dad Hype Meter is a hype score, not a verdict</h3>
+              <p>The number on each review measures how much a game took over our group chat. It is anticipation, clearly labelled as anticipation. We are not going to hand out review scores for games we have not played to completion.</p>
+            </li>
+            <li>
+              <h3>Three perspectives, no forced consensus</h3>
+              <p>Every write-up is read through all three of us and we publish the places we disagree. A game that works brilliantly for one dad and loses another is more useful than an averaged shrug.</p>
+            </li>
+            <li>
+              <h3>Sources are linked, always</h3>
+              <p>Every review lists the sources it draws on so you can check our work. If we get something wrong, tell us and we will correct it in place with a note explaining what changed.</p>
+            </li>
+            <li>
+              <h3>Game images belong to the people who made them</h3>
+              <p>Screenshots and key art on this site are the official press assets published by each game's developer on its own Steam store listing, used editorially alongside our coverage of that specific game. Every image is credited to its developer and publisher where it appears, and links back to the source listing. We do not alter artwork beyond cropping and resizing it to fit the page. If you made one of these games and would rather we used different images, or none at all, email us and it is done the same day.</p>
+            </li>
+            <li>
+              <h3>We disclose anything we are given</h3>
+              <p>Review codes, event access, travel, hardware, snacks. If somebody gives us something, it goes in the disclosure line on that piece. Nobody has offered yet, but we are ready.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="wrap section" id="press" aria-labelledby="press-heading">
+          
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">Press</p>
+      <h2><span id="press-heading">Press &amp; partnerships</span></h2>
+      
+    </div>
+    
+  </div>
+          <div class="presskit">
+            <article class="presskit__card">
+              <h3>What we cover</h3>
+              <p>Indie and mid-size games across PC and console, with a bias toward interesting mechanical ideas and anything a busy adult can pick up in short sessions. Strategy, tactics, roguelites, immersive sims and well-made weird stuff.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>What we produce</h3>
+              <p>Written reviews and collections, three-perspective breakdowns, show coverage and commentary. Streaming and video are in progress. Everything is published here first.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>Review codes &amp; events</h3>
+              <p>We accept review codes and event access, and we disclose every one of them. We will always tell you honestly whether a game is a fit for our audience before you send anything over.</p>
+            </article>
+            <article class="presskit__card">
+              <h3>Get in touch</h3>
+              <p>The fastest route is <a href="https://github.com/PsychoBrosGames" rel="noreferrer">github.com/PsychoBrosGames</a>. Publicists and event organisers: mention the show or title in the first line and one of us will reply, usually after bedtime.</p>
+            </article>
+          </div>
+          <div class="note note--flame">
+            <h2>Quick facts for your media list</h2>
+            <ul class="facts">
+              <li><b>Outlet</b> PsychoBros</li>
+              <li><b>Founded</b> 2025</li>
+              <li><b>Team</b> Three writers</li>
+              <li><b>Focus</b> Indie &amp; mid-size games</li>
+              <li><b>Format</b> Reviews, collections, commentary</li>
+              <li><b>Published</b> 20 reviews to date</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brandcol">
+        <a class="brand" href="../" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <p>Three dads in their forties reviewing games between school pickup and bedtime. One of us will not stop talking about Descent.</p>
+      </div>
+      <div class="foot__col">
+        <h2>Read</h2>
+        <a href="../reviews/">All reviews</a>
+        <a href="../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="foot__col">
+        <h2>The boring bits</h2>
+        <a href="../about/#crew">Meet the dads</a>
+        <a href="../about/#standards">How we stay honest</a>
+        <a href="../about/#press">Press &amp; partnerships</a>
+      </div>
+      <div class="foot__col">
+        <h2>Elsewhere</h2>
+        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <a href="../about/#press">Get in touch</a>
+      </div>
+    </div>
+    <div class="wrap foot__bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
+      <p class="foot__rights">Game screenshots and key art are official press assets belonging to their respective developers and publishers, used editorially. <a href="../about/#standards">Image policy</a>.</p>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

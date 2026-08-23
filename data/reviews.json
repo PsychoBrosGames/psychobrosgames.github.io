@@ -1,0 +1,1323 @@
+[
+  {
+    "slug": "nevers-end",
+    "title": "Never's End",
+    "studio": "Hypersect",
+    "date": "2025-09-02",
+    "genre": "Tactical RPG",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; coming soon",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Possession-based party building gives this open-world tactics game a genuinely different answer to the usual roster problem.",
+    "verdictTitle": "A tactics sandbox with possession at its center.",
+    "dadTake": "Possession: cheaper than recruiting and somehow worse for HR.",
+    "verdict": "Never's End has the kind of central mechanic that can support an entire campaign: your immortal spirit survives, but the bodies carrying it do not have to. The promise rests on whether its weather, terrain, settlements, and swappable hosts stay legible when the battlefield gets busy.",
+    "overview": [
+      "Humanity is almost gone, the Never is spreading, and the player is an undying warrior spirit embodied in living silver. Instead of recruiting a fixed party, that spirit possesses townsfolk and carries their abilities into turn-based battles.",
+      "The open world adds settlements, temples, and technology around a combat simulation that accounts for wind, water, weather, and terrain. That combination makes Never's End look less like a chain of puzzle maps and more like a campaign built to produce stories."
+    ],
+    "facts": [
+      "Possession turns townsfolk into a flexible party-building system.",
+      "Weather, wind, water, and terrain are simulated tactical factors.",
+      "Settlements, temples, and technology connect combat to an open-world campaign."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Watch the onboarding",
+        "headline": "A great hook still needs a clean rules ramp.",
+        "body": "Possessing a new host is instantly understandable. The risk is the stack of elemental, environmental, and settlement systems arriving before a new player knows which decisions actually matter."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Strong fit",
+        "headline": "The roster is a strategic resource, not a collection screen.",
+        "body": "A party that can be rebuilt through possession creates meaningful adaptation. Add weather and terrain, and the game has several ways to reward planning beyond raw damage."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Campaign pick",
+        "headline": "The campaign pitch is stronger than any single battle.",
+        "body": "Open-world consequences and changing hosts could make this a game worth discussing between sessions, provided the simulation does not turn every encounter into a long setup phase."
+      }
+    ],
+    "bestFor": [
+      "Players who want tactical RPG systems with a strong narrative premise",
+      "Campaign planners who enjoy adapting a roster to the map",
+      "Groups that trade stories about unexpected simulation outcomes"
+    ],
+    "watchFor": [
+      "A potentially steep first-hour learning curve",
+      "How clearly environmental interactions are communicated",
+      "Whether possession creates attachment or makes characters feel disposable"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Never's End on Steam",
+        "url": "https://store.steampowered.com/app/1999930/"
+      }
+    ],
+    "hype": 8.7
+  },
+  {
+    "slug": "blocks-for-babies",
+    "title": "Blocks for Babies",
+    "studio": "BunkSoft Interactive LLC",
+    "date": "2025-09-03",
+    "genre": "Arcade Roguelite",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; coming soon",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Stack blocks in 2D, blast them apart in 3D, then build a run around the collision between both halves.",
+    "verdictTitle": "Two genres collide hard enough to make the gimmick work.",
+    "dadTake": "Tetris got a shotgun. We have follow-up questions.",
+    "verdict": "Blocks for Babies has a pitch that survives the elevator ride: stack the board, jump into it, and shoot the mess you made. The deciding factor will be whether upgrades turn that contrast into strategy instead of asking players to alternate between two disconnected minigames.",
+    "overview": [
+      "The run switches between arcade block-stacking and first-person shooting. Clearing lines shapes the 2D board; entering the 3D space lets the player destroy blocks directly with weapons.",
+      "Items, weapons, and upgrades are designed to create cross-mode synergies, while bosses test whether the player understands both rule sets. It is a roguelite built around a mechanical punchline with real room to deepen."
+    ],
+    "facts": [
+      "Runs alternate between 2D block-stacking and 3D first-person combat.",
+      "Weapons, items, and upgrades can create synergies across both modes.",
+      "Boss encounters are designed to test mastery of stacking and shooting together."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Easy hook",
+        "headline": "The concept explains itself before the title does.",
+        "body": "Most players already understand blocks and shooting. That makes the first minute approachable even if the roguelite upgrade layer becomes more demanding later."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Synergy dependent",
+        "headline": "The best runs should begin on the stacking screen.",
+        "body": "The design gets interesting when block placement creates opportunities for the combat phase. If upgrades only raise damage, the two-mode structure loses its strategic reason to exist."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Strong party demo",
+        "headline": "This is built for one-more-run handoffs.",
+        "body": "Short, visible mistakes and an unusual premise make it easy to pass around. Long-term appeal depends on bosses and build variety keeping the joke from becoming routine."
+      }
+    ],
+    "bestFor": [
+      "Players who like genre mashups with an immediate arcade loop",
+      "Roguelite fans who enjoy discovering odd upgrade combinations",
+      "Game-night spectators who want readable failures and quick resets"
+    ],
+    "watchFor": [
+      "Whether the two modes meaningfully affect each other",
+      "Run variety beyond the first strong gimmick",
+      "How much downtime sits between stacking and shooting"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Blocks for Babies on Steam",
+        "url": "https://store.steampowered.com/app/2776770/"
+      }
+    ],
+    "hype": 7.4
+  },
+  {
+    "slug": "rollergirl",
+    "title": "RollerGirl",
+    "studio": "Pushing Vertices",
+    "date": "2025-09-05",
+    "genre": "Slice-of-Life Adventure",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; date TBA",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "A broken car, a pair of rollerblades, and a playlist turn a small-town summer into an unusually personal adventure.",
+    "verdictTitle": "A small-town mixtape with wheels.",
+    "dadTake": "A broken car, good music, and zero desire to call roadside assistance.",
+    "verdict": "RollerGirl stands out by making music taste part of how the world reads its protagonist. The adventure will live or die on character writing, but its blend of movement, odd jobs, romance, and playlist decisions gives a familiar summer story a specific point of view.",
+    "overview": [
+      "Naomi is sixteen, her car has broken down, and getting around town now means rollerblades. That inconvenience opens a slice-of-life adventure built from conversations, odd jobs, romance, and a small-town mystery.",
+      "Songs are collectible, playlists are editable, and music choices change how the world responds. The 2000s-inspired soundtrack is not just atmosphere; it is one of the player's main ways of defining Naomi."
+    ],
+    "facts": [
+      "Music and playlist choices change how characters and the world react.",
+      "Collected songs expand the player's available playlists.",
+      "The setting mixes rollerblade traversal, odd jobs, romance, and mystery."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Welcoming",
+        "headline": "Movement and conversation are a low-friction way in.",
+        "body": "There is no giant combat vocabulary to learn. The important question is whether skating feels good enough that traveling between conversations stays pleasant rather than becoming an errand."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Story systems",
+        "headline": "The playlist needs consequences, not just flavor.",
+        "body": "Music-driven reactions can become a meaningful social system if choices create tradeoffs and reveal character. Without that, collecting tracks risks becoming a decorative checklist."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Weekend game",
+        "headline": "Specificity is doing the heavy lifting.",
+        "body": "The small-town scale and 2000s identity give RollerGirl a clear mood. It is a strong change of pace for players who want a focused story between larger releases."
+      }
+    ],
+    "bestFor": [
+      "Players who choose adventures for characters and atmosphere",
+      "Anyone nostalgic for 2000s playlists and small-town summers",
+      "Story-game fans who like identity expressed through choices"
+    ],
+    "watchFor": [
+      "Traversal repetition between story beats",
+      "How substantial playlist consequences become",
+      "Whether the mystery complements or overwhelms the slice-of-life tone"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "RollerGirl on Steam",
+        "url": "https://store.steampowered.com/app/2828540/"
+      }
+    ],
+    "hype": 8.2
+  },
+  {
+    "slug": "rogue-eclipse",
+    "title": "Rogue Eclipse",
+    "studio": "HUSKRAFTS",
+    "date": "2025-09-06",
+    "genre": "Spaceflight Roguelike",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Fast starfighter combat, destructible battlefields, and enormous targets aim to make every failed run look spectacular.",
+    "verdictTitle": "Starfighter spectacle built for another run.",
+    "dadTake": "Space is vast, beautiful, and apparently full of things that need exploding.",
+    "verdict": "Rogue Eclipse understands that a space roguelike needs more than upgrade menus: the flying itself has to feel dangerous and fast. Destructible environments and behemoth-scale enemies give its run structure a strong visual purpose, while its Arabesque Futurism helps it avoid generic military sci-fi.",
+    "overview": [
+      "The player is a pilot fighting for humanity's future through repeated arcade-style spaceflight runs. Ships can be upgraded as battles escalate from fighter skirmishes to encounters with enormous enemy machines.",
+      "Destructible environments broaden the combat space, while a visual direction inspired by Arabesque Futurism gives the ships and world a recognizable identity. The target is speed and spectacle without surrendering the build decisions expected from a roguelike."
+    ],
+    "facts": [
+      "Arcade starfighter controls are paired with a repeated roguelike run structure.",
+      "Battlefields include destructible environments and enemy behemoths.",
+      "The visual world draws on Arabesque Futurism."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Control check",
+        "headline": "The flight model decides who gets invited.",
+        "body": "Speed is exciting only if orientation stays readable. Strong aim assistance and clear objectives would make the spectacle accessible without flattening the challenge."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Build potential",
+        "headline": "Destruction should create choices, not only particles.",
+        "body": "Environmental damage is most valuable when it changes routes, exposes weak points, or creates cover. Ship upgrades need the same tactical specificity."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "One-more-run",
+        "headline": "A clean run length could make this rotation-ready.",
+        "body": "Space combat and obvious boss scale are easy to return to. The question is whether progression respects players who want a satisfying session without committing an entire night."
+      }
+    ],
+    "bestFor": [
+      "Starfighter fans who want arcade speed over simulation",
+      "Roguelike players drawn to visible build progression",
+      "Anyone looking for science fiction outside familiar military aesthetics"
+    ],
+    "watchFor": [
+      "Spatial readability at high speed",
+      "Upgrade variety across repeated runs",
+      "Whether destruction changes tactics or remains mostly visual"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Rogue Eclipse on Steam",
+        "url": "https://store.steampowered.com/app/782260/"
+      }
+    ],
+    "hype": 8.9
+  },
+  {
+    "slug": "terrible-lizards",
+    "title": "Terrible Lizards",
+    "studio": "WDR Studios LLC",
+    "date": "2025-09-08",
+    "genre": "Survival Horror",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; coming soon",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "A dead car and a decaying Route 66 dinosaur attraction turn a 1992 road stop into a focused horror setup.",
+    "verdictTitle": "Roadside Americana with teeth.",
+    "dadTake": "Road trip rule one: never trust the dinosaur-shaped roadside attraction.",
+    "verdict": "Terrible Lizards starts from a location horror games have barely touched: a sun-faded tourist trap built around fake dinosaurs. The missing-child mystery gives the player a reason to explore, while the 1992 setting removes the easy exits that modern technology usually creates.",
+    "overview": [
+      "The player's car dies outside Dalton's Dinos, a deteriorating Route 66 attraction in New Mexico. It is 1992, a child is missing, and the creatures stalking the property are more dangerous than the roadside statues suggest.",
+      "The setup uses a contained attraction, an investigation, and chase pressure rather than a sprawling apocalypse. That scale makes the location itself the game's strongest asset."
+    ],
+    "facts": [
+      "The story takes place in 1992, removing cell phones and modern escape routes.",
+      "Dalton's Dinos is a deserted Route 66 dinosaur attraction.",
+      "Exploration of a missing-child case is interrupted by active creature hunts."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Tension warning",
+        "headline": "A clear mystery can pull in players who avoid pure survival loops.",
+        "body": "The investigation gives each scary corridor a purpose. Accessibility will depend on generous checkpoints and whether chases communicate where safety actually is."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "System unknown",
+        "headline": "The attraction needs rules worth learning.",
+        "body": "A memorable monster is stronger when its behavior can be studied and exploited. If every encounter is a scripted sprint, the location may carry more weight than the play."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "October pick",
+        "headline": "The setting sells a focused horror night.",
+        "body": "A contained roadside attraction is easy to pitch to the group and different enough to remember. The ideal version stays tight instead of stretching the premise."
+      }
+    ],
+    "bestFor": [
+      "Horror players who value setting and mystery",
+      "Fans of analog-era stories without instant communication",
+      "Groups looking for a focused seasonal playthrough"
+    ],
+    "watchFor": [
+      "Checkpoint generosity during chase sequences",
+      "Enemy behavior depth",
+      "Whether the missing-child story earns its darker material"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Terrible Lizards on Steam",
+        "url": "https://store.steampowered.com/app/2920220/"
+      }
+    ],
+    "hype": 7.8
+  },
+  {
+    "slug": "beatdown-city-survivors",
+    "title": "Beatdown City Survivors",
+    "studio": "NuChallenger",
+    "date": "2025-09-09",
+    "genre": "Action Survivors-Like",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Zombie survival becomes an immersive-sim toy box where puddles, gas, cars, and ridiculous crafted weapons all count.",
+    "verdictTitle": "A systems-first survivor with a mean toy box.",
+    "dadTake": "The city has problems. Your solution is mostly uppercuts.",
+    "verdict": "Beatdown City Survivors is most convincing when it treats the city as part of the loadout. Electrifying puddles and detonating gas promise more interesting decisions than simply circling a horde, and weapon crafting gives the run structure a gleefully scrappy identity.",
+    "overview": [
+      "This survivors-like drops varied characters into a sandbox city full of zombies and mutants. Environmental hazards can be chained together, so puddles, electricity, gas, and cars become improvised tools.",
+      "Crafted weapons push that improvisation into absurd territory, with examples ranging from knife-slippers to fireworks bazookas. The roster also extends beyond standard human fighters to animals and other unusual survivors."
+    ],
+    "facts": [
+      "Environmental systems let electricity, gas, puddles, and cars interact.",
+      "Crafting supports deliberately absurd weapons and synergies.",
+      "The recruitable survivor roster includes humans, animals, and stylized fighters."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Readable chaos",
+        "headline": "The sandbox needs to teach through obvious cause and effect.",
+        "body": "Cars exploding and puddles conducting electricity are intuitive. The challenge is keeping crafted effects readable when the screen fills with enemies."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Strong fit",
+        "headline": "The city is the build.",
+        "body": "Environmental combinations create positional decisions that many survivors-likes lack. Character abilities and crafting should reward setting up a chain rather than only scaling damage."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Rotation candidate",
+        "headline": "The comedy works because the systems back it up.",
+        "body": "Silly weapons are good trailer material, but the reusable hook is discovering another interaction. That can sustain short sessions if runs reach the interesting choices quickly."
+      }
+    ],
+    "bestFor": [
+      "Survivors-like fans who want more environmental agency",
+      "Players who enjoy crafting chaotic build combinations",
+      "Anyone who prefers systemic comedy to scripted jokes"
+    ],
+    "watchFor": [
+      "Visual clarity during dense encounters",
+      "How quickly runs reach meaningful build choices",
+      "Whether crafted weapons remain distinct at high power"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Beatdown City Survivors on Steam",
+        "url": "https://store.steampowered.com/app/3383040/"
+      }
+    ],
+    "hype": 8.5
+  },
+  {
+    "slug": "draco-and-the-seven-scales",
+    "title": "Draco and the Seven Scales",
+    "studio": "Ice Goat Games",
+    "date": "2025-09-11",
+    "genre": "Pirate Action Adventure",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Top-down dungeons, sea routes, rival captains, and pixel-art piracy make exploration route choice the real treasure map.",
+    "verdictTitle": "A pirate map that rewards taking the long route.",
+    "dadTake": "Pirates, dragons, and a map we will absolutely hold upside down.",
+    "verdict": "Draco and the Seven Scales makes a strong case for putting the ship back into pirate adventure. Different sea routes open different dungeons, items, and puzzles, giving travel a strategic purpose beyond connecting islands.",
+    "overview": [
+      "Draco is a pirate captain trying to save what matters most to him. The adventure moves between top-down exploration on foot and travel by ship across a large pixel-art world.",
+      "Route choice matters because different passages lead to different dungeons, puzzles, and items. Rival captains, armadas, and sea monsters turn those routes into more than scenery."
+    ],
+    "facts": [
+      "Exploration alternates between on-foot adventuring and sailing.",
+      "Different sea routes unlock distinct dungeons, items, and puzzles.",
+      "Boss threats include rival captains, armadas, and sea monsters."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Classic entry",
+        "headline": "The familiar top-down language helps.",
+        "body": "Movement, dungeons, and bosses are easy to understand. The ship layer should add possibility without turning basic navigation into a tax."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Route planning",
+        "headline": "Navigation choices need lasting consequences.",
+        "body": "Multiple routes are strategically meaningful when they change resources, equipment, and future options. If every path is eventually mandatory, the map becomes a checklist."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Comfort pick",
+        "headline": "A strong genre shape with one useful twist.",
+        "body": "Pixel-art adventure is familiar territory, but meaningful sailing can distinguish this from another dungeon run. The balance between land and sea will decide its pace."
+      }
+    ],
+    "bestFor": [
+      "Players who like classic top-down adventure structure",
+      "Explorers who want route choice to unlock different content",
+      "Pirate-game fans who expect the ship to matter"
+    ],
+    "watchFor": [
+      "Travel time between destinations",
+      "Whether alternate routes remain genuine choices",
+      "The balance between exploration, puzzles, and boss combat"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Draco and the Seven Scales on Steam",
+        "url": "https://store.steampowered.com/app/2559690/"
+      }
+    ],
+    "hype": 7.6
+  },
+  {
+    "slug": "arcane-eats",
+    "title": "Arcane Eats",
+    "studio": "Wonderbelly Games",
+    "date": "2025-09-12",
+    "genre": "Cooking Deckbuilder",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; planned for 2026",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Ingredient cards, enchanted cooktops, and impatient customers turn meal prep into a compact turn-by-turn strategy problem.",
+    "verdictTitle": "A deckbuilder where dinner service is the boss fight.",
+    "dadTake": "The dinner rush now has spells, cards, and still no clean spoons.",
+    "verdict": "Arcane Eats gives card play a physical process: ingredients occupy cooktops, tools modify meals, and customers create timing pressure. The theme is not pasted over the deckbuilder; it changes how cards occupy space and when they become useful.",
+    "overview": [
+      "Ingredient cards move onto enchanted cooktops rather than resolving as abstract attacks. Energy, timing, kitchen tools, and customer demands all compete for attention during a turn.",
+      "The result is part deckbuilder and part service puzzle. A good meal is not only about assembling the strongest card combo; it also has to reach the right customer before patience runs out."
+    ],
+    "facts": [
+      "Ingredient cards are played onto enchanted cooktops.",
+      "Magical kitchen tools modify meals and card outcomes.",
+      "Customer-management pressure is part of each turn's puzzle."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Theme helps",
+        "headline": "Cooking makes abstract card timing easier to read.",
+        "body": "Players can understand that ingredients need time and customers will not wait forever. Tooltips still need to keep the magical exceptions from overwhelming that clear foundation."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Strong fit",
+        "headline": "Cooktop space creates the real decisions.",
+        "body": "Cards becoming occupied ingredients introduces sequencing and capacity management. The best decks should solve service problems differently rather than converge on one efficient recipe."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Lunch-break runs",
+        "headline": "A compact service loop is easy to return to.",
+        "body": "The familiar deckbuilder rhythm benefits from a theme that visibly changes the board. Run length and customer variety will determine whether it stays in rotation."
+      }
+    ],
+    "bestFor": [
+      "Deckbuilder fans who want stronger board-state management",
+      "Cooking-game players ready for turn-based pressure",
+      "Anyone drawn to systems where timing matters as much as card value"
+    ],
+    "watchFor": [
+      "Information density around magical tools",
+      "Customer variety across repeated runs",
+      "Whether successful decks remain meaningfully different"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Arcane Eats on Steam",
+        "url": "https://store.steampowered.com/app/2640090/"
+      }
+    ],
+    "hype": 8.3
+  },
+  {
+    "slug": "table-tactics",
+    "title": "Table Tactics: physics-driven tabletop battles",
+    "studio": "Unbound Creations",
+    "date": "2025-09-14",
+    "genre": "Physics Strategy",
+    "platforms": "Windows, macOS, Linux",
+    "statusAtShow": "Unreleased; date TBA",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "featured": true,
+    "deck": "Forget health bars. Win by using arrows, marbles, fireballs, traps, and pushes to physically knock miniatures off balance.",
+    "verdictTitle": "Miniatures strategy where gravity writes the damage numbers.",
+    "dadTake": "Finally, a strategy game where knocking things over counts as planning.",
+    "verdict": "Table Tactics replaces invisible arithmetic with visible consequences. Weight, shape, position, and momentum decide whether a miniature stays upright, giving every move the clarity of a tabletop stunt and the possibility of an unexpected chain reaction.",
+    "overview": [
+      "The battlefield is a tabletop populated by collectible miniature figures. Archers, catapults, mages, traps, marbles, and other tools do not reduce a health meter; they apply force until an opposing figure falls.",
+      "Because weight and shape matter, roster building is partly about physical properties. Coins earned through play can be used to buy and trade miniatures, giving the physics puzzle a collection layer."
+    ],
+    "facts": [
+      "Victory comes from physically knocking miniatures over instead of depleting health.",
+      "Unit weight, shape, position, and applied force all affect outcomes.",
+      "Coins support buying, trading, and building custom miniature rosters."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Instantly readable",
+        "headline": "Falling over is the clearest damage number in games.",
+        "body": "The win condition needs almost no explanation, and a lucky ricochet is entertaining even before the player understands the roster. Precision controls are the accessibility test."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Top pick",
+        "headline": "Physics makes positioning matter twice.",
+        "body": "A unit's tactical role and physical body both belong in the plan. The system can reward setup, angle, force, and roster construction without hiding the result behind a calculation."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Game-night fit",
+        "headline": "This has argument-generating potential.",
+        "body": "Visible outcomes make the game easy to watch and discuss. If turns stay brisk, Table Tactics could work as both a solo strategy game and a reliable pass-the-controller event."
+      }
+    ],
+    "bestFor": [
+      "Tabletop players who enjoy measuring angles and consequences",
+      "Strategy fans tired of opaque damage formulas",
+      "Game-night groups that value readable, surprising outcomes"
+    ],
+    "watchFor": [
+      "Control precision when aiming small forces",
+      "Physics consistency across unit shapes",
+      "How acquisition and trading affect roster balance"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. The official Steam title is shown in full; it is often shortened to Table Tactics.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Table Tactics on Steam",
+        "url": "https://store.steampowered.com/app/3730680/"
+      }
+    ],
+    "hype": 9.1
+  },
+  {
+    "slug": "hank-drowning-on-dry-land",
+    "title": "Hank: Drowning On Dry Land",
+    "studio": "My Next Games",
+    "date": "2025-09-15",
+    "genre": "Narrative Adventure",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer.",
+    "verdictTitle": "Thirty minutes of poisoned cartoon noir.",
+    "dadTake": "Thirty minutes of cartoon noir, poison, and excellent reasons to hydrate.",
+    "verdict": "Hank is short enough to commit fully to its premise without turning the subconscious into a collectible map. Its dark Saturday-morning-cartoon style and half-hour target make it a useful reminder that a complete game does not need to fill a calendar.",
+    "overview": [
+      "Hank is a time-traveling vigilante who has been poisoned and left drowning in spilled beer. The attempt to survive sends him through his own subconscious rather than a conventional crime scene.",
+      "The official description targets roughly thirty minutes and frames the presentation like a dark Saturday-morning cartoon. That brevity makes tone, pacing, and a clean ending more important than mechanical expansion."
+    ],
+    "facts": [
+      "The story follows a poisoned vigilante traveling through his subconscious.",
+      "The visual tone is modeled after dark Saturday-morning cartoons.",
+      "The official description targets a roughly 30-minute runtime."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Easy commitment",
+        "headline": "Half an hour is a feature.",
+        "body": "A short runtime removes the usual hesitation around starting a narrative game. The experience needs only clear interaction and readable story beats to justify the evening."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Story first",
+        "headline": "There is no campaign system to optimize.",
+        "body": "The appeal is structure, symbolism, and pacing rather than mastery. Players looking for deep mechanics should treat this as an interactive short, not a compact RPG."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Palette cleanser",
+        "headline": "A complete idea can fit between larger games.",
+        "body": "The unusual death and cartoon-noir framing make Hank easy to remember. If the ending lands, the short format is exactly the right size."
+      }
+    ],
+    "bestFor": [
+      "Players who want a complete story in one sitting",
+      "Fans of surreal noir and dark cartoon aesthetics",
+      "Anyone looking for a break between longer campaigns"
+    ],
+    "watchFor": [
+      "Limited mechanical depth by design",
+      "Whether the surreal imagery stays narratively coherent",
+      "Value expectations around a very short runtime"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Hank: Drowning On Dry Land on Steam",
+        "url": "https://store.steampowered.com/app/1937880/"
+      }
+    ],
+    "hype": 8
+  },
+  {
+    "slug": "no-stone-unturned",
+    "title": "No Stone Unturned",
+    "studio": "Wise Monkey Entertainment Ltd.",
+    "date": "2025-09-17",
+    "genre": "Comedy Detective Adventure",
+    "platforms": "Windows, macOS",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "A fully voiced British detective comedy builds three classic cases into the larger mystery of A Murder Most Fowl.",
+    "verdictTitle": "A chicken murder with actual casework underneath.",
+    "dadTake": "A chicken is dead. Three dads are now emotionally overinvested.",
+    "verdict": "No Stone Unturned has a joke-shaped doorway, but the structure behind it is substantial: multiple cases, a voiced cast, and a central murder mystery. The best version lets the humor sharpen observation instead of treating every clue as another setup.",
+    "overview": [
+      "The larger case is called A Murder Most Fowl, but the investigation extends through three classic cases inspired by fairy tales, jokes, and children's stories. Each feeds into the central whodunnit.",
+      "The game advertises more than ten hours of story and a fully voiced cast. British humor is the tone, while the detective structure has to carry the player's attention between punchlines."
+    ],
+    "facts": [
+      "Three smaller cases feed into the larger chicken murder mystery.",
+      "The game features a fully voice-acted cast.",
+      "Official materials describe more than ten hours of story content."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Story friendly",
+        "headline": "Comedy lowers the pressure of getting a clue wrong.",
+        "body": "A voiced cast and recognizable story references make the world approachable. Hint design will decide whether the humor stays fun when an investigation stalls."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Case quality",
+        "headline": "The deduction must work without the punchline.",
+        "body": "Three linked cases can create satisfying inference if evidence is consistent and conclusions are earned. Comedy cannot excuse arbitrary solutions."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Shared-screen fit",
+        "headline": "Detective comedy is built for group debate.",
+        "body": "Voiced characters and discrete cases make this easy to play with spectators. Ten-plus hours is appealing if each mystery changes the rhythm."
+      }
+    ],
+    "bestFor": [
+      "Adventure players who like voiced comedy",
+      "Groups that solve mysteries together from the couch",
+      "Fans of British humor and storybook parody"
+    ],
+    "watchFor": [
+      "Hint quality when a case stalls",
+      "Whether solutions remain logically earned",
+      "Comedy repetition across a longer runtime"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "No Stone Unturned on Steam",
+        "url": "https://store.steampowered.com/app/2453640/"
+      }
+    ],
+    "hype": 7.2
+  },
+  {
+    "slug": "sashimi-slayer",
+    "title": "Sashimi Slayer",
+    "studio": "Shrimp Fried Rice Games",
+    "date": "2025-09-18",
+    "genre": "Rhythm Action",
+    "platforms": "Windows, macOS",
+    "statusAtShow": "Unreleased",
+    "group": "PAX Rising Showcase",
+    "groupKey": "pax-rising",
+    "deck": "Sea-creature duels combine rhythm timing, parries, and clean cuts with an open-source physical sword controller.",
+    "verdictTitle": "The sword controller is the hook; timing is the game.",
+    "dadTake": "We came for the sword controller and stayed because our arms hurt.",
+    "verdict": "Sashimi Slayer is exactly the kind of concept that belongs on a show floor: visible, physical, and understandable from across the aisle. The open-source sword is more than a prop if the same parry-and-cut timing remains satisfying on a standard controller.",
+    "overview": [
+      "This rhythm-action arcade game turns seafood duels into timed parries and cuts. Hand-drawn art and original music frame three levels built around learning when to defend and when to strike.",
+      "Its defining feature is an open-source physical sword controller. That hardware makes the game a performance, while the underlying timing still has to support players using conventional input."
+    ],
+    "facts": [
+      "Combat centers on rhythm-based parries and clean cuts.",
+      "The physical sword controller design is open source.",
+      "The game includes three levels with hand-drawn art and original music."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Immediate fun",
+        "headline": "Swinging a sword explains the assignment.",
+        "body": "The physical controller turns timing into a visible motion. Standard controls should preserve that clarity for players who meet the game away from an event."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Score chase",
+        "headline": "Precision and pattern depth decide the ceiling.",
+        "body": "Three levels can support mastery if enemy sequences demand more than memorization. Clean scoring feedback is essential for a rhythm game with a physical input novelty."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Party standout",
+        "headline": "This is a spectator game by design.",
+        "body": "Short rounds, physical movement, and readable failure make Sashimi Slayer ideal for handoffs. Its long-term value depends on replay scoring and controller availability."
+      }
+    ],
+    "bestFor": [
+      "Arcade players who enjoy rhythm and score chasing",
+      "Events or parties with room for the physical controller",
+      "Makers interested in an open-source game peripheral"
+    ],
+    "watchFor": [
+      "Content depth across three levels",
+      "Parity between sword and standard controls",
+      "Setup space and hardware availability"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Sashimi Slayer on Steam",
+        "url": "https://store.steampowered.com/app/3671910/"
+      }
+    ],
+    "hype": 8.8
+  },
+  {
+    "slug": "adaptory",
+    "title": "Adaptory",
+    "studio": "Stormcloak Games",
+    "date": "2025-09-20",
+    "genre": "Colony Simulation",
+    "platforms": "Windows, macOS",
+    "statusAtShow": "Unreleased",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "Four stranded explorers must survive a growing base whose chemistry and physics keep working whether the crew is ready or not.",
+    "verdictTitle": "A colony sim that makes physics part of the crew.",
+    "dadTake": "A colony sim where even the air has a spreadsheet.",
+    "verdict": "Adaptory's fixed four-person crew gives every expansion a cost: the base becomes more complicated while the available hands do not multiply. A simulation of heat, density, viscosity, gravity, and phase changes turns automation from a late-game luxury into the central survival plan.",
+    "overview": [
+      "Four procedurally generated explorers crash on a deserted planetoid and have to build a path home. The crew remains fixed while the base grows, so automation becomes the answer to rising complexity.",
+      "The simulation models gravity, temperature, density, viscosity, and phase changes. Those systems make pipes, rooms, storage, and environmental control part of a connected physical problem."
+    ],
+    "facts": [
+      "Each game begins with four procedurally generated crew members.",
+      "Physics and chemistry model gravity, temperature, density, viscosity, and phase changes.",
+      "A fixed crew size makes automation essential as the base expands."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Steep systems",
+        "headline": "The crew stories can humanize the simulation.",
+        "body": "Four recognizable explorers give new players something to care about while learning pipes and temperature. Strong alerts and overlays will be necessary when the physics starts cascading."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Top pick",
+        "headline": "The constraint is labor, not only material.",
+        "body": "A fixed crew turns every manual task into an opportunity cost. Automation has strategic meaning because it directly returns scarce attention to the colony."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Long campaign",
+        "headline": "This is a second-screen-not-required commitment.",
+        "body": "The simulation invites long sessions and careful planning. Narrative discovery and clear milestones will determine whether the base feels like a journey rather than a perpetual maintenance job."
+      }
+    ],
+    "bestFor": [
+      "Colony-sim players who enjoy connected physical systems",
+      "Automation planners who want labor to remain scarce",
+      "Story-minded players who still want systemic consequences"
+    ],
+    "watchFor": [
+      "Alert clarity during cascading failures",
+      "Early-game teaching for chemistry and phase changes",
+      "Campaign pacing once basic survival is stable"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Adaptory on Steam",
+        "url": "https://store.steampowered.com/app/2201620/"
+      }
+    ],
+    "hype": 7.9
+  },
+  {
+    "slug": "sky-of-tides",
+    "title": "Sky of Tides",
+    "studio": "Lofty Sky Entertainment Inc.",
+    "date": "2025-09-21",
+    "genre": "Narrative RPG",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; date TBA",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "Nine floating realms, a molten inner sun, and fully voiced episodes frame a choice-driven journey across a broken world.",
+    "verdictTitle": "A story-first journey across a literally broken world.",
+    "dadTake": "The world broke apart. Great news for anyone who hates normal maps.",
+    "verdict": "Sky of Tides has a world concept strong enough to carry a narrative RPG: oceans in the sky and nine realms hanging over a molten core. Its success depends on choices leaving visible marks rather than only changing the tone of the next conversation.",
+    "overview": [
+      "Rin D'Lorah travels through numen9, a shattered world made of nine floating realms above the Inner Sun. The story unfolds across nine fully voiced episodes.",
+      "Dialogue, discovery, and risk choices are designed to shape both Rin and the world around her. The game presents itself as an episodic journey where exploration and identity carry more weight than combat spectacle."
+    ],
+    "facts": [
+      "The world consists of nine floating realms above a molten inner sun.",
+      "The narrative is organized into nine fully voiced episodes.",
+      "Dialogue, discovery, and risk choices leave marks on the protagonist and world."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Story entry",
+        "headline": "A voiced episode structure is easy to approach.",
+        "body": "Clear chapter breaks can make a large fantasy world manageable. The game still needs to explain its terminology without turning every conversation into lore homework."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Choice scrutiny",
+        "headline": "Consequences must be more than alternate dialogue.",
+        "body": "Risk and discovery choices are interesting when they change later options, relationships, or locations. The system needs enough memory to reward deliberate role-playing."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Narrative slot",
+        "headline": "Nine episodes give the campaign a useful shape.",
+        "body": "The format creates natural stopping points for busy players. A strong central performance and visible world change could keep the group talking between chapters."
+      }
+    ],
+    "bestFor": [
+      "Narrative RPG players who prioritize world and character",
+      "Players who prefer episodic stopping points",
+      "Science-fantasy fans drawn to unusual geography"
+    ],
+    "watchFor": [
+      "Lore density in early episodes",
+      "How materially choices change later content",
+      "Pacing across nine chapters"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Sky of Tides on Steam",
+        "url": "https://store.steampowered.com/app/1120330/"
+      }
+    ],
+    "hype": 8.6
+  },
+  {
+    "slug": "letter-lost",
+    "title": "Letter Lost",
+    "studio": "FlatNine Games",
+    "date": "2025-09-23",
+    "genre": "Workplace Horror Adventure",
+    "platforms": "Windows, Linux",
+    "statusAtShow": "Unreleased",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "Stamping, sorting, and delivering mail inside a post office with mandatory housing turns cheerful procedure into a warning sign.",
+    "verdictTitle": "Postal work turns into quiet workplace horror.",
+    "dadTake": "Neither rain nor snow nor workplace horror will stop this delivery.",
+    "verdict": "Letter Lost uses one of horror's best tools: instructions that sound friendly until the player notices what they forbid. Sorting mail provides a dependable routine, while the closed Wistvale Post Office gives every corporate reassurance something ominous to hide.",
+    "overview": [
+      "The player works in the Wistvale Post Office on Kharnym Isle, stamping, sorting, and delivering mail. Official language describes mandatory room and board while making it clear that leaving is not encouraged.",
+      "That contrast between cheerful procedure and restrictive rules gives the game its tension. The ordinary work loop has to stay satisfying enough that each deviation feels dangerous."
+    ],
+    "facts": [
+      "The core work loop includes stamping, sorting, and delivering mail.",
+      "Employees receive mandatory room and board inside the post office.",
+      "Friendly corporate language is used to conceal restrictive and unsettling rules."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Low-action horror",
+        "headline": "Routine gives nervous players something concrete to do.",
+        "body": "Sorting mail is calmer than combat, which can make the horror approachable. Clear task feedback is important when the story deliberately makes workplace rules unreliable."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Pattern hunting",
+        "headline": "The mail should become evidence.",
+        "body": "A procedural loop creates room for anomalies, hidden instructions, and deduction. The design is strongest when careful sorting reveals the system rather than merely triggering scripted scares."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Focused oddity",
+        "headline": "The office is a strong place to spend one strange weekend.",
+        "body": "Workplace horror benefits from a contained setting and repeatable tasks. Variety in letters, routes, and rule changes will decide whether the unease grows."
+      }
+    ],
+    "bestFor": [
+      "Players who prefer psychological tension to combat",
+      "Fans of bureaucratic horror and unreliable instructions",
+      "Puzzle-minded players who notice anomalies in routine"
+    ],
+    "watchFor": [
+      "Task repetition across a longer playthrough",
+      "Readability when rules intentionally conflict",
+      "Whether the mystery offers conclusions instead of only atmosphere"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Letter Lost on Steam",
+        "url": "https://store.steampowered.com/app/3624790/"
+      }
+    ],
+    "hype": 7.5
+  },
+  {
+    "slug": "voidsayer",
+    "title": "Voidsayer",
+    "studio": "Pavel Auseitasau",
+    "date": "2025-09-24",
+    "genre": "Monster-Taming RPG",
+    "platforms": "Windows",
+    "statusAtShow": "Released June 2, 2025",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "More than one hundred tameable monsters fight back against the Abyss across a procedurally varied, interconnected world.",
+    "verdictTitle": "Monster-taming depth in a world already losing the fight.",
+    "dadTake": "Catch monsters, fight oblivion, remember which dad named them all.",
+    "verdict": "Voidsayer frames collection as survival rather than sport. Gear, evolution, and a roster of more than one hundred monsters create obvious team-building depth, while procedural events aim to keep the dark world from becoming a fixed route.",
+    "overview": [
+      "The Abyss is consuming the world, and the player's answer is a roster of tameable monsters. More than one hundred creatures can be recruited, equipped, and evolved.",
+      "The world is interconnected but uses procedural events and challenges to vary the journey. That puts pressure on team flexibility rather than a single solved party."
+    ],
+    "facts": [
+      "The roster contains more than 100 tameable monsters.",
+      "Monsters can equip gear and evolve.",
+      "Procedural events and challenges vary the interconnected world."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Roster warning",
+        "headline": "A hundred monsters need excellent comparison tools.",
+        "body": "Collection is inviting, but gear and evolution can quickly create menu overload. Clear recommendations and readable roles would keep experimentation from feeling like bookkeeping."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Deep fit",
+        "headline": "Team construction is the campaign.",
+        "body": "Gear, evolution, and procedural challenges give the roster multiple reasons to change. The strongest encounters should punish a universal team without demanding endless grinding."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Genre commitment",
+        "headline": "The dark tone separates it from a crowded field.",
+        "body": "Voidsayer is for players ready to invest in a roster. Procedural variation can help the campaign stay fresh if the story still provides memorable places and milestones."
+      }
+    ],
+    "bestFor": [
+      "Monster-taming fans who want equipment and evolution depth",
+      "RPG players comfortable rebuilding teams for new challenges",
+      "Players drawn to darker worlds and procedural variation"
+    ],
+    "watchFor": [
+      "Menu clarity across a large roster",
+      "Grinding requirements for alternate teams",
+      "Whether procedural events remain narratively memorable"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials, official Steam information, and its released version at the time of the event. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Voidsayer on Steam",
+        "url": "https://store.steampowered.com/app/2754370/"
+      }
+    ],
+    "hype": 8.4
+  },
+  {
+    "slug": "moros-protocol",
+    "title": "Moros Protocol",
+    "studio": "Pixel Reign",
+    "date": "2025-09-25",
+    "genre": "Roguelite Retro FPS",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; launched Sept. 18, 2025",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "A memoryless soldier wakes aboard a derelict warship where shifting corridors turn retro FPS combat into a repeated escape attempt.",
+    "verdictTitle": "Retro FPS aggression with a roguelite memory problem.",
+    "dadTake": "The spaceship is haunted, the guns are loud, and bedtime was an hour ago.",
+    "verdict": "Moros Protocol combines the direct feedback of a classic shooter with the uncertainty of a roguelite. Crunchy pixel textures and low-poly spaces give The Orpheus a strong look, while augments and found weapons make each return to its shifting corridors a new loadout problem.",
+    "overview": [
+      "The player wakes without memory aboard the derelict warship The Orpheus. Its corridors shift between runs, and the route out is filled with monsters and demanding bosses.",
+      "Combat draws on shooters from the 1990s and early 2000s. Found weapons and augments shape each loadout, adding run variation without replacing the need for movement and aim."
+    ],
+    "facts": [
+      "The Orpheus changes its corridor layout between runs.",
+      "Low-poly environments are paired with crunchy pixel textures.",
+      "Weapons and augments shape loadouts across repeated attempts."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Aim intensive",
+        "headline": "Retro speed needs modern recovery options.",
+        "body": "Readable enemies and adjustable difficulty can open the ship to players without classic FPS reflexes. Repeated early rooms should not become a punishment for learning."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Loadout fit",
+        "headline": "Augments should change movement and target priority.",
+        "body": "The roguelite layer matters when a weapon or augment changes how rooms are approached. Minor damage bumps would not justify the repeated structure."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "High-energy slot",
+        "headline": "A strong run can fit where a campaign mission cannot.",
+        "body": "The format is useful for short, intense sessions. Boss checkpoints and progression pacing will determine whether failure encourages another attempt or ends the night."
+      }
+    ],
+    "bestFor": [
+      "Retro FPS players who want procedural replay",
+      "Roguelite fans who prefer mechanical execution to deck building",
+      "Science-fiction horror fans drawn to derelict ships"
+    ],
+    "watchFor": [
+      "Repetition in early-run encounters",
+      "Accessibility for players outside the retro FPS audience",
+      "How dramatically augments change a run"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. The game launched later in September 2025; it was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Moros Protocol on Steam",
+        "url": "https://store.steampowered.com/app/1605250/"
+      }
+    ],
+    "hype": 9
+  },
+  {
+    "slug": "fractured-blooms",
+    "title": "Fractured Blooms",
+    "studio": "Serenity Forge",
+    "date": "2025-09-26",
+    "genre": "Psychological Life Sim",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; date TBA",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "Repairing a house, growing crops, and cooking meals become unsettling when Angie realizes the day will not stay finished.",
+    "verdictTitle": "Cozy routines weaponized by a time loop.",
+    "dadTake": "Cozy gardening, except Tuesday is broken and possibly watching you.",
+    "verdict": "Fractured Blooms uses familiar life-sim chores as emotional pressure. A time loop turns every planted crop and repaired room into a question about what can be preserved, making comfort and dread depend on the same daily routine.",
+    "overview": [
+      "Angie restores a neglected house, grows crops, cooks meals, and cares for the people inside it. Those cozy systems operate inside a time loop that gradually changes how each task is understood.",
+      "The game is described as inspired by a true story. Its central challenge is tonal: routine must remain satisfying while repetition reveals psychological unease."
+    ],
+    "facts": [
+      "Daily play includes house restoration, farming, cooking, and caregiving.",
+      "A time loop turns routine management into the story structure.",
+      "The project is officially described as inspired by a true story."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Gentle controls",
+        "headline": "Familiar chores provide a stable way into difficult material.",
+        "body": "Life-sim tasks are approachable and predictable. Content framing and pacing matter because the story uses that comfort to carry psychological themes."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Loop scrutiny",
+        "headline": "Knowledge must become the resource that survives.",
+        "body": "A time loop is compelling when each reset changes planning, priorities, or interpretation. Repeating identical chores without new leverage would weaken the structure."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Story commitment",
+        "headline": "This is a life sim for players willing to feel uneasy.",
+        "body": "The contrast is the reason to play, not a surprise to hide. A focused runtime and careful disclosures can help it reach the right audience."
+      }
+    ],
+    "bestFor": [
+      "Life-sim players open to psychological storytelling",
+      "Narrative players who enjoy learning through repeated days",
+      "Players interested in cozy mechanics used for dramatic contrast"
+    ],
+    "watchFor": [
+      "Emotional content and tonal intensity",
+      "Repetition without enough new information",
+      "How sensitively the true-story inspiration is handled"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Fractured Blooms on Steam",
+        "url": "https://store.steampowered.com/app/3730310/"
+      }
+    ],
+    "hype": 8.1
+  },
+  {
+    "slug": "akiiwan-relaxing-survival",
+    "title": "Akiiwan: Relaxing Survival",
+    "studio": "Little Buffalo Studios",
+    "date": "2025-09-28",
+    "genre": "Relaxing Survival",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased; coming soon",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "Handcrafted biomes, changing moons, and field-recorded northern soundscapes replace the usual survival panic with careful attention.",
+    "verdictTitle": "Survival that replaces panic with attention.",
+    "dadTake": "Survival crafting for people who would prefer nature not scream at them.",
+    "verdict": "Akiiwan keeps the gathering and adaptation of survival games while removing much of the hostility. No minimap, changing biomes, and wildlife that generally avoids aggression encourage players to read the world instead of racing a threat meter.",
+    "overview": [
+      "The player explores handcrafted biomes whose conditions change with each new moon. Navigation happens without a minimap, placing more value on landmarks and observation.",
+      "Wildlife generally does not attack unless heavily provoked, and the soundscape uses field recordings from Canada's North. The design aims for survival through relationship with the environment rather than domination of it."
+    ],
+    "facts": [
+      "Biomes change with each new moon.",
+      "The game has no minimap and emphasizes environmental navigation.",
+      "Soundscapes use field recordings from Canada's North, while animals are usually nonaggressive."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Welcoming",
+        "headline": "Removing constant attack pressure changes who can enjoy survival.",
+        "body": "Players can learn gathering and navigation without being chased out of the lesson. The lack of a minimap still asks for strong landmarks and accessible orientation tools."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Observation play",
+        "headline": "The strategy is reading cycles instead of winning fights.",
+        "body": "Changing moons can create planning around routes, resources, and timing. The systems need enough consequence that calm does not become automatic."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Wind-down pick",
+        "headline": "A survival loop can belong at the end of the night.",
+        "body": "The field-recorded soundscape and gentler wildlife make this easy to imagine as a regular decompressing session. Clear long-term goals will keep calm exploration purposeful."
+      }
+    ],
+    "bestFor": [
+      "Players interested in survival without constant combat",
+      "Explorers who enjoy navigating by landmarks",
+      "Anyone who values natural sound and environmental rhythm"
+    ],
+    "watchFor": [
+      "Orientation options without a minimap",
+      "Long-term goals after basic needs are secure",
+      "Whether changing biomes create meaningful planning"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Akiiwan: Relaxing Survival on Steam",
+        "url": "https://store.steampowered.com/app/3673960/"
+      }
+    ],
+    "hype": 7.7
+  },
+  {
+    "slug": "exovia",
+    "title": "Exovia",
+    "studio": "ByteRockers' Games",
+    "date": "2025-09-30",
+    "genre": "Zero-G Factory Simulation",
+    "platforms": "Windows",
+    "statusAtShow": "Unreleased",
+    "group": "Official PAX West 2025 event page",
+    "groupKey": "official-pax",
+    "deck": "A zero-gravity factory sim replaces conveyor belts with floating layouts, generated asteroids, and pressure-free optimization.",
+    "verdictTitle": "Factory optimization without the conveyor-belt anxiety.",
+    "dadTake": "Build a factory in zero gravity. Misplace every wrench in three dimensions.",
+    "verdict": "Exovia changes factory design by removing the floor. Floating production layouts and asteroid maps turn three-dimensional space into the central logistics problem, while the lack of danger and time pressure makes experimentation the point rather than the cost.",
+    "overview": [
+      "Factories are built in zero gravity around procedurally generated asteroids. Traditional conveyor belts give way to floating production layouts and logistics that use open space.",
+      "Asteroid seeds can be shared, and the game explicitly removes time pressure and danger. The challenge is self-directed optimization inside a calmer industrial sandbox."
+    ],
+    "facts": [
+      "Zero-gravity logistics replaces standard ground-based conveyor layouts.",
+      "Asteroids are procedurally generated and use shareable seeds.",
+      "There is no time pressure or danger; optimization is intentionally relaxed."
+    ],
+    "lenses": [
+      {
+        "name": "The Casual",
+        "signal": "Low pressure",
+        "headline": "No failure clock creates room to learn spatial logistics.",
+        "body": "Players can rebuild without losing a colony or fighting an attack. Three-dimensional construction still needs excellent camera controls and clear connection previews."
+      },
+      {
+        "name": "The Tactician",
+        "signal": "Spatial puzzle",
+        "headline": "Removing belts should create new constraints, not remove them.",
+        "body": "The appeal is discovering how zero-G changes throughput and layout. Optimization needs measurable tradeoffs even when the game refuses to punish experimentation."
+      },
+      {
+        "name": "The All-Rounder",
+        "signal": "Zen campaign",
+        "headline": "A factory game can be a wind-down game.",
+        "body": "Shareable seeds and no danger make Exovia easy to revisit without remembering a crisis state. Milestones and visual growth will be important for a sense of progress."
+      }
+    ],
+    "bestFor": [
+      "Factory players who want a calmer optimization sandbox",
+      "Spatial thinkers interested in true three-dimensional layouts",
+      "Players who enjoy sharing seeds and comparing solutions"
+    ],
+    "watchFor": [
+      "Camera and placement controls in three dimensions",
+      "Meaningful constraints without danger or deadlines",
+      "Progression goals across a long-running factory"
+    ],
+    "reviewBasis": "Retrospective mini-review based on the game's appearance in official PAX West 2025 event-page materials and official Steam information. It was not separately verified as an Indie MEGABOOTH-branded booth title.",
+    "sources": [
+      {
+        "label": "Official PAX West 2025 Steam event",
+        "url": "https://store.steampowered.com/sale/paxwest2025"
+      },
+      {
+        "label": "Exovia on Steam",
+        "url": "https://store.steampowered.com/app/3144430/"
+      }
+    ],
+    "hype": 8.5
+  }
+]

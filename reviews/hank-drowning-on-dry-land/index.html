@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        document.documentElement.classList.add("js");
+        const ok = new Set(["light", "dark"]);
+        const saved = localStorage.getItem("psychobros-theme");
+        const theme = (ok.has(saved) && saved) ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer. A PsychoBros review of Hank: Drowning On Dry Land by My Next Games." />
+    <meta name="theme-color" content="#0b0d12" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="PsychoBros" />
+    <meta property="og:title" content="Hank: Drowning On Dry Land review — PsychoBros" />
+    <meta property="og:description" content="A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer. A PsychoBros review of Hank: Drowning On Dry Land by My Next Games." />
+    <meta property="og:url" content="https://psychobrosgames.github.io/reviews/hank-drowning-on-dry-land/" />
+    <meta property="og:image" content="https://psychobrosgames.github.io/assets/press/hank-drowning-on-dry-land/cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:image:alt" content="Screenshot from Hank: Drowning On Dry Land" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://psychobrosgames.github.io/assets/press/hank-drowning-on-dry-land/cover.jpg" />
+    <title>Hank: Drowning On Dry Land review — PsychoBros</title>
+    <link rel="canonical" href="https://psychobrosgames.github.io/reviews/hank-drowning-on-dry-land/" />
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Hank: Drowning On Dry Land review","description":"A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer. A PsychoBros review of Hank: Drowning On Dry Land by My Next Games.","datePublished":"2025-09-15","dateModified":"2025-09-15","url":"https://psychobrosgames.github.io/reviews/hank-drowning-on-dry-land/","image":"https://psychobrosgames.github.io/assets/press/hank-drowning-on-dry-land/cover.jpg","author":{"@type":"Organization","name":"PsychoBros"},"publisher":{"@type":"Organization","name":"PsychoBros","logo":{"@type":"ImageObject","url":"https://psychobrosgames.github.io/assets/favicon.svg"}},"about":{"@type":"VideoGame","name":"Hank: Drowning On Dry Land","genre":"Narrative Adventure"}}</script>
+  </head>
+  <body class="page-review">
+    <a class="skip" href="#main">Skip to content</a>
+    
+    <header class="masthead" data-masthead>
+      <div class="wrap masthead__inner">
+        <a class="brand" href="../../" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <nav class="masthead__nav" aria-label="Main navigation">
+          <a href="../../reviews/" aria-current="page">Reviews</a>
+          <a href="../../pax-west-2025/">PAX West 2025</a>
+          <a href="../../about/#crew">The Dads</a>
+          <a href="../../about/">About &amp; Press</a>
+        </nav>
+        <div class="masthead__actions">
+          
+  <button class="iconbtn" type="button" data-theme-toggle aria-label="Switch color theme">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2.4v2.4M12 19.2v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7" />
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.7 14.1A8 8 0 0 1 9.9 3.3 8.5 8.5 0 1 0 20.7 14.1Z" />
+    </svg>
+  </button>
+          <button class="iconbtn burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobilenav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
+        <a href="../../reviews/" aria-current="page">Reviews</a>
+          <a href="../../pax-west-2025/">PAX West 2025</a>
+          <a href="../../about/#crew">The Dads</a>
+          <a href="../../about/">About &amp; Press</a>
+      </nav>
+    </header>
+    
+      <main id="main">
+        <span id="top"></span>
+        <article class="article">
+          <header class="pagehead pagehead--article">
+            <div class="wrap">
+              <nav class="crumbs" aria-label="Breadcrumb">
+                <a href="../../">Home</a><span>/</span><a href="../">Reviews</a><span>/</span><span aria-current="page">Hank: Drowning On Dry Land</span>
+              </nav>
+              <p class="kicker">PAX Rising Showcase</p>
+              <h1>Hank: Drowning On Dry Land</h1>
+              <p class="pagehead__deck">A poisoned time-traveling vigilante searches his own subconscious for a way to survive a death as strange as spilled beer.</p>
+              <div class="byline byline--article">
+                <span>By <b>PsychoBros</b></span>
+                <time datetime="2025-09-15">September 15, 2025</time>
+                <span>My Next Games</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="wrap article__hero reveal">
+            <figure class="article__figure">
+              <img class="article__cover" src="../../assets/press/hank-drowning-on-dry-land/cover.jpg" alt="Screenshot from Hank: Drowning On Dry Land" width="1200" height="675" fetchpriority="high" />
+              <figcaption class="article__credit">Press image courtesy of My Next Games. Sourced from the game's <a href="https://store.steampowered.com/app/1937880/" rel="noopener">official Steam listing</a>.</figcaption>
+            </figure>
+            <div class="article__aside">
+              <div class="article__scorecard">
+                <p class="kicker">Dad Hype Meter</p>
+                <p class="article__score" data-tone="warm">8.0<i>/10</i></p>
+                <p class="article__band">Wishlisted immediately</p>
+                <p class="article__scorenote">An anticipation score, not a play-tested verdict. <a href="../../about/#standards">How this works</a></p>
+              </div>
+              <figure class="keyart">
+                <h2 class="kicker">Official key art</h2>
+                <img src="../../assets/press/hank-drowning-on-dry-land/key-art.jpg" alt="Official key art for Hank: Drowning On Dry Land" width="460" height="215" loading="lazy" decoding="async" />
+                <figcaption>&copy; My Next Games</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="wrap article__grid">
+            <aside class="article__side">
+              <div class="specs">
+                <h2 class="kicker">The basics</h2>
+                <dl>
+                  <div><dt>Developer</dt><dd>My Next Games</dd></div>
+                  <div><dt>Genre</dt><dd>Narrative Adventure</dd></div>
+                  <div><dt>Platforms</dt><dd>Windows</dd></div>
+                  <div><dt>At the show</dt><dd>Unreleased</dd></div>
+                </dl>
+              </div>
+              <div class="specs">
+                <h2 class="kicker">Dad consensus</h2>
+                <dl>
+                  <div><dt>Dad Who Skipped the Tutorial</dt><dd>Easy commitment</dd></div><div><dt>The Descent Guy</dt><dd>Story first</dd></div><div><dt>Normal-ish Dad</dt><dd>Palette cleanser</dd></div>
+                </dl>
+              </div>
+            </aside>
+
+            <div class="article__body">
+              <div class="verdict reveal">
+                <p class="kicker">The thirty-second version</p>
+                <h2>Thirty minutes of poisoned cartoon noir.</h2>
+                <p class="verdict__joke">Thirty minutes of cartoon noir, poison, and excellent reasons to hydrate.</p>
+                <p>Hank is short enough to commit fully to its premise without turning the subconscious into a collectible map. Its dark Saturday-morning-cartoon style and half-hour target make it a useful reminder that a complete game does not need to fill a calendar.</p>
+              </div>
+
+              <section class="prose reveal" aria-labelledby="what-title">
+                <h2 id="what-title">Okay, what is this thing?</h2>
+                <p>Hank is a time-traveling vigilante who has been poisoned and left drowning in spilled beer. The attempt to survive sends him through his own subconscious rather than a conventional crime scene.</p><p>The official description targets roughly thirty minutes and frames the presentation like a dark Saturday-morning cartoon. That brevity makes tone, pacing, and a clean ending more important than mechanical expansion.</p>
+              </section>
+
+              <figure class="shots reveal">
+                <div class="shots__grid">
+                  <img src="../../assets/press/hank-drowning-on-dry-land/gallery-1.jpg" alt="Screenshot 2 from Hank: Drowning On Dry Land" width="800" height="450" loading="lazy" decoding="async" /><img src="../../assets/press/hank-drowning-on-dry-land/gallery-2.jpg" alt="Screenshot 3 from Hank: Drowning On Dry Land" width="800" height="450" loading="lazy" decoding="async" />
+                </div>
+                <figcaption>Press screenshots courtesy of My Next Games.</figcaption>
+              </figure>
+
+              <section class="reveal" aria-labelledby="why-title">
+                <h2 class="h-rule" id="why-title">Why it escaped the group chat</h2>
+                <ul class="checklist">
+                  <li>The story follows a poisoned vigilante traveling through his subconscious.</li><li>The visual tone is modeled after dark Saturday-morning cartoons.</li><li>The official description targets a roughly 30-minute runtime.</li>
+                </ul>
+              </section>
+
+              <section class="reveal" aria-labelledby="tribunal-title">
+                <h2 class="h-rule" id="tribunal-title">Three dads enter</h2>
+                <div class="tribunal">
+                  
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">01</p>
+                    <div>
+                      <p class="tribunal__who">Dad Who Skipped the Tutorial</p>
+                      <h3>Half an hour is a feature.</h3>
+                      <p>A short runtime removes the usual hesitation around starting a narrative game. The experience needs only clear interaction and readable story beats to justify the evening.</p>
+                    </div>
+                  </article>
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">02</p>
+                    <div>
+                      <p class="tribunal__who">The Descent Guy</p>
+                      <h3>There is no campaign system to optimize.</h3>
+                      <p>The appeal is structure, symbolism, and pacing rather than mastery. Players looking for deep mechanics should treat this as an interactive short, not a compact RPG.</p>
+                    </div>
+                  </article>
+                  <article class="tribunal__item">
+                    <p class="tribunal__n">03</p>
+                    <div>
+                      <p class="tribunal__who">Normal-ish Dad</p>
+                      <h3>A complete idea can fit between larger games.</h3>
+                      <p>The unusual death and cartoon-noir framing make Hank easy to remember. If the ending lands, the short format is exactly the right size.</p>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <section class="reveal" aria-labelledby="fit-title">
+                <h2 class="visually-hidden" id="fit-title">Who it is for and what to watch</h2>
+                <div class="fit">
+                  <div class="fit__col fit__col--yes">
+                    <h3>Invite these people</h3>
+                    <ul><li>Players who want a complete story in one sitting</li><li>Fans of surreal noir and dark cartoon aesthetics</li><li>Anyone looking for a break between longer campaigns</li></ul>
+                  </div>
+                  <div class="fit__col fit__col--watch">
+                    <h3>Dad caveats</h3>
+                    <ul><li>Limited mechanical depth by design</li><li>Whether the surreal imagery stays narratively coherent</li><li>Value expectations around a very short runtime</li></ul>
+                  </div>
+                </div>
+              </section>
+
+              <section class="receipts reveal" aria-labelledby="receipts-title">
+                <h2 class="kicker" id="receipts-title">Receipts</h2>
+                <p>Retrospective mini-review based on the game&#039;s verified PAX Rising Showcase placement on the official PAX West 2025 Steam event page and official Steam materials. This is not a final-release review.</p>
+                <ul>
+                  <li><a href="https://store.steampowered.com/sale/paxwest2025" target="_blank" rel="noreferrer">Official PAX West 2025 Steam event</a></li><li><a href="https://store.steampowered.com/app/1937880/" target="_blank" rel="noreferrer">Hank: Drowning On Dry Land on Steam</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <nav class="wrap pager" aria-label="More reviews">
+            <a class="pager__link" href="../no-stone-unturned/"><span>&larr; Newer</span><strong>No Stone Unturned</strong></a>
+            <a class="pager__link pager__link--next" href="../table-tactics/"><span>Older &rarr;</span><strong>Table Tactics: physics-driven tabletop battles</strong></a>
+          </nav>
+
+          <section class="wrap section" aria-labelledby="related-title">
+            
+  <div class="sechead">
+    <div class="sechead__text">
+      <p class="kicker">Keep going</p>
+      <h2><span id="related-title">More reviews</span></h2>
+      
+    </div>
+    <a class="btn btn--ghost" href="../">All 20 <span aria-hidden="true">&rarr;</span></a>
+  </div>
+            <div class="grid">
+  <article class="card reveal"
+    data-card
+    data-title="exovia"
+    data-studio="byterockers&#039; games"
+    data-genre="zero-g factory simulation"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/exovia/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/press/exovia/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="hot"><b>8.5</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Zero-G Factory Simulation</span><time datetime="2025-09-30">Sep 30</time></p>
+      <h3 class="card__title"><a href="../../reviews/exovia/">Exovia</a></h3>
+      <p class="card__take">Build a factory in zero gravity. Misplace every wrench in three dimensions.</p>
+      <p class="card__foot"><span>ByteRockers&#039; Games</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="akiiwan: relaxing survival"
+    data-studio="little buffalo studios"
+    data-genre="relaxing survival"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/akiiwan-relaxing-survival/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/press/akiiwan-relaxing-survival/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="cool"><b>7.7</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Relaxing Survival</span><time datetime="2025-09-28">Sep 28</time></p>
+      <h3 class="card__title"><a href="../../reviews/akiiwan-relaxing-survival/">Akiiwan: Relaxing Survival</a></h3>
+      <p class="card__take">Survival crafting for people who would prefer nature not scream at them.</p>
+      <p class="card__foot"><span>Little Buffalo Studios</span></p>
+    </div>
+  </article>
+  <article class="card reveal"
+    data-card
+    data-title="fractured blooms"
+    data-studio="serenity forge"
+    data-genre="psychological life sim"
+    data-group="official-pax">
+    <a class="card__art" href="../../reviews/fractured-blooms/" tabindex="-1" aria-hidden="true">
+      <img src="../../assets/press/fractured-blooms/cover.jpg" alt="" loading="lazy" decoding="async" width="1200" height="675" sizes="(max-width: 640px) 92vw, (max-width: 1080px) 44vw, 30vw" />
+      <span class="score" data-tone="warm"><b>8.1</b><i>hype</i></span>
+    </a>
+    <div class="card__body">
+      <p class="card__meta"><span class="tag">Psychological Life Sim</span><time datetime="2025-09-26">Sep 26</time></p>
+      <h3 class="card__title"><a href="../../reviews/fractured-blooms/">Fractured Blooms</a></h3>
+      <p class="card__take">Cozy gardening, except Tuesday is broken and possibly watching you.</p>
+      <p class="card__foot"><span>Serenity Forge</span></p>
+    </div>
+  </article></div>
+          </section>
+        </article>
+      </main>
+    
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brandcol">
+        <a class="brand" href="../../" aria-label="PsychoBros home">
+          
+  <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1.5" y="8.5" width="37" height="23" rx="7.5" fill="var(--pb-flame)" />
+    <path d="M9.5 20h7M13 16.5v7" stroke="#0b0d12" stroke-width="2.8" stroke-linecap="round" />
+    <circle cx="26.5" cy="17.6" r="2.5" fill="#0b0d12" />
+    <circle cx="31" cy="23" r="2.5" fill="#0b0d12" />
+  </svg>
+          <span class="brand__word">Psycho<em>Bros</em></span>
+        </a>
+        <p>Three dads in their forties reviewing games between school pickup and bedtime. One of us will not stop talking about Descent.</p>
+      </div>
+      <div class="foot__col">
+        <h2>Read</h2>
+        <a href="../../reviews/">All reviews</a>
+        <a href="../../pax-west-2025/">PAX West 2025</a>
+      </div>
+      <div class="foot__col">
+        <h2>The boring bits</h2>
+        <a href="../../about/#crew">Meet the dads</a>
+        <a href="../../about/#standards">How we stay honest</a>
+        <a href="../../about/#press">Press &amp; partnerships</a>
+      </div>
+      <div class="foot__col">
+        <h2>Elsewhere</h2>
+        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <a href="../../about/#press">Get in touch</a>
+      </div>
+    </div>
+    <div class="wrap foot__bottom">
+      <p>&copy; <span data-year></span> PsychoBros. Built after the kids went to bed. Mostly.</p>
+      <p class="foot__rights">Game screenshots and key art are official press assets belonging to their respective developers and publishers, used editorially. <a href="../../about/#standards">Image policy</a>.</p>
+      <a class="totop" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+    </div>
+  </footer>
+    <script src="../../script.js"></script>
+  </body>
+</html>
