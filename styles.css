@@ -380,11 +380,6 @@ p {
   color: var(--pb-blue);
 }
 
-.kicker--onblue {
-  color: var(--pb-blue-ink);
-  opacity: 0.75;
-}
-
 .tag {
   display: inline-block;
   padding: 0.2rem 0.5rem;
@@ -943,43 +938,16 @@ p {
   color: var(--pb-faint);
 }
 
-/* ------------------------------------------------------------------ band */
-
-.band {
-  margin-block: var(--pb-section);
-  background: var(--pb-blue);
-  color: var(--pb-blue-ink);
-}
-
-.band__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: center;
-  padding-block: clamp(2.25rem, 4.5vw, 3.25rem);
-}
-
-.band__copy h2 {
-  margin-top: 0.4rem;
-  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-}
-
-.band__copy p {
-  max-width: 58ch;
-  margin-top: 0.85rem;
-  font-size: 1rem;
-  opacity: 0.86;
-}
-
-.band__copy .btn {
-  margin-top: 1.35rem;
-}
+/* ----------------------------------------------------------- hype scale */
 
 .scale {
   display: grid;
   gap: 0.4rem;
   padding: 1.15rem;
   margin: 0;
+  /* Sized as a compact card: its only consumer is the About standards list,
+     where a full-width ladder would strand ~900px of empty space per row. */
+  max-width: 26rem;
   border-radius: var(--pb-radius);
   background: color-mix(in srgb, var(--pb-blue-ink) 88%, transparent);
   color: #fff;
@@ -2039,10 +2007,6 @@ a.tag:hover {
   .article__side {
     position: static;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-
-  .band__inner {
-    grid-template-columns: 1fr;
   }
 
   .foot__grid {

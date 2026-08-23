@@ -377,7 +377,9 @@ const homePage = () => {
   // keep both columns roughly the same height.
   const rail = rest.slice(0, 7);
   const grid = rest.slice(7, 15);
-  const more = rest.slice(15, 19);
+  // The homepage is games-only, so the back catalogue absorbs the space the
+  // old explainer sections used to take.
+  const more = rest.slice(15, 23);
   const description =
     "Game reviews from three dads in their forties. A decade of AAA blockbusters and tiny indies, scored by how loud the group chat got.";
 
@@ -448,23 +450,6 @@ const homePage = () => {
           </div>
         </section>
 
-        <section class="band" aria-labelledby="hype-title">
-          <div class="wrap band__inner">
-            <div class="band__copy reveal">
-              <p class="kicker kicker--onblue">How the score works</p>
-              <h2 id="hype-title">The Dad Hype Meter</h2>
-              <p>It is a number out of ten for how hard a game hijacked our group chat. For the games we actually played, that is our verdict and we will stand behind it. For the PAX West write-ups it is pure anticipation, and those are labeled so you know the difference. Nine and up means somebody left the dishwasher half-loaded, which around here counts as a standing ovation.</p>
-              <a class="btn btn--ink" href="about/#standards">How we stay honest <span aria-hidden="true">&rarr;</span></a>
-            </div>
-            <ul class="scale reveal">
-              ${HYPE_BANDS.map(
-                (band) =>
-                  `<li><b data-tone="${band.tone}">${band.at}</b> <span>${escapeHtml(band.label)}</span></li>`
-              ).join("\n              ")}
-            </ul>
-          </div>
-        </section>
-
         <section class="wrap section" aria-labelledby="more-title">
           ${sectionHead({
             kicker: "Keep scrolling",
@@ -476,48 +461,6 @@ const homePage = () => {
           </div>
         </section>
 
-        <section class="wrap section" aria-labelledby="years-title">
-          ${sectionHead({
-            kicker: "Since 2015",
-            title: '<span id="years-title">We have been doing this a while</span>',
-            note: "Every year we have been playing together, and the games that survived the group chat.",
-            link: ["years/", "All years"],
-          })}
-          <div class="yearstrip">
-            ${allYears()
-              .map(
-                (y) =>
-                  `<a class="yearstrip__item reveal" href="years/${y}/"><b>${y}</b><span>${reviewsInYear(y).length} reviews</span></a>`,
-              )
-              .join("")}
-          </div>
-        </section>
-
-        <section class="wrap section" aria-labelledby="crew-title">
-          ${sectionHead({
-            kicker: "The tribunal",
-            title: '<span id="crew-title">Every review gets three opinions</span>',
-            note: "We each play differently, so we each review differently. Nobody has ever fully agreed on anything.",
-            link: ["about/#crew", "Meet the dads"],
-          })}
-          <div class="crew">
-            <article class="crew__card reveal">
-              <p class="crew__n">01</p>
-              <h3>Dad Who Skipped the Tutorial</h3>
-              <p>Plays maybe four games a year and refuses to read a single tooltip. If he cannot work it out in ninety seconds, he decides that is the game's problem. Our onboarding canary.</p>
-            </article>
-            <article class="crew__card reveal">
-              <p class="crew__n">02</p>
-              <h3>The Descent Guy</h3>
-              <p>Has opinions about six-degrees-of-freedom movement that predate two of his children. Will find the systems depth in anything, then compare it unfavourably to Descent.</p>
-            </article>
-            <article class="crew__card reveal">
-              <p class="crew__n">03</p>
-              <h3>Normal-ish Dad</h3>
-              <p>The control group. Plays a reasonable amount, finishes about half of it, and is the only one of us who checks whether a game is still fun at hour three.</p>
-            </article>
-          </div>
-        </section>
       </main>`,
   });
 };
@@ -814,6 +757,23 @@ const aboutPage = () => {
           </div>
         </section>
 
+        <section class="wrap section" id="archive" aria-labelledby="archive-heading">
+          ${sectionHead({
+            kicker: "Since 2015",
+            title: '<span id="archive-heading">We have been doing this a while</span>',
+            note: "Every year we have been playing together, and the games that survived the group chat.",
+            link: ["../years/", "All years"],
+          })}
+          <div class="yearstrip">
+            ${allYears()
+              .map(
+                (y) =>
+                  `<a class="yearstrip__item reveal" href="../years/${y}/"><b>${y}</b><span>${reviewsInYear(y).length} reviews</span></a>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
         <section class="wrap section" id="standards" aria-labelledby="standards-heading">
           ${sectionHead({ kicker: "Editorial", title: '<span id="standards-heading">How we stay honest</span>' })}
           <ol class="standards">
@@ -824,6 +784,14 @@ const aboutPage = () => {
             <li>
               <h3>The Dad Hype Meter tells you which kind of score it is</h3>
               <p>The number measures how much a game took over our group chat. On something we played, that is our verdict. On the PAX West entries it is anticipation, and it says so on the page. Handing out review scores for games we have not played would be a bit much, even for us.</p>
+              <p>Roughly, the ladder runs like this:</p>
+              <ul class="scale">
+                ${HYPE_BANDS.map(
+                  (band) =>
+                    `<li><b data-tone="${band.tone}">${band.at}</b> <span>${escapeHtml(band.label)}</span></li>`
+                ).join("\n                ")}
+              </ul>
+              <p>Nine and up means somebody left the dishwasher half-loaded, which around here counts as a standing ovation.</p>
             </li>
             <li>
               <h3>Three perspectives, no forced consensus</h3>
