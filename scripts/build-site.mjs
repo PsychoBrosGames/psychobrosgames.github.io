@@ -213,8 +213,7 @@ const footer = (prefix) => `
         <a href="${prefix}about/#press">Press &amp; partnerships</a>
       </div>
       <div class="foot__col">
-        <h2>Elsewhere</h2>
-        <a href="https://github.com/PsychoBrosGames" rel="noreferrer">GitHub</a>
+        <h2>Contact</h2>
         <a href="${prefix}about/#press">Get in touch</a>
       </div>
     </div>
