@@ -1440,6 +1440,11 @@ p {
    visitors never meet it. Padding lives on .paxmodal__inner instead of here so
    the click handler can treat "target is the dialog" as "clicked the backdrop". */
 .paxmodal {
+  /* The global `* { margin: 0 }` reset wipes the UA stylesheet's `margin: auto`
+     on <dialog>, which is what normally centers a modal against the
+     `inset-block: 0` the UA sets on dialog:modal. Put it back, or the dialog
+     pins to the top-left of the viewport. */
+  margin: auto;
   width: min(38rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
   padding: 0;
