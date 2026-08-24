@@ -149,11 +149,32 @@ const themeToggle = `
     </svg>
   </button>`;
 
+/* One source for the PAX pitch. The About-page callout and the first-visit
+   dialog both read it, so the two can never drift apart. */
+const PAX = {
+  kicker: "PAX West 2026",
+  headline: "All three dads will be in Seattle",
+  body: "All three of us are on the show floor this year, covering new releases, indie discoveries, hands-on previews, developer conversations, and whatever we end up arguing about on the flight home.",
+  availHead: "We are available for",
+  avail: [
+    "Hands-on previews",
+    "Developer interviews",
+    "Press appointments",
+    "Review opportunities",
+    "Publisher and studio events",
+    "Media and creator receptions",
+  ],
+};
+
+const paxAvailList = (indent) =>
+  PAX.avail.map((item) => `<li>${item}</li>`).join(`\n${" ".repeat(indent)}`);
+
 const navLinks = (prefix) => [
   ["reviews", `${prefix}reviews/`, "Reviews"],
   ["years", `${prefix}years/`, "By Year"],
   ["crew", `${prefix}about/#crew`, "The Dads"],
   ["about", `${prefix}about/`, "About &amp; Press"],
+  ["pax", `${prefix}about/#pax`, PAX.kicker],
 ];
 
 const header = (prefix, active) => {
@@ -186,6 +207,32 @@ const header = (prefix, active) => {
       </nav>
     </header>`;
 };
+
+/* Mirrors the About-page PAX callout. It ships on every page, but a native
+   <dialog> stays display:none until script.js calls showModal(), so a visitor
+   with JavaScript off never gets a stuck overlay blocking the site. */
+const paxModal = (prefix) => `
+    <dialog class="paxmodal" id="pax-modal" aria-labelledby="pax-modal-title" data-pax-modal>
+      <div class="paxmodal__inner">
+        <form method="dialog">
+          <button class="paxmodal__x" type="submit" value="dismiss" aria-label="Dismiss">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+        <p class="kicker">${PAX.kicker}</p>
+        <h2 id="pax-modal-title">${PAX.headline}</h2>
+        <p>${PAX.body}</p>
+        <h3 class="paxmodal__availhead">${PAX.availHead}</h3>
+        <ul class="paxmodal__avail">
+          ${paxAvailList(10)}
+        </ul>
+        <p class="paxmodal__mail">Scheduling and invitations: <a href="${mailto()}">${contactEmail}</a></p>
+        <p class="paxmodal__cta">
+          <a class="btn btn--blue" href="${mailto(`PsychoBros — ${PAX.kicker}`)}">Contact PsychoBros <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="${prefix}about/#pax">Read the press kit <span aria-hidden="true">&rarr;</span></a>
+        </p>
+      </div>
+    </dialog>`;
 
 /** A function, not a constant, so it reads `reviews` after module init rather
     than at declaration time. */
@@ -299,6 +346,7 @@ ${head}
     ${header(prefix, active)}
     ${body}
     ${footer(prefix)}
+    ${paxModal(prefix)}
     <script src="${prefix}script.js"></script>
   </body>
 </html>
@@ -383,7 +431,7 @@ const homePage = () => {
   // keep both columns roughly the same height.
   const rail = rest.slice(0, 7);
   const grid = rest.slice(7, 15);
-  // The homepage is games-only, so the back catalogue absorbs the space the
+  // The homepage is games-only, so the back catalog absorbs the space the
   // old explainer sections used to take.
   const more = rest.slice(15, 23);
   const description =
@@ -459,7 +507,7 @@ const homePage = () => {
         <section class="wrap section" aria-labelledby="more-title">
           ${sectionHead({
             kicker: "Keep scrolling",
-            title: '<span id="more-title">More from the back catalogue</span>',
+            title: '<span id="more-title">More from the back catalog</span>',
             link: ["reviews/", "The full archive"],
           })}
           <div class="rows">
@@ -610,7 +658,7 @@ const yearsPage = () => {
         <section class="pagehead">
           <div class="wrap">
             <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">By year</span></nav>
-            <p class="kicker">The back catalogue</p>
+            <p class="kicker">The back catalog</p>
             <h1>A decade of this</h1>
             <p class="pagehead__deck">We started playing together in ${first} and somehow never stopped. Here is every year since, and what we made time for.</p>
           </div>
@@ -773,7 +821,7 @@ const aboutPage = () => {
               <p class="crew__n">02</p>
               <h3>The Descent Guy</h3>
               <p class="crew__role">Systems &amp; mechanics</p>
-              <p>The reason this site exists. Deep and slightly alarming knowledge of movement systems, level design and difficulty curves, anchored by a thirty-year relationship with Descent. He finds the mechanical idea at the centre of a game faster than anyone we know.</p>
+              <p>The reason this site exists. Deep and slightly alarming knowledge of movement systems, level design and difficulty curves, anchored by a thirty-year relationship with Descent. He finds the mechanical idea at the center of a game faster than anyone we know.</p>
             </article>
             <article class="crew__card reveal">
               <p class="crew__n">03</p>
@@ -842,26 +890,21 @@ const aboutPage = () => {
         <section class="wrap section" id="press" aria-labelledby="press-heading">
           ${sectionHead({ kicker: "Press", title: '<span id="press-heading">Press &amp; partnerships</span>' })}
 
-          <div class="note note--blue pax">
+          <div class="note note--blue pax" id="pax">
             <div class="pax__copy">
-              <p class="kicker">PAX West 2026</p>
-              <h3>All three dads will be in Seattle</h3>
-              <p>All three of us are on the show floor this year, covering new releases, indie discoveries, hands-on previews, developer conversations, and whatever we end up arguing about on the flight home.</p>
+              <p class="kicker">${PAX.kicker}</p>
+              <h3>${PAX.headline}</h3>
+              <p>${PAX.body}</p>
               <p class="pax__mail">Scheduling and invitations: <a href="${mailto()}">${contactEmail}</a></p>
               <p class="pax__cta">
-                <a class="btn btn--blue" href="${mailto("PsychoBros — PAX West 2026")}">Contact PsychoBros <span aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn--blue" href="${mailto(`PsychoBros — ${PAX.kicker}`)}">Contact PsychoBros <span aria-hidden="true">&rarr;</span></a>
                 <a class="btn btn--ghost" href="../tags/pax-west/">See our PAX West coverage <span aria-hidden="true">&rarr;</span></a>
               </p>
             </div>
             <div class="pax__avail">
-              <h4>We are available for</h4>
+              <h4>${PAX.availHead}</h4>
               <ul>
-                <li>Hands-on previews</li>
-                <li>Developer interviews</li>
-                <li>Press appointments</li>
-                <li>Review opportunities</li>
-                <li>Publisher and studio events</li>
-                <li>Media and creator receptions</li>
+                ${paxAvailList(16)}
               </ul>
             </div>
           </div>

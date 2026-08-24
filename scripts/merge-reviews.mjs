@@ -2,7 +2,7 @@
  * Merges writer-agent output into data/reviews.json.
  *
  * The 20 PAX records are replaced in place by their retrofits; the 60 new
- * back-catalogue reviews are added. Nothing here invents or edits facts - the
+ * back-catalog reviews are added. Nothing here invents or edits facts - the
  * only mutation is dropping `statusAtShow` from verdicts, which is PAX-only
  * framing that renders as a nonsensical "Status at show" row on a review of a
  * game that shipped years ago.
@@ -43,7 +43,7 @@ const missedRetro = live.filter((r) => !merged.has(r.slug));
 if (missedRetro.length)
   problems.push(`shipped reviews with no retrofit: ${missedRetro.map((r) => r.slug).join(", ")}`);
 
-// --- new back-catalogue reviews -------------------------------------------
+// --- new back-catalog reviews -------------------------------------------
 let stripped = 0;
 for (const file of BATCHES) {
   for (const r of read(file)) {

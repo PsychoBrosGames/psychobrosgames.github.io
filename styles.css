@@ -1434,6 +1434,130 @@ p {
   font-size: 0.92rem;
 }
 
+/* ------------------------------------------------------------- pax modal */
+
+/* Native <dialog>: closed (display:none) until script.js opens it, so no-JS
+   visitors never meet it. Padding lives on .paxmodal__inner instead of here so
+   the click handler can treat "target is the dialog" as "clicked the backdrop". */
+.paxmodal {
+  width: min(38rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--pb-line);
+  border-radius: var(--pb-radius-lg);
+  background: var(--pb-surface);
+  color: var(--pb-text);
+  box-shadow: var(--pb-shadow);
+}
+
+.paxmodal::backdrop {
+  background: rgb(4 8 16 / 0.66);
+}
+
+.paxmodal[open] {
+  animation: pax-in 0.22s ease-out;
+}
+
+@keyframes pax-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.paxmodal__inner {
+  position: relative;
+  padding: clamp(1.4rem, 3.4vw, 2.1rem);
+}
+
+.paxmodal__x {
+  position: absolute;
+  top: clamp(0.9rem, 2vw, 1.2rem);
+  right: clamp(0.9rem, 2vw, 1.2rem);
+  display: grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border: 1px solid var(--pb-line);
+  border-radius: 999px;
+  background: var(--pb-surface-2);
+  color: var(--pb-dim);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.paxmodal__x:hover {
+  color: var(--pb-text);
+  border-color: var(--pb-blue);
+}
+
+/* The close button sits over this line, so keep the heading clear of it. */
+.paxmodal h2 {
+  margin: 0.4rem 0 0.8rem;
+  padding-right: 2.75rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+}
+
+.paxmodal p {
+  color: var(--pb-dim);
+}
+
+.paxmodal__availhead {
+  margin: 1.4rem 0 0;
+  font-family: var(--pb-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pb-faint);
+}
+
+.paxmodal__avail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 1.2rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paxmodal__avail li {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--pb-line);
+  color: var(--pb-dim);
+  font-size: 0.9rem;
+}
+
+.paxmodal__mail {
+  margin-top: 1.3rem;
+  font-size: 0.94rem;
+}
+
+.paxmodal__mail a {
+  color: var(--pb-blue);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* .btn is white-space: nowrap, so the row has to be free to wrap instead. */
+.paxmodal__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.3rem;
+}
+
 /* --------------------------------------------------------------- article */
 
 .article__hero {
@@ -2162,6 +2286,10 @@ a.tag:hover {
   .article__score {
     font-size: 2.8rem;
   }
+
+  .paxmodal__avail {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2187,7 +2315,8 @@ a.tag:hover {
   .ticker,
   .foot,
   .pager,
-  .rail {
+  .rail,
+  .paxmodal {
     display: none;
   }
 

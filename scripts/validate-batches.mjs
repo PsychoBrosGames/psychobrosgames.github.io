@@ -22,7 +22,7 @@ const planBySlug = new Map(plan.map((p) => [p.slug, p]));
 const LENSES = ["The Casual", "The Tactician", "The All-Rounder"];
 
 /** The live reviews.json shape. `statusAtShow` is deliberately absent: it is a
-    PAX-only field and meaningless on a back-catalogue verdict. */
+    PAX-only field and meaningless on a back-catalog verdict. */
 const REQUIRED_KEYS = [
   "slug",
   "title",
@@ -236,7 +236,7 @@ for (const file of files) {
       }
     }
 
-    // A back-catalogue verdict has no "status at show" - that is PAX framing.
+    // A back-catalog verdict has no "status at show" - that is PAX framing.
     if (!paxMode && r.scoreKind === "verdict" && "statusAtShow" in r)
       problems.push(`${where}: statusAtShow is PAX-only and must be dropped on a verdict`);
 

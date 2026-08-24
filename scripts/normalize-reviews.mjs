@@ -1,5 +1,5 @@
 /**
- * Normalise every review record to the current schema.
+ * Normalize every review record to the current schema.
  *
  * The site began as a single PAX West 2025 collection, so the original records
  * carried `group`/`groupKey` fields that assumed one collection existed. The
@@ -29,7 +29,7 @@ const reviews = JSON.parse(await readFile(REVIEWS, 'utf8'));
 const problems = [];
 let migrated = 0;
 
-const normalised = reviews.map((review) => {
+const normalized = reviews.map((review) => {
   const next = { ...review };
 
   next.year = Number(String(next.date).slice(0, 4));
@@ -69,14 +69,14 @@ const normalised = reviews.map((review) => {
   return next;
 });
 
-normalised.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+normalized.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 
-await writeFile(REVIEWS, `${JSON.stringify(normalised, null, 2)}\n`, 'utf8');
+await writeFile(REVIEWS, `${JSON.stringify(normalized, null, 2)}\n`, 'utf8');
 
-const years = [...new Set(normalised.map((r) => r.year))].sort();
-const kinds = normalised.reduce((acc, r) => ({ ...acc, [r.scoreKind]: (acc[r.scoreKind] || 0) + 1 }), {});
+const years = [...new Set(normalized.map((r) => r.year))].sort();
+const kinds = normalized.reduce((acc, r) => ({ ...acc, [r.scoreKind]: (acc[r.scoreKind] || 0) + 1 }), {});
 
-console.log(`reviews    : ${normalised.length}`);
+console.log(`reviews    : ${normalized.length}`);
 console.log(`years      : ${years[0]}-${years[years.length - 1]} (${years.length})`);
 console.log(`scoreKind  : ${JSON.stringify(kinds)}`);
 console.log(`migrated   : ${migrated} record(s) gained a scoreKind`);

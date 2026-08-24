@@ -63,6 +63,42 @@
     });
   }
 
+  /* ------------------------------------------------------- pax west dialog */
+
+  /* A native <dialog> gives us the focus trap, Escape handling and inert
+     background for free. It is only ever opened from here, so if this script
+     fails the page stays fully usable instead of sitting behind a backdrop. */
+  const paxModal = document.querySelector("[data-pax-modal]");
+  if (paxModal && typeof paxModal.showModal === "function") {
+    const PAX_KEY = "psychobros-pax-2026-dismissed";
+
+    let dismissed = false;
+    try {
+      dismissed = localStorage.getItem(PAX_KEY) === "1";
+    } catch {
+      /* private mode — the dialog simply shows again next visit */
+    }
+
+    if (!dismissed) {
+      paxModal.showModal();
+
+      /* Fires for the close button, Escape and the backdrop alike. */
+      paxModal.addEventListener("close", () => {
+        try {
+          localStorage.setItem(PAX_KEY, "1");
+        } catch {
+          /* private mode — nothing to persist to */
+        }
+      });
+
+      /* .paxmodal__inner carries all the padding, so a click that lands on the
+         dialog element itself can only have come from the backdrop. */
+      paxModal.addEventListener("click", (event) => {
+        if (event.target === paxModal) paxModal.close("backdrop");
+      });
+    }
+  }
+
   /* ----------------------------------------------------------------- reveal */
 
   const revealables = document.querySelectorAll(".reveal");

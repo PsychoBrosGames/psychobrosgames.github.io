@@ -27,7 +27,7 @@ const DELAY_MS = 350;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Normalise a title so "Akiiwan: Relaxing Survival" can be matched to "Akiiwan". */
+/** Normalize a title so "Akiiwan: Relaxing Survival" can be matched to "Akiiwan". */
 function norm(s) {
   return String(s || '')
     .toLowerCase()
